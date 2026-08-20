@@ -15,14 +15,12 @@ function App() {
     setCopied(null)
   }
 
-  const copy = async (hex: string) => {
-    try {
-      await navigator.clipboard.writeText(hex)
-    } catch {
-      // Clipboard may be unavailable; still reflect the selection in the UI.
-    }
+  const copy = (hex: string) => {
+    // Reflect the selection immediately so UI feedback never depends on the
+    // clipboard promise, which can hang or be denied in some browsers.
     setCopied(hex)
     window.setTimeout(() => setCopied((c) => (c === hex ? null : c)), 1600)
+    void navigator.clipboard?.writeText(hex).catch(() => {})
   }
 
   return (
