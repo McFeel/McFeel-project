@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 """稿件红线自查。
 
-对本目录下的调研报告成稿做机械校验，覆盖五类约束：
-术语白名单、既成事实表述的否定语境、编造要素、半角标点、关键口径的限定语。
+对本目录下的调研报告成稿做机械校验，覆盖六类约束：
+
+1. “零碳区域”只允许出现在转述住建部认证体系之处，且不得用于指称本项目；
+2. “全国首个”“国内首个”一类表述必须带出处或争取方向的限定语；
+3. 清华大学一站尚未开展，不得写成已调研、已座谈、已形成结论；
+4. 既成事实用语（已立项、已签约等）只允许出现在否定语境；
+5. 含量化数据的段落必须同段标注出处；
+6. 正文使用全角标点，并校验公文 Word 与 Markdown 正文同步。
 
 用法：python3 docs/survey-reports/check_writing_constraints.py
 """
@@ -14,51 +20,81 @@ import sys
 from pathlib import Path
 
 DOC_DIR = Path(__file__).resolve().parent
+REPORT = DOC_DIR / "2026-08-南网总部基地绿色近零碳智慧园区项目调研报告.md"
+DOCX = DOC_DIR / "2026-08-南网总部基地绿色近零碳智慧园区项目调研报告.docx"
 
-# 只允许「零碳」单用，以及「零碳机房」「零碳工厂」两个复合词。
-ALLOWED_ZEROCARBON_TERMS = ("零碳机房", "零碳工厂")
-BANNED_TERMS = ("零碳区域",)
+# “零碳区域”系建科院宣讲材料转述住建部体系时的原词，只能在有出处的语境下使用。
+ZERO_CARBON_AREA = "零碳区域"
+AREA_SOURCE_MARKERS = ("宣讲材料", "住建部", "建科院")
+PROJECT_MARKERS = ("南网", "总部基地", "本项目")
 
-# 这些词只允许出现在否定语境中，用于声明「不是已定事实」。
+# “首个”类表述必须说明是谁的口径。
+FIRST_CLAIMS = ("全国首个", "国内首个")
+FIRST_MARKERS = ("宣讲材料", "争取", "会内", "意向", "据")
+
+# 清华一站尚未开展。
+TSINGHUA = "清华"
+TSINGHUA_FORBIDDEN = ("已调研", "已座谈", "已参观", "已形成结论", "已开展", "调研结论")
+
 FAIT_ACCOMPLI = ("已立项", "已落地", "已签约", "已申报", "已批复", "已中标")
-NEGATION_MARKERS = ("不", "未", "没有", "无", "非", "禁")
+NEGATION_MARKERS = ("不", "未", "没有", "无", "非", "禁", "尚")
 
-# 「全国首个」必须与限定语同句出现，避免被读成既成事实。
-SCOPED_CLAIM = "全国首个"
-SCOPE_MARKERS = ("争取", "会内", "不得", "未见", "一类表述")
+# 量化数据必须与出处同段出现。
+QUANTITY_RE = re.compile(
+    r"\d+(?:\.\d+)?(?:%|％|万平方米|平方米|万千瓦|兆瓦|千瓦|千瓦时|万度|度|吨|"
+    r"万立方米|亩|万块|块|栋|次每小时)"
+)
+SOURCE_MARKERS = (
+    "据",
+    "宣讲材料",
+    "新华网",
+    "中国网",
+    "新能源网",
+    "报道",
+    "纪要",
+    "会上",
+    "调研计划",
+    "计算",
+    "稿中未见",
+    "标准",
+    "台阶",
+    "要求",
+)
 
-FABRICATION_PATTERNS = {
-    "文号或标准编号": r"〔\d{4}〕|\d{4}〕\d+号|GB ?/ ?T ?\d|GB ?\d{4,}|DL ?/ ?T|T ?/ ?CEC",
-    "百分比": r"\d+(?:\.\d+)?[%％]",
-    "量值单位": (
-        r"\d+(?:\.\d+)?(?:万元|亿元|万千瓦|兆瓦|MW|kW|kWh|万度|平方米|㎡|"
-        r"吨|万吨|台|个月|个季度)"
-    ),
-    "未见指标": r"\bPUE\b|\bCUE\b|\bWUE\b",
-}
+# 文号样式一律不得出现。GB 55015-2021 是宣讲材料给出的标准号，
+# 仿宋_GB2312、楷体_GB2312 是公文体例的字体名，均属允许项。
+ALLOWED_STANDARD_NUMBERS = ("GB 55015-2021", "仿宋_GB2312", "楷体_GB2312")
+DOC_NUMBER_RE = re.compile(r"〔\d{4}〕|\d{4}〕\d+号|第?\d+号文|GB ?/ ?T ?\d|GB ?\d{4,}")
 
 HALFWIDTH_PUNCT = re.compile(r"[,;:!?()]")
 SENTENCE_SPLIT = re.compile(r"[。；！？\n]")
+# 术语与英文缩写中的半角字符属正常排版，校验时先行剔除。
+TECH_TOKENS = re.compile(
+    r"GB 55015-2021|SEER|STP|V2G|AI|Wp|PUE|G\d+|5\.5至5\.6|check_writing_constraints\.py"
+)
+
+
+def sentences(text: str):
+    for chunk in SENTENCE_SPLIT.split(text):
+        chunk = chunk.strip()
+        if chunk:
+            yield chunk
 
 
 def body_lines(text: str):
     """产出正文行，跳过 Markdown 结构行，并剥离行内代码与链接目标。"""
     for lineno, raw in enumerate(text.splitlines(), start=1):
         line = raw.strip()
-        if not line or line.startswith("#") or set(line) <= {"-"}:
-            continue
-        if line.startswith("|"):  # 表格行含大量 Markdown 分隔符
+        if not line or line.startswith(("#", "<!--", "|")) or set(line) <= {"-"}:
             continue
         stripped = re.sub(r"`[^`]*`", "", line)
         stripped = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", stripped)
-        stripped = stripped.replace("**", "")
-        yield lineno, stripped
+        yield lineno, stripped.replace("**", "")
 
 
-def sentences_with(text: str, needle: str):
-    for chunk in SENTENCE_SPLIT.split(text):
-        if needle in chunk:
-            yield chunk.strip()
+def paragraphs(text: str):
+    for lineno, line in body_lines(text):
+        yield lineno, line
 
 
 def main() -> int:
@@ -78,66 +114,114 @@ def main() -> int:
             print(f"FAIL  {item}")
         failures.extend(problems)
 
-    # 一、禁用术语
-    problems = []
-    for doc in docs:
-        text = doc.read_text(encoding="utf-8")
-        for term in BANNED_TERMS:
-            if term in text:
-                problems.append(f"{doc.name} 出现禁用术语「{term}」")
-    check("禁用术语", problems)
+    texts = {doc: doc.read_text(encoding="utf-8") for doc in docs}
 
-    # 二、术语白名单：先移除允许的复合词，再看是否残留「零碳＋汉字」的自造搭配。
+    # 一、“零碳区域”的使用语境。
+    # 出处要求只针对正文；审查说明是对该词本身的说明文字，不适用此项。
     problems = []
-    for doc in docs:
-        text = doc.read_text(encoding="utf-8")
+    for sentence in sentences(texts[REPORT]):
+        if ZERO_CARBON_AREA in sentence and not any(
+            m in sentence for m in AREA_SOURCE_MARKERS
+        ):
+            problems.append(f"{REPORT.name}「零碳区域」缺出处：{sentence}")
+    for doc, text in texts.items():
+        for sentence in sentences(text):
+            if (
+                ZERO_CARBON_AREA in sentence
+                and any(m in sentence for m in PROJECT_MARKERS)
+                and not any(n in sentence for n in NEGATION_MARKERS)
+            ):
+                problems.append(f"{doc.name}「零碳区域」被用于本项目：{sentence}")
+    check("「零碳区域」仅用于转述认证体系", problems)
+
+    # 二、“首个”类表述的限定语
+    problems = []
+    for doc, text in texts.items():
+        for sentence in sentences(text):
+            for claim in FIRST_CLAIMS:
+                if claim in sentence and not any(m in sentence for m in FIRST_MARKERS):
+                    problems.append(f"{doc.name}「{claim}」缺限定语：{sentence}")
+    check("「首个」类表述须带出处或争取方向", problems)
+
+    # 三、清华一站尚未开展
+    problems = []
+    for doc, text in texts.items():
+        for sentence in sentences(text):
+            if TSINGHUA not in sentence:
+                continue
+            for word in TSINGHUA_FORBIDDEN:
+                if word in sentence and not any(
+                    n in sentence for n in NEGATION_MARKERS
+                ):
+                    problems.append(f"{doc.name}清华被写成「{word}」：{sentence}")
+    check("清华大学一站不得写成已开展", problems)
+
+    # 四、既成事实用语限于否定语境
+    problems = []
+    for doc, text in texts.items():
+        for sentence in sentences(text):
+            for term in FAIT_ACCOMPLI:
+                if term in sentence and not any(
+                    n in sentence for n in NEGATION_MARKERS
+                ):
+                    problems.append(f"{doc.name}「{term}」非否定语境：{sentence}")
+    check("既成事实用语限于否定语境", problems)
+
+    # 五、量化数据必须同段标注出处
+    problems = []
+    for doc, text in texts.items():
+        for lineno, line in paragraphs(text):
+            if QUANTITY_RE.search(line) and not any(m in line for m in SOURCE_MARKERS):
+                problems.append(f"{doc.name} 第 {lineno} 行数据缺出处：{line[:70]}")
+    check("量化数据同段标注出处", problems)
+
+    # 六、文号样式
+    problems = []
+    for doc, text in texts.items():
         masked = text
-        for term in ALLOWED_ZEROCARBON_TERMS:
-            masked = masked.replace(term, "○")
-        # 文件名与链接中的「零碳机房」已被掩去，此处只剩自造搭配。
-        for match in re.finditer(r"零碳[\u4e00-\u9fff]+", masked):
-            problems.append(f"{doc.name} 出现白名单外搭配「{match.group()}」")
-    check("术语白名单（零碳／零碳机房／零碳工厂）", problems)
+        for allowed in ALLOWED_STANDARD_NUMBERS:
+            masked = masked.replace(allowed, "○")
+        for match in DOC_NUMBER_RE.finditer(masked):
+            problems.append(f"{doc.name} 疑似文号：「{match.group()}」")
+    check("未出现编造文号", problems)
 
-    # 三、既成事实表述必须处于否定语境
+    # 七、正文全角标点
     problems = []
-    for doc in docs:
-        text = doc.read_text(encoding="utf-8")
-        for term in FAIT_ACCOMPLI:
-            for sentence in sentences_with(text, term):
-                if not any(mark in sentence for mark in NEGATION_MARKERS):
-                    problems.append(
-                        f"{doc.name}「{term}」出现在非否定语境：{sentence}"
-                    )
-    check("既成事实表述限于否定语境", problems)
-
-    # 四、关键口径的限定语
-    problems = []
-    for doc in docs:
-        text = doc.read_text(encoding="utf-8")
-        for sentence in sentences_with(text, SCOPED_CLAIM):
-            if not any(mark in sentence for mark in SCOPE_MARKERS):
-                problems.append(
-                    f"{doc.name}「{SCOPED_CLAIM}」缺少限定语：{sentence}"
-                )
-    check("「全国首个」须带争取方向的限定语", problems)
-
-    # 五、编造要素
-    problems = []
-    for doc in docs:
-        text = doc.read_text(encoding="utf-8")
-        for name, pattern in FABRICATION_PATTERNS.items():
-            for match in re.finditer(pattern, text):
-                problems.append(f"{doc.name} 疑似{name}：「{match.group()}」")
-    check("编造要素（文号、百分比、量值、未见指标）", problems)
-
-    # 六、半角标点
-    problems = []
-    for doc in docs:
-        for lineno, line in body_lines(doc.read_text(encoding="utf-8")):
-            if HALFWIDTH_PUNCT.search(line):
-                problems.append(f"{doc.name} 第 {lineno} 行含半角标点：{line}")
+    for doc, text in texts.items():
+        for lineno, line in body_lines(text):
+            if HALFWIDTH_PUNCT.search(TECH_TOKENS.sub("", line)):
+                problems.append(f"{doc.name} 第 {lineno} 行含半角标点：{line[:70]}")
     check("正文全角标点", problems)
+
+    # 八、公文 Word 与 Markdown 正文同步
+    print("\n=== 公文 Word 与 Markdown 同步 ===")
+    if not DOCX.exists():
+        print("FAIL  未找到公文 Word，请先执行 build_docx.py")
+        failures.append("缺少公文 Word")
+    else:
+        try:
+            from docx import Document
+        except ImportError:
+            print("SKIP  未安装 python-docx，跳过同步校验")
+        else:
+            doc_text = "".join(
+                p.text for p in Document(DOCX).paragraphs
+            ) + "".join(
+                c.text for t in Document(DOCX).tables for r in t.rows for c in r.cells
+            )
+            md_text = REPORT.read_text(encoding="utf-8")
+            missing = [
+                line
+                for _, line in body_lines(md_text)
+                if len(line) > 30 and line[:28] not in doc_text
+            ]
+            if missing:
+                print(f"FAIL  Word 缺少 {len(missing)} 段正文，需重新生成")
+                for line in missing[:3]:
+                    print(f"      {line[:60]}")
+                failures.append("Word 与 Markdown 不同步")
+            else:
+                print("PASS")
 
     print("\n=== 结果 ===")
     if failures:
