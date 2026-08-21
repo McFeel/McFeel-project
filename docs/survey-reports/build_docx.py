@@ -23,8 +23,9 @@ from docx.oxml.ns import qn
 from docx.shared import Mm, Pt
 
 DOC_DIR = Path(__file__).resolve().parent
-SOURCE = DOC_DIR / "2026-08-南网总部基地绿色近零碳智慧园区项目调研报告.md"
-TARGET = DOC_DIR / "2026-08-南网总部基地绿色近零碳智慧园区项目调研报告.docx"
+DOC_NAME = "调研报告：南网总部基地北京调研"
+SOURCE = DOC_DIR / f"{DOC_NAME}.md"
+TARGET = DOC_DIR / f"{DOC_NAME}.docx"
 
 FANGSONG = "仿宋_GB2312"
 HEITI = "黑体"
@@ -32,6 +33,7 @@ KAITI = "楷体_GB2312"
 
 SIZE_TITLE = Pt(18)  # 小二号，取此字号可使本报告标题在一行内排完
 SIZE_BODY = Pt(16)  # 三号
+SIZE_HEADER = Pt(10.5)  # 五号，用于页眉
 SIZE_TABLE = Pt(10.5)  # 五号
 # 四列宽度合计156毫米，即A4去掉左右页边距后的可用宽度
 TABLE_COL_WIDTHS = (Mm(22), Mm(40), Mm(47), Mm(47))
@@ -133,6 +135,23 @@ def restart_page_numbering(section) -> None:
         sect_pr.append(pg_num)
 
 
+def add_document_header(section, text: str) -> None:
+    """页眉居中，下加一条横线，封面那一节不设页眉。"""
+    section.header.is_linked_to_previous = False
+    para = section.header.paragraphs[0]
+    para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    set_font(para.add_run(text), FANGSONG, SIZE_HEADER)
+
+    borders = OxmlElement("w:pBdr")
+    bottom = OxmlElement("w:bottom")
+    bottom.set(qn("w:val"), "single")
+    bottom.set(qn("w:sz"), "6")
+    bottom.set(qn("w:space"), "1")
+    bottom.set(qn("w:color"), "000000")
+    borders.append(bottom)
+    para._p.get_or_add_pPr().append(borders)
+
+
 def add_page_number_footer(section) -> None:
     """页码居中，采用公文常见的 — 1 — 形式。
 
@@ -199,6 +218,7 @@ def build_cover(doc, title: str, subtitle: str, meta: list[tuple[str, str]]) -> 
     body_section = doc.add_section(WD_SECTION.NEW_PAGE)
     configure_page(body_section)
     restart_page_numbering(body_section)
+    add_document_header(body_section, DOC_NAME)
     add_page_number_footer(body_section)
 
 
@@ -257,6 +277,8 @@ def main() -> int:
     doc = Document()
     configure_page(doc.sections[0])
     set_default_style(doc)
+    doc.core_properties.title = DOC_NAME
+    doc.core_properties.author = "王天智"
 
     cover_title = ""
     cover_subtitle = ""
