@@ -1,0 +1,123 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(124, 92, 255, 0.35), transparent 60%),
+    radial-gradient(1000px 500px at 100% 0%, rgba(255, 92, 157, 0.28), transparent 55%),
+    #0d0d14;
+}
+
+.hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 24px 32px;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #d9d9ec;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.08;
+  margin: 20px 0 12px;
+  background: linear-gradient(90deg, #fff, #c9b8ff 60%, #ff9ec4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: #b7b7c9;
+  font-size: 1.05rem;
+  margin: 0 auto 28px;
+  max-width: 560px;
+}
+
+.cta {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7c5cff, #ff5c9d);
+  box-shadow: 0 10px 30px rgba(124, 92, 255, 0.4);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(255, 92, 157, 0.45);
+}
+
+.cta:active {
+  transform: translateY(0);
+}
+
+.palette {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  max-width: 960px;
+  width: 100%;
+  margin: 8px auto 0;
+  padding: 24px;
+}
+
+.swatch {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  min-height: 200px;
+  border-radius: 18px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  color: #0d0d14;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.14s ease;
+}
+
+.swatch:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.swatch-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(4px);
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.swatch-meta strong {
+  font-size: 0.95rem;
+}
+
+.swatch-meta code {
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  color: #333;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px;
+  color: #8a8aa0;
+  font-size: 0.9rem;
+}
