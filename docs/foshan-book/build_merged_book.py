@@ -61,7 +61,7 @@ ANNEX_START_RES = [
     re.compile(r"新产品发布系列"),
 ]
 BLOCK_END_RE = re.compile(r"^(附录\s*[A-DＡ-Ｄ]|第[一二三四五六七八九十百零]+[篇部])")
-CAPTION_LINE_RE = re.compile(r"^[图表][　 \t]*[0-9０-９一二三四五六七八九十]+")
+CAPTION_LINE_RE = re.compile(r"^[图表][　 \t]*[（(]?[0-9０-９一二三四五六七八九十]+")
 TOC_STYLE_RE = re.compile(r"^(TOC|Contents|目录)\s*\d*$", re.IGNORECASE)
 
 
