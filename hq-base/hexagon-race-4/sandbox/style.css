@@ -104,15 +104,29 @@ html, body {
   letter-spacing: 0.02em;
 }
 
-.mantra {
+.mantra-wrap {
   flex: 1;
+  min-width: 0;
   text-align: center;
-  font-size: 14.5px;
-  color: var(--gold);
   border-left: 1px solid var(--line);
   border-right: 1px solid var(--line);
-  padding: 6px 18px;
+  padding: 4px 18px;
+}
+
+.mantra {
+  font-size: 14.5px;
+  color: var(--gold);
   letter-spacing: 0.04em;
+}
+
+.hypothesis {
+  margin-top: 3px;
+  font-size: 10.5px;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #pagenav { display: flex; gap: 10px; }

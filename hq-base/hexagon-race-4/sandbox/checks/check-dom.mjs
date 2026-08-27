@@ -71,6 +71,20 @@ ok(
 );
 ok(d.querySelector('#mantra').textContent.includes('国家建六张网，南网做协同'), '顶栏口头禅已就位：' + d.querySelector('#mantra').textContent);
 ok(d.querySelector('#hexnote').textContent.includes('不与六边一对一拆分对应'), '六边与六张网不一对一的说明已就位');
+
+// 「人人参与、人人受益」只作顶栏工作假设小字：不进面板、不进弹层、不改写六路原文
+const hypo = d.querySelector('#hypothesis').textContent;
+ok(hypo.includes('工作假设') && hypo.includes('人人参与、人人受益'), '顶栏工作假设小字：' + hypo);
+ok(d.querySelector('#topbar').contains(d.querySelector('#hypothesis')), '工作假设只出现在顶栏内');
+ok(
+  panels.every((p) => !/人人参与|人人受益|碳普惠|算力普惠|园区资源普惠/.test(p.textContent)),
+  '六边面板短释义未被工作假设改写'
+);
+ok(
+  panels[5].querySelector('.edge-tag').textContent === '共享半径 · 可复制服务',
+  '普惠面板短释义保持原样：' + panels[5].querySelector('.edge-tag').textContent
+);
+ok(d.querySelectorAll('.edge-panel-head[role="button"], .edge-locked').length === 0, '未给任何一边加「锁定释义」入口');
 ok(
   d.querySelectorAll('sup.pending').length > 0 && d.querySelector('sup.pending').getAttribute('title').length > 10,
   '「待核」角标带说明性 tooltip'
@@ -88,6 +102,11 @@ ok(
 const rows = [...d.querySelectorAll('#matrix-table tbody tr')];
 ok(rows.length === 7, `数据行数 = ${rows.length}（核 + 六边）`);
 ok(rows[0].querySelector('th').textContent.startsWith('核'), '第一行为「核」');
+ok(d.querySelectorAll('#matrix-table tr.row-note').length === 0, '对照表未插入任何改写口径的注解行');
+ok(
+  !/人人参与|人人受益|重核/.test(d.querySelector('#matrix-table').textContent),
+  '对照表六路格子未被工作假设改写'
+);
 let cellsOK = true, thinCells = 0, cellCount = 0;
 rows.forEach((tr) => {
   const tds = [...tr.querySelectorAll('td')];
@@ -185,6 +204,11 @@ allText += d.querySelector('#modal-body').textContent;
 d.querySelector('#modal-close').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
 
 ok(!/三条不做/.test(allText), '全页（含全部弹层）无「三条不做」');
+{
+  // 工作假设只在顶栏出现一次，弹层里的六路原文不得被它污染
+  const hits = (allText.match(/人人参与、人人受益/g) || []).length;
+  ok(hits === 1, `「人人参与、人人受益」全页只出现 1 次（顶栏工作假设），实际 ${hits} 次`);
+}
 ok(!/不做清单/.test(allText), '全页无「不做清单」');
 ok(!/2030/.test(allText), '未出现「2030 覆盖重点园区」一类未经核实的时间表');
 ok(!/印发/.test(allText.replace(/以正式印发文件为准|不作公司印发件口径引用/g, '')), '未把待核口径写成公司印发件');

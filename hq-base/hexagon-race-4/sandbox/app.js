@@ -28,6 +28,7 @@
   function buildBoard() {
     var board = $('#board');
     $('#mantra').textContent = CORE.mantra;
+    $('#hypothesis').textContent = CORE.hypothesis;
     $('#hexnote').textContent = CORE.hexNote;
 
     var pendingTip = CORE.layers[1].pending;
