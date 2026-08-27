@@ -1,6 +1,6 @@
 /* ============================================================
    南网总部基地既有园 · 六边形沙盘
-   固定 1600 × 900（16:9）舞台，按窗口等比缩放，适合投屏。
+   横屏为固定 1600 × 900 投影舞台；窄屏／竖屏切换为自然滚动。
    ============================================================ */
 
 * { box-sizing: border-box; }
@@ -869,4 +869,424 @@ sup.pending {
   font-size: 12px;
   line-height: 1.7;
   color: var(--ink-2);
+}
+
+/* ------------------------ 手机／竖屏自然流布局 ------------------------ */
+
+@media (max-width: 800px), (orientation: portrait) {
+  html,
+  body {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body { background: var(--bg-0); }
+  body.modal-open { overflow: hidden; }
+
+  #viewport {
+    position: static;
+    display: block;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  #stage {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    transform: none !important;
+    overflow: visible;
+    background:
+      radial-gradient(700px 520px at 50% 13%, #17304f 0%, var(--bg-1) 48%, var(--bg-0) 100%);
+    box-shadow: none;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  #stage::before {
+    position: fixed;
+    background-size: 44px 44px;
+  }
+
+  #scalehint { display: none; }
+
+  #topbar {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding:
+      calc(16px + env(safe-area-inset-top))
+      calc(16px + env(safe-area-inset-right))
+      14px
+      calc(16px + env(safe-area-inset-left));
+    background: linear-gradient(180deg, rgba(9, 20, 38, 0.98), rgba(9, 20, 38, 0.82));
+  }
+
+  .brand-title {
+    font-size: clamp(18px, 5vw, 23px);
+    line-height: 1.35;
+  }
+
+  .brand-sub {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .mantra-wrap {
+    padding: 10px 0;
+    text-align: left;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mantra {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .hypothesis {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.5;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  #pagenav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .navbtn {
+    min-height: 48px;
+    justify-content: center;
+    padding: 9px 10px;
+    font-size: 13px;
+    touch-action: manipulation;
+  }
+
+  .navnum {
+    width: 22px;
+    height: 22px;
+  }
+
+  .page {
+    position: static;
+    min-height: 0;
+  }
+
+  #page-board.is-active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #board {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding:
+      22px
+      calc(14px + env(safe-area-inset-right))
+      8px
+      calc(14px + env(safe-area-inset-left));
+  }
+
+  #core {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: min(280px, calc(100vw - 48px));
+    height: min(280px, calc(100vw - 48px));
+    margin: 0 auto 12px;
+    transform: none;
+    flex: 0 0 auto;
+    touch-action: manipulation;
+  }
+
+  .core-ring-1 { padding-top: 13px; }
+  .core-ring-2 { inset: 42px; padding-top: 12px; }
+  .core-ring-3 { inset: 37px; padding-top: 19px; }
+  .core-ring-label { font-size: 12px; }
+  .core-ring-note { font-size: 8.8px; }
+  .core-ring-3 .core-ring-label { font-size: 11.5px; }
+  .core-ring-3 .core-ring-note { font-size: 10px; }
+  .core-hint { bottom: 13px; font-size: 9px; }
+
+  .spoke { display: none; }
+
+  .edge-panel {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    transform: none;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .edge-panel-title {
+    align-items: center;
+    gap: 7px;
+    white-space: normal;
+  }
+
+  .edge-idx {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    font-size: 12px;
+  }
+
+  .edge-name { font-size: 19px; }
+  .edge-en { font-size: 10px; }
+  .edge-tag {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.45;
+    white-space: normal;
+  }
+
+  .chips {
+    margin-top: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .chip {
+    min-height: 56px;
+    height: auto;
+    padding: 8px 4px;
+    touch-action: manipulation;
+  }
+
+  .corner-card {
+    position: static;
+    width: auto !important;
+    margin:
+      8px
+      calc(14px + env(safe-area-inset-right))
+      0
+      calc(14px + env(safe-area-inset-left));
+    padding: 14px;
+  }
+
+  #boardnote { margin-bottom: 20px; }
+  .corner-title { font-size: 13px; }
+  .corner-note { font-size: 12px; line-height: 1.7; }
+  #legend-chips { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .legend-chip { min-height: 44px; display: grid; place-items: center; }
+
+  #page-matrix.is-active { display: block; }
+
+  .matrix-head {
+    display: block;
+    padding:
+      20px
+      calc(14px + env(safe-area-inset-right))
+      12px
+      calc(14px + env(safe-area-inset-left));
+  }
+
+  .matrix-head h2 {
+    font-size: 19px;
+    line-height: 1.45;
+  }
+
+  .matrix-tip {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  #matrix-wrap {
+    position: relative;
+    inset: auto;
+    width: calc(100% - 28px - env(safe-area-inset-left) - env(safe-area-inset-right));
+    margin:
+      0
+      calc(14px + env(safe-area-inset-right))
+      calc(20px + env(safe-area-inset-bottom))
+      calc(14px + env(safe-area-inset-left));
+    overflow-x: auto;
+    overflow-y: visible;
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y pinch-zoom;
+  }
+
+  #matrix-table {
+    width: 1260px;
+    min-width: 1260px;
+    table-layout: fixed;
+  }
+
+  #matrix-table thead th { height: 48px; }
+  #matrix-table tbody th {
+    width: 112px;
+    padding: 10px;
+  }
+
+  #matrix-table td {
+    min-width: 190px;
+    padding: 10px;
+    touch-action: manipulation;
+  }
+
+  .mx-modelhead { height: 48px; }
+  .mx-line { font-size: 12px; line-height: 1.55; }
+  .mx-key { height: 20px; line-height: 20px; }
+  .mx-val {
+    display: block;
+    overflow: visible;
+  }
+
+  #overlay {
+    position: fixed;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+    background: #071021;
+  }
+
+  #modal {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  #modal-head {
+    z-index: 4;
+    padding:
+      calc(12px + env(safe-area-inset-top))
+      calc(66px + env(safe-area-inset-right))
+      12px
+      calc(16px + env(safe-area-inset-left));
+  }
+
+  .modal-eyebrow {
+    flex-wrap: wrap;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  #modal-title {
+    margin-top: 7px;
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  #modal-close {
+    top: calc(10px + env(safe-area-inset-top));
+    right: calc(10px + env(safe-area-inset-right));
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+    touch-action: manipulation;
+  }
+
+  #modal-body {
+    display: block;
+    overflow: hidden;
+  }
+
+  .m-body-row {
+    display: block;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .m-left {
+    width: 100%;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .m-left.is-scroll {
+    overflow: visible;
+    padding: 16px;
+  }
+
+  .m-right {
+    width: 100%;
+    overflow: visible;
+    padding: 18px 16px 28px;
+  }
+
+  .m-secttl {
+    padding: 12px 16px;
+    line-height: 1.5;
+    flex-wrap: wrap;
+  }
+
+  .mermaid-box {
+    width: 100%;
+    min-height: 360px;
+    max-height: 62vh;
+    justify-content: flex-start;
+    overflow: auto;
+    padding: 14px;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y pinch-zoom;
+  }
+
+  .mermaid-box svg {
+    min-width: 700px;
+    max-width: none;
+    height: auto;
+  }
+
+  .mermaid-src {
+    min-width: 680px;
+    white-space: pre;
+  }
+
+  .mermaid-note {
+    padding: 10px 16px 14px;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .mermaid-note button {
+    min-width: 44px;
+    min-height: 44px;
+    margin: 8px 0 0;
+    padding: 8px 12px;
+    font-size: 12px;
+    touch-action: manipulation;
+  }
+
+  .blk-text,
+  .take p {
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .srcpack summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    touch-action: manipulation;
+  }
 }

@@ -17,10 +17,24 @@
 
   /* ------------------------------ 舞台缩放 ------------------------------ */
 
+  var flowLayoutQuery = window.matchMedia
+    ? window.matchMedia('(max-width: 800px), (orientation: portrait)')
+    : null;
+
+  function isFlowLayout() {
+    return !!(flowLayoutQuery && flowLayoutQuery.matches);
+  }
+
   function fitStage() {
     var stage = $('#stage');
+    if (isFlowLayout()) {
+      stage.style.transform = 'none';
+      stage.setAttribute('data-layout', 'flow');
+      return;
+    }
     var s = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
     stage.style.transform = 'scale(' + s + ')';
+    stage.setAttribute('data-layout', 'stage');
   }
 
   /* ------------------------------ 首页沙盘 ------------------------------ */
@@ -226,12 +240,14 @@
     body.appendChild(bodyNode);
     lastFocus = document.activeElement;
     overlay.hidden = false;
+    document.body.classList.add('modal-open');
     $('#modal-close').focus();
   }
 
   function closeModal() {
     overlay.hidden = true;
     $('#modal-body').innerHTML = '';
+    document.body.classList.remove('modal-open');
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
@@ -387,6 +403,7 @@
     Array.prototype.forEach.call(document.querySelectorAll('.navbtn'), function (b) {
       b.classList.toggle('is-active', b.dataset.page === name);
     });
+    if (isFlowLayout()) window.scrollTo(0, 0);
   }
 
   function bindGlobal() {
