@@ -1,0 +1,15 @@
+{
+  "name": "hexagon-race-4-sandbox-checks",
+  "private": true,
+  "version": "1.0.0",
+  "description": "沙盘页面的无浏览器校验脚本（开发期工具；沙盘本身不依赖任何 npm 包）",
+  "type": "module",
+  "scripts": {
+    "check": "node check-dom.mjs && node check-source.mjs && node check-mermaid.mjs"
+  },
+  "devDependencies": {
+    "canvas": "^3.0.0",
+    "jsdom": "^29.1.1",
+    "mermaid": "10.9.1"
+  }
+}
