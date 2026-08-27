@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>既有园升级 · 六家独立顶层设计（沙盘）</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="viewport">
+  <div id="stage">
+
+    <!-- ================= 顶栏 ================= -->
+    <header id="topbar">
+      <div class="brand">
+        <div class="brand-title" id="brand-title"></div>
+        <div class="brand-sub" id="brand-sub"></div>
+      </div>
+      <div class="topnote" id="topnote"></div>
+      <nav id="pagenav">
+        <button class="navbtn is-active" data-page="board"><span class="navnum">1</span>六家独立顶层设计</button>
+        <button class="navbtn" data-page="matrix"><span class="navnum">2</span>四行对照表</button>
+      </nav>
+    </header>
+
+    <!-- ================= 第一页：六家 ================= -->
+    <section id="page-board" class="page is-active">
+      <div id="board">
+        <div id="hub">
+          <div class="hub-title" id="hub-title"></div>
+          <div class="hub-sub" id="hub-sub"></div>
+          <div class="hub-hint" id="hub-hint"></div>
+        </div>
+        <!-- 六家卡片由 app.js 注入 -->
+      </div>
+
+      <div id="legend" class="corner-card">
+        <div class="corner-title">六家机构字标</div>
+        <div id="legend-chips"></div>
+        <div class="corner-note">点任一机构：原文脑图 + 核全文 + 各边 + 普惠专节</div>
+      </div>
+
+      <div id="boardnote" class="corner-card">
+        <div class="corner-title">读法</div>
+        <div class="corner-note">六家各写各的核、各切各的边、各主张各的普惠，本页不作统一收口；卡片上只露该家自己的核一句话与边的切法。</div>
+        <div class="corner-note">上一轮统一「一核六边」口径的六路一揽子存于 <code>archive/index.html</code>。</div>
+      </div>
+    </section>
+
+    <!-- ================= 第二页：对照表 ================= -->
+    <section id="page-matrix" class="page">
+      <div class="matrix-head">
+        <h2>核 / 边怎么切 / 普惠主张 / 否掉了什么 × 六家</h2>
+        <div class="matrix-tip">格子过长时按行数收起，点击任一格子展开该家原文；表格可上下滚动。</div>
+      </div>
+      <div id="matrix-wrap"><table id="matrix-table"></table></div>
+    </section>
+
+    <!-- ================= 弹层 ================= -->
+    <div id="overlay" hidden>
+      <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div id="modal-head">
+          <div class="modal-eyebrow" id="modal-eyebrow"></div>
+          <h3 id="modal-title"></h3>
+          <button id="modal-close" aria-label="关闭">×</button>
+        </div>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="scalehint">建议全屏（F11）投屏观看 · 16:9</div>
+
+<script>
+  // mermaid 从 CDN 加载；主源失败时自动切备用源。离线时页面仍可用，脑图退化为原文源码。
+  (function () {
+    var sources = [
+      'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js',
+      'https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js'
+    ];
+    var i = 0;
+    function load() {
+      if (i >= sources.length) { window.__mermaidFailed = true; return; }
+      var s = document.createElement('script');
+      s.src = sources[i++];
+      s.onerror = load;
+      document.head.appendChild(s);
+    }
+    load();
+  })();
+</script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
