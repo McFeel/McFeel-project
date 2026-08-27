@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>南网总部基地既有园区 · 六边形战士脑图（Opus 4.8 路）</title>
+<style>
+  :root{
+    --bg1:#0b1220; --bg2:#111a2e; --ink:#0f172a; --muted:#64748b;
+    --card:#ffffff; --line:#e2e8f0;
+    --core1:#0ea5e9; --core2:#6366f1;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei",
+      "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+    color:#e5edff;
+    background: radial-gradient(1200px 700px at 15% -10%, #1b2a4a 0%, transparent 55%),
+                radial-gradient(1100px 700px at 100% 0%, #26204a 0%, transparent 50%),
+                linear-gradient(160deg, var(--bg1), var(--bg2));
+    min-height:100vh;
+  }
+  header.top{
+    padding:26px 28px 10px; max-width:1400px; margin:0 auto;
+  }
+  .kicker{font-size:13px; letter-spacing:.18em; color:#8fa6d8; text-transform:uppercase;}
+  h1{font-size:26px; margin:6px 0 4px; font-weight:800; letter-spacing:.02em;}
+  h1 .r{color:#7dd3fc;}
+  .core-note{
+    margin-top:10px; padding:12px 16px; border-radius:12px;
+    background:linear-gradient(90deg, rgba(14,165,233,.16), rgba(99,102,241,.12));
+    border:1px solid rgba(125,211,252,.28); color:#dbe7ff; font-size:14.5px; line-height:1.7;
+    max-width:1100px;
+  }
+  .core-note b{color:#a7f3d0;}
+  .controls{
+    display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+    padding:12px 28px; max-width:1400px; margin:0 auto;
+  }
+  .controls .grp{display:flex; gap:8px; align-items:center; font-size:13px; color:#a9bbe0;}
+  .btn{
+    cursor:pointer; border:1px solid rgba(148,163,184,.35); background:rgba(255,255,255,.06);
+    color:#e5edff; padding:7px 12px; border-radius:9px; font-size:13px; transition:.15s;
+  }
+  .btn:hover{background:rgba(255,255,255,.14); border-color:rgba(148,163,184,.6);}
+  input[type=range]{accent-color:#7dd3fc;}
+  .legend{display:flex; gap:10px; flex-wrap:wrap; margin-left:auto;}
+  .legend .lg{display:flex; align-items:center; gap:6px; font-size:12.5px; color:#c7d3ee;}
+  .dot{width:11px; height:11px; border-radius:50%; display:inline-block;}
+
+  .viewport{overflow:auto; padding:10px 28px 40px;}
+  .canvas{position:relative; transform-origin:top left; transition:transform .12s ease; width:max-content; min-width:100%;}
+  svg.links{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0;}
+  .flow{position:relative; z-index:1; display:flex; align-items:center; gap:70px; padding:20px 0;}
+
+  .core{
+    flex:0 0 auto; width:210px; padding:18px 16px; border-radius:18px; text-align:center;
+    background:linear-gradient(150deg, var(--core1), var(--core2));
+    box-shadow:0 12px 30px rgba(56,102,220,.4); color:#fff;
+  }
+  .core .lab{font-size:11px; letter-spacing:.16em; opacity:.85;}
+  .core .t{font-size:19px; font-weight:800; margin-top:6px; line-height:1.35;}
+  .core .s{font-size:13px; margin-top:6px; opacity:.95;}
+
+  .branches{display:flex; flex-direction:column; gap:20px;}
+  .branch{display:flex; align-items:center; gap:60px;}
+  .bnode{
+    flex:0 0 auto; width:150px; cursor:pointer; user-select:none;
+    padding:14px 14px; border-radius:14px; color:#fff; position:relative;
+    box-shadow:0 8px 22px rgba(2,8,23,.45); transition:transform .12s;
+  }
+  .bnode:hover{transform:translateY(-2px);}
+  .bnode .nm{font-size:18px; font-weight:800; letter-spacing:.03em;}
+  .bnode .tg{
+    display:inline-block; margin-top:6px; font-size:11px; padding:2px 8px; border-radius:999px;
+    background:rgba(255,255,255,.22); color:#fff;
+  }
+  .bnode .chev{position:absolute; top:12px; right:12px; font-size:13px; opacity:.85; transition:.2s;}
+  .branch.collapsed .chev{transform:rotate(-90deg);}
+
+  .leaves{display:flex; flex-direction:column; gap:12px;}
+  .branch.collapsed .leaves{display:none;}
+  .leaf{
+    width:430px; background:var(--card); color:var(--ink); border-radius:12px;
+    padding:11px 13px 11px 15px; position:relative; overflow:hidden;
+    box-shadow:0 6px 16px rgba(2,8,23,.28);
+  }
+  .leaf::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--lc);}
+  .leaf .pill{
+    display:inline-block; font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px;
+    color:#fff; background:var(--lc); margin-bottom:6px; letter-spacing:.04em;
+  }
+  .leaf .tx{font-size:13px; line-height:1.62; color:#1f2937;}
+  .leaf .tx b{color:#0f766e;}
+
+  .nodo{max-width:1400px; margin:6px auto 50px; padding:0 28px;}
+  .nodo h2{font-size:18px; color:#fecaca; letter-spacing:.04em;}
+  .nodo .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; margin-top:12px;}
+  .nodo .c{
+    background:rgba(239,68,68,.10); border:1px solid rgba(248,113,113,.35);
+    border-radius:12px; padding:14px 16px;
+  }
+  .nodo .c .n{font-size:26px; font-weight:800; color:#f87171; opacity:.55; line-height:1;}
+  .nodo .c .txt{font-size:13.5px; line-height:1.65; margin-top:6px; color:#ffe4e6;}
+
+  footer{max-width:1400px; margin:0 auto 40px; padding:0 28px; color:#7f92bd; font-size:12px; line-height:1.7;}
+  .hint{font-size:12.5px; color:#9fb0d8;}
+
+  @media print{
+    body{background:#fff; color:#000;}
+    .controls,.legend{display:none;}
+    .canvas{transform:none !important;}
+    .leaf,.core,.bnode{box-shadow:none;}
+  }
+</style>
+</head>
+<body>
+  <header class="top">
+    <div class="kicker">第四轮赛马 · Opus 4.8 路</div>
+    <h1>南网总部基地既有园区 · 六边形战士<span class="r"> 脑图</span></h1>
+    <div class="core-note">
+      核（钱朝阳课题原话）：<b>加快积累战略资产，驱动"第二增长曲线"</b>。
+      总部基地是南网能源"能碳一体化"第二曲线的<b>明牌</b>——内部验证 → 行业复制，不是曲线本身。
+      每一边的验收口径不是"这栋楼多好看"，而是"跑通后能否变成可卖给别的连续办公既有园的战略资产"。
+      买设备/平台/认证/服务，<b>不买主笔</b>。
+    </div>
+  </header>
+
+  <div class="controls">
+    <button class="btn" id="toggleAll">全部折叠</button>
+    <div class="grp">缩放
+      <input type="range" id="zoom" min="0.5" max="1.15" step="0.05" value="0.9" />
+      <span id="zoomVal">90%</span>
+    </div>
+    <span class="hint">提示：点击任意分支节点可折叠 / 展开其四项。</span>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <div class="viewport">
+    <div class="canvas" id="canvas">
+      <svg class="links" id="links" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="flow">
+        <div class="core" id="core">
+          <div class="lab">核 · CORE</div>
+          <div class="t">加快积累<br/>战略资产</div>
+          <div class="s">驱动"第二增长曲线"</div>
+        </div>
+        <div class="branches" id="branches"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="nodo">
+    <h2>三条不做</h2>
+    <div class="grid" id="nodo"></div>
+  </section>
+
+  <footer>
+    来源：The Edge 阿姆斯特丹（BREEAM / Philips 案例）· Apple Park（Apple Newsroom / 维基百科）· Google Bay View（Google Blog）·
+    华为松山湖 FusionSolar 与智慧园区 1+3+N（华为数字能源）· 腾讯滨海大厦 / 企鹅岛（WSP / 腾讯云 / Arcadis）·
+    中移信息港（新华网，引自内部《北京调研报告》）· 集成商 Schneider / Siemens / JCI / Honeywell（各官网 / Memoori）· WELL（IWBI）· EaaS/ESCO（Facilities Dive）。
+    园区约束（约 5000 人持续办公、设备 2016 年投运、广州供冷重、屋顶有限且立面风貌不可大改、冰蓄冷经济性随电价改革生变）引自内部《北京调研报告》口述，标注待核。
+    未编造投资额与未签约合作，对外不使用"全国首个零碳机房"。
+  </footer>
+
+<script>
+const SIDES = [
+  {name:"零碳", color:"#0f766e", tag:"结果侧", leaves:{
+    "是什么":"碳账＋绿电＋抵消＋源网荷储，达标口径；≠绿色、≠单纯省电。",
+    "为什么":"广州供冷重、屋顶有限，达标主力在需求侧节能＋绿电交易——南网主场，可复制。",
+    "怎么做":"立园区碳账与核算边界；光伏 / 储能 / 蓄冷做柔性资源接实时电价；分低碳 / 近零碳 / 碳中和三层给决策。",
+    "一揽子":"华为 FusionSolar（松山湖样板 17.5MW）· 施耐德 EcoStruxure Microgrid｜买 光伏EPC / 储能 / 能碳平台 / 绿电服务｜资产＝可复用碳账本与调度模型。"
+  }},
+  {name:"绿色", color:"#16a34a", tag:"生态侧 · ≠高效", leaves:{
+    "是什么":"生态环境质量——水 / 绿化 / 材料 / 微气候 / 自然采光通风；与省不省电是两件事。",
+    "为什么":"不动结构、不停机即可改，最易复制，直接影响体感与对外形象。",
+    "怎么做":"中水雨水回用闭环、海绵透水、乔木与垂直绿化、优化采光通风；风貌处以庭院植被替代硬改。",
+    "一揽子":"Apple Park（80%绿地 / 9000+耐旱乔木 / 约九个月自然通风）· 腾讯滨海海绵空中花园 · 松山湖生态绿地｜买 雨水中水系统 / 透水铺装 / 绿化遮阳｜资产＝微气候与水循环改造模块。"
+  }},
+  {name:"高效", color:"#2563eb", tag:"手段侧", leaves:{
+    "是什么":"用能与运营效率——冷站 / 群控 / 照明 / 运维；≠零碳结果、≠绿色生态。",
+    "为什么":"广州供冷重、设备满十年、5000 人持续办公——冷站是唯一有量级支撑的入手点，可复制性最高。",
+    "怎么做":"冷站与水系统深度诊断取基线 → AI群控 / 变频 / 末端联动；PoE照明\u201C人来灯亮\u201D；蓄冷对接实时电价。",
+    "一揽子":"The Edge（省电约70% / 含水层蓄能＋热泵 / PoE照明省约50%）· Siemens Building X（月省约6.4%）· 中移信息港余热供办公｜买 冷站AI群控 / 高效机组 / PoE照明 / 合同能源管理｜资产＝冷站诊断＋AI群控可复制包。"
+  }},
+  {name:"智慧", color:"#7c3aed", tag:"数据资产", leaves:{
+    "是什么":"数字底座——物联感知 / 数字孪生 / 一网统管，数据可视可管可控。",
+    "为什么":"数据即战略资产；底座一次建成即可复制，是能碳一体化产品化的地基。",
+    "怎么做":"\u0022一个平台、两类功能\u0022——对内办公联动、对外电网互动与碳核算；本地化部署与数据主权先定。",
+    "一揽子":"华为 1+3+N＋CIM＋好望 · The Edge 数字天花板＋Mapiq App · Honeywell Forge / Siemens Building X / 中移 M-PARK｜买 物联底座 / 数字孪生 / 一网统管 / 工单｜资产＝数字底座与数据资产。"
+  }},
+  {name:"人文·健康", color:"#ea580c", tag:"以人为本", leaves:{
+    "是什么":"对人友好——空气 / 水 / 光 / 声达健康标准＋文化 / 社交 / 健身 / 体验空间。",
+    "为什么":"5000 人长期办公，健康关乎效率与人才；WELL 对既有办公有专门达标路径，复制性强。",
+    "怎么做":"以 WELL v2 七概念为清单，做新风净化 / 水质 / 健康照明 / 噪声治理，配健身休憩与可调工位。",
+    "一揽子":"Apple Park 健身中心与步道 · 腾讯滨海三大连接层＋机房余热供泳池 · The Edge App 个性化调光调温｜买 新风 / 水质 / 健康照明 / 声环境 / WELL认证｜资产＝WELL既有办公改造清单。"
+  }},
+  {name:"普惠", color:"#d97706", tag:"行业复制", leaves:{
+    "是什么":"对内无障碍通用设计＋公共开放；对外把跑通的能力做成买得起的服务。",
+    "为什么":"正对第二曲线的\u0022行业复制\u0022：EaaS / 合同能源管理按节能量付费，把战略资产变可持续收入。",
+    "怎么做":"全域无障碍＋部分空间公众开放；六边成果封装成可计量、成效可验证的服务包，南网能源当集成与主笔。",
+    "一揽子":"腾讯企鹅岛无障碍 / 科技博物馆 / 04街坊净零碳 · Bay View 公众步道与湿地 · EaaS/ESCO 按节能量付费｜买 无障碍设施 / 公共开放改造 / 方案服务化能力｜资产＝能碳一体化服务产品（明牌）。"
+  }}
+];
+
+const NODO = [
+  "不做新建盆景 —— 只做既有连续办公园区可复制的模块化、增量、可逆改造；凡不能复制给同类园区的一律不投。",
+  "不做成片停机的休克式大改 —— 5000 人持续办公、设备未到报废年限、立面风貌不可大改，走园中园分区试点，先取实测基线再定指标。",
+  "不抢帽子 / 不编数字 / 不买主笔 —— 不用\u0022全国首个零碳机房\u0022等未落地定调，不编投资额与未签约合作；集成与主笔由南网能源自持，避免战略资产外流。"
+];
+
+const ORDER = ["是什么","为什么","怎么做","一揽子"];
+
+// build branches
+const branchesEl = document.getElementById("branches");
+SIDES.forEach(s=>{
+  const b = document.createElement("div");
+  b.className = "branch";
+  b.dataset.color = s.color;
+  const grad = `linear-gradient(140deg, ${s.color}, ${shade(s.color,-18)})`;
+  b.innerHTML = `
+    <div class="bnode" style="background:${grad}">
+      <span class="chev">▾</span>
+      <div class="nm">${s.name}</div>
+      ${s.tag?`<span class="tg">${s.tag}</span>`:""}
+    </div>
+    <div class="leaves">
+      ${ORDER.map(k=>`
+        <div class="leaf" style="--lc:${s.color}">
+          <span class="pill">${k}</span>
+          <div class="tx">${s.leaves[k]}</div>
+        </div>`).join("")}
+    </div>`;
+  b.querySelector(".bnode").addEventListener("click",()=>{
+    b.classList.toggle("collapsed"); draw();
+  });
+  branchesEl.appendChild(b);
+});
+
+// legend
+const legend = document.getElementById("legend");
+SIDES.forEach(s=>{
+  const el=document.createElement("span"); el.className="lg";
+  el.innerHTML=`<span class="dot" style="background:${s.color}"></span>${s.name}`;
+  legend.appendChild(el);
+});
+
+// no-do
+const nodoEl=document.getElementById("nodo");
+NODO.forEach((t,i)=>{
+  const c=document.createElement("div"); c.className="c";
+  c.innerHTML=`<div class="n">0${i+1}</div><div class="txt">${t}</div>`;
+  nodoEl.appendChild(c);
+});
+
+// darken/lighten a hex color
+function shade(hex,amt){
+  let c=hex.replace('#',''); if(c.length===3)c=c.split('').map(x=>x+x).join('');
+  let n=parseInt(c,16), r=(n>>16)+amt, g=((n>>8)&255)+amt, b=(n&255)+amt;
+  r=Math.max(0,Math.min(255,r)); g=Math.max(0,Math.min(255,g)); b=Math.max(0,Math.min(255,b));
+  return '#'+(1<<24|r<<8*2|g<<8|b).toString(16).slice(1);
+}
+
+// connectors
+const canvas=document.getElementById("canvas");
+const svg=document.getElementById("links");
+const coreEl=document.getElementById("core");
+let scale=0.9;
+
+function anchor(el,side){
+  const r=el.getBoundingClientRect(), c=canvas.getBoundingClientRect();
+  const x=((side==='r'?r.right:r.left)-c.left)/scale;
+  const y=(r.top+r.height/2-c.top)/scale;
+  return {x,y};
+}
+function curve(a,b,color){
+  const dx=Math.max(30,(b.x-a.x)*0.5);
+  return `<path d="M${a.x},${a.y} C${a.x+dx},${a.y} ${b.x-dx},${b.y} ${b.x},${b.y}" `
+       + `fill="none" stroke="${color}" stroke-width="2.4" stroke-opacity="0.75"/>`;
+}
+function draw(){
+  svg.setAttribute("width",canvas.offsetWidth);
+  svg.setAttribute("height",canvas.offsetHeight);
+  let p="";
+  const branches=[...document.querySelectorAll(".branch")];
+  branches.forEach(b=>{
+    const col=b.dataset.color;
+    const bn=b.querySelector(".bnode");
+    p+=curve(anchor(coreEl,'r'),anchor(bn,'l'),col);
+    if(!b.classList.contains("collapsed")){
+      b.querySelectorAll(".leaf").forEach(l=>{
+        p+=curve(anchor(bn,'r'),anchor(l,'l'),shade(col,25));
+      });
+    }
+  });
+  svg.innerHTML=p;
+}
+
+// controls
+const zoom=document.getElementById("zoom"), zoomVal=document.getElementById("zoomVal");
+function applyZoom(){canvas.style.transform=`scale(${scale})`; zoomVal.textContent=Math.round(scale*100)+"%"; requestAnimationFrame(draw);}
+zoom.addEventListener("input",()=>{scale=parseFloat(zoom.value); applyZoom();});
+
+const toggleAll=document.getElementById("toggleAll");
+toggleAll.addEventListener("click",()=>{
+  const branches=[...document.querySelectorAll(".branch")];
+  const collapse=branches.some(b=>!b.classList.contains("collapsed"));
+  branches.forEach(b=>b.classList.toggle("collapsed",collapse));
+  toggleAll.textContent=collapse?"全部展开":"全部折叠";
+  requestAnimationFrame(draw);
+});
+
+window.addEventListener("resize",()=>requestAnimationFrame(draw));
+window.addEventListener("load",()=>{applyZoom(); setTimeout(draw,60);});
+applyZoom();
+setTimeout(draw,120);
+</script>
+</body>
+</html>
