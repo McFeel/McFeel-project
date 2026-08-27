@@ -261,8 +261,7 @@
     var section = model.edges[edgeId];
 
     var body = document.createElement('div');
-    body.style.display = 'flex';
-    body.style.width = '100%';
+    body.className = 'm-body-row';
     body.appendChild(mermaidPane(model));
 
     var right = document.createElement('div');
@@ -288,13 +287,10 @@
 
   function openCoreModal(focusModelId) {
     var body = document.createElement('div');
-    body.style.display = 'flex';
-    body.style.width = '100%';
+    body.className = 'm-body-row';
 
     var left = document.createElement('div');
-    left.className = 'm-left';
-    left.style.padding = '16px 20px';
-    left.style.overflow = 'auto';
+    left.className = 'm-left is-scroll';
     var lh = '<div class="mantra-box">' + CORE.mantra + '</div>';
     CORE.layers.forEach(function (l) {
       lh += '<div class="core-tier"><div class="tier">' + l.tier + '</div>' +

@@ -596,6 +596,8 @@ sup.pending {
 
 #modal-body { flex: 1 1 auto; min-height: 0; display: flex; }
 
+.m-body-row { display: flex; width: 100%; min-height: 0; overflow: hidden; }
+
 .m-left {
   flex: 0 0 620px;
   min-width: 0;
@@ -604,6 +606,8 @@ sup.pending {
   border-right: 1px solid var(--line);
   background: rgba(6, 14, 26, 0.55);
 }
+
+.m-left.is-scroll { display: block; overflow: auto; padding: 16px 20px 24px; }
 
 .m-right { flex: 1 1 auto; min-width: 0; overflow: auto; padding: 16px 20px 24px; }
 
