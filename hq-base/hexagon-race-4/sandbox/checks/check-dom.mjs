@@ -176,6 +176,69 @@ ok(!/2030/.test(allText), '未出现「2030 覆盖重点园区」一类未经核
 ok(!/印发/.test(allText.replace(/以正式印发文件为准|不作公司印发件口径引用/g, '')), '未把待核口径写成公司印发件');
 console.log(`         全页可见文本共 ${allText.length} 字`);
 
+/* ---------------------------------------------------------------- */
+section('排版余量估算（node-canvas 按真实字体测量文本宽度）');
+let measure = null;
+try {
+  const { createCanvas } = await import('canvas');
+  const ctx = createCanvas(8, 8).getContext('2d');
+  measure = (t, px, bold) => {
+    ctx.font = `${bold ? 'bold ' : ''}${px}px "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif`;
+    return ctx.measureText(t || '').width;
+  };
+} catch {
+  console.log('  SKIP  未安装 canvas，跳过文本宽度估算（npm i canvas 后可启用）');
+}
+
+if (measure) {
+  const PANEL_INNER = 340 - 24; // 面板宽 340，左右内边距各 12
+  let worst = { room: 1e9, who: '' };
+  panels.forEach((p) => {
+    const name = p.querySelector('.edge-name').textContent;
+    const en = p.querySelector('.edge-en').textContent;
+    const w = 20 + 8 + measure(name, 18, true) + 8 + measure(en, 10.5);
+    const room = PANEL_INNER - w;
+    if (room < worst.room) worst = { room, who: `${name} ${en}` };
+  });
+  ok(worst.room > 0, `六边面板标题行最紧的一条仍余 ${worst.room.toFixed(0)}px（${worst.who}）`);
+
+  let tagWorst = { room: 1e9, who: '' };
+  panels.forEach((p) => {
+    const tag = p.querySelector('.edge-tag').textContent;
+    const room = PANEL_INNER - measure(tag, 10.5);
+    if (room < tagWorst.room) tagWorst = { room, who: tag };
+  });
+  ok(tagWorst.room > 0, `面板副标题最紧的一条仍余 ${tagWorst.room.toFixed(0)}px（${tagWorst.who}）`);
+
+  const CHIP_W = (PANEL_INNER - 16) / 3;
+  let chipWorst = { room: 1e9, who: '' };
+  [...d.querySelectorAll('.chip')].forEach((c) => {
+    const t = c.querySelector('.chip-name').textContent;
+    const room = CHIP_W - measure(t, 14, true) - 8;
+    if (room < chipWorst.room) chipWorst = { room, who: t };
+  });
+  ok(chipWorst.room > 0, `模型字标最宽的一个（${chipWorst.who}）在 ${CHIP_W.toFixed(0)}px 格内仍余 ${chipWorst.room.toFixed(0)}px`);
+
+  // 对照表：按 3 行收起后估算行高，看七行能否基本一屏放下
+  const COL_W = (1600 - 40 - 108) / 6 - 18;
+  const LINE = 11 * 1.52;
+  let tableH = 42;
+  rows.forEach((tr) => {
+    let rowH = 0;
+    [...tr.querySelectorAll('td')].forEach((td) => {
+      const h = [...td.querySelectorAll('.mx-val')].reduce((acc, v) => {
+        const lines = Math.min(3, Math.ceil(measure(v.textContent, 11) / COL_W));
+        return acc + lines * LINE;
+      }, 0);
+      rowH = Math.max(rowH, h + 24);
+    });
+    tableH += rowH;
+  });
+  const avail = 830 - 46 - 14;
+  console.log(`         对照表估算总高 ${tableH.toFixed(0)}px，可视区 ${avail}px（列宽 ${COL_W.toFixed(0)}px）`);
+  ok(tableH < avail * 1.25, `七行基本一屏可见（超出 ${Math.max(0, tableH - avail).toFixed(0)}px，可滚动）`);
+}
+
 section('翻页');
 d.querySelectorAll('.navbtn')[1].dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
 ok(

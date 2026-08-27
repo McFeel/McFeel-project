@@ -59,10 +59,12 @@
       var head = document.createElement('div');
       head.className = 'edge-panel-head';
       head.innerHTML =
+        '<div class="edge-panel-title">' +
         '<span class="edge-idx">' + (i + 1) + '</span>' +
         '<span class="edge-name">' + edge.name + '</span>' +
         '<span class="edge-en">' + edge.en + '</span>' +
-        '<span class="edge-tag">' + edge.tag + '</span>';
+        '</div>' +
+        '<div class="edge-tag">' + edge.tag + '</div>';
       panel.appendChild(head);
 
       var chips = document.createElement('div');
