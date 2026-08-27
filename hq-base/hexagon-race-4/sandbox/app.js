@@ -158,12 +158,30 @@
     if (note && reason) note.firstChild.textContent = '脑图渲染未完成（' + reason + '），已显示原文 mermaid 源码。';
   }
 
+  // 横向很宽的图（如 graph TD 的流程图）按容器宽度缩放会把字压到看不清，
+  // 这里改为保留可读宽度、由左栏横向滚动。
+  function fitDiagram(box, firm) {
+    var svg = box.querySelector('svg');
+    if (!svg) return;
+    var vb = (svg.getAttribute('viewBox') || '').split(/[\s,]+/).map(Number);
+    if (vb.length !== 4 || !vb[2] || !vb[3]) return;
+    var ratio = vb[2] / vb[3];
+    if (ratio < 2.2) return;
+    var natural = Math.min(Math.max(vb[2], 900), 1900);
+    svg.style.maxWidth = 'none';
+    svg.style.width = natural + 'px';
+    svg.style.height = 'auto';
+    box.style.justifyContent = 'flex-start';
+    var note = box.parentNode.querySelector('.mermaid-note');
+    if (note) note.firstChild.textContent = '脑图取自该家原文（横向较宽，可在本栏内左右拖动查看）。';
+  }
+
   function renderMermaid(box, firm) {
-    if (svgCache[firm.id]) { box.innerHTML = svgCache[firm.id]; return; }
+    if (svgCache[firm.id]) { box.innerHTML = svgCache[firm.id]; fitDiagram(box, firm); return; }
     box.innerHTML = '<div class="corner-note">脑图渲染中……</div>';
     ensureMermaid()
       .then(function (m) { return m.render('mmd-' + firm.id + '-' + (++renderSeq), firm.mermaid.trim()); })
-      .then(function (res) { svgCache[firm.id] = res.svg; box.innerHTML = res.svg; })
+      .then(function (res) { svgCache[firm.id] = res.svg; box.innerHTML = res.svg; fitDiagram(box, firm); })
       .catch(function (err) { showMermaidSource(box, firm, err && err.message ? err.message : '渲染失败'); });
   }
 
