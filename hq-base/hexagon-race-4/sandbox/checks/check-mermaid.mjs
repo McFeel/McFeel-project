@@ -63,7 +63,7 @@ ok(typeof W.mermaid === 'object' && W.mermaid !== null, '普通 <script> 标签�
 ok(typeof W.mermaid.initialize === 'function' && typeof W.mermaid.render === 'function', 'mermaid.initialize / mermaid.render 均可用');
 W.mermaid.initialize({ startOnLoad: false, securityLevel: 'loose', theme: 'dark' });
 
-new Function(fs.readFileSync(path.join(DIR, 'data.js'), 'utf8') + '\n;globalThis.__M = FIRMS;')();
+new Function(fs.readFileSync(path.join(DIR, 'data.js'), 'utf8') + '\n;globalThis.__M = MODELS;')();
 const FIRMS = globalThis.__M;
 
 console.log('\n== 六路 mindmap 语法解析');
