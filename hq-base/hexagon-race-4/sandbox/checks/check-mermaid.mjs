@@ -63,35 +63,38 @@ ok(typeof W.mermaid === 'object' && W.mermaid !== null, '普通 <script> 标签�
 ok(typeof W.mermaid.initialize === 'function' && typeof W.mermaid.render === 'function', 'mermaid.initialize / mermaid.render 均可用');
 W.mermaid.initialize({ startOnLoad: false, securityLevel: 'loose', theme: 'dark' });
 
-new Function(fs.readFileSync(path.join(DIR, 'data.js'), 'utf8') + '\n;globalThis.__M = MODELS;')();
-const MODELS = globalThis.__M;
+new Function(fs.readFileSync(path.join(DIR, 'data.js'), 'utf8') + '\n;globalThis.__M = FIRMS;')();
+const FIRMS = globalThis.__M;
 
 console.log('\n== 六路 mindmap 语法解析');
-for (const m of MODELS) {
+for (const f of FIRMS) {
   let msg = '', good = true;
-  try { await W.mermaid.parse(m.mermaid.trim()); } catch (e) { good = false; msg = ' —— ' + (e.message || e).toString().split('\n')[0]; }
-  ok(good, `${m.name}（${m.mermaid.trim().split('\n').length} 行）解析通过${msg}`);
+  try { await W.mermaid.parse(f.mermaid.trim()); } catch (e) { good = false; msg = ' —— ' + (e.message || e).toString().split('\n')[0]; }
+  const kind = f.mermaid.trim().split('\n')[0].trim();
+  ok(good, `${f.name}（${kind}，${f.mermaid.trim().split('\n').length} 行）解析通过${msg}`);
 }
 
 console.log('\n== 六路 mindmap 渲染产物');
-for (const m of MODELS) {
+for (const f of FIRMS) {
   try {
-    const { svg } = await W.mermaid.render('mmd-' + m.id, m.mermaid.trim());
+    const { svg } = await W.mermaid.render('mmd-' + f.id, f.mermaid.trim());
     const doc = new W.DOMParser().parseFromString(svg, 'image/svg+xml');
-    const nodes = doc.querySelectorAll('g.mindmap-node, .mindmap-node').length;
-    const texts = [...doc.querySelectorAll('text, span')].map((e) => e.textContent).join('');
-    const root = m.mermaid.match(/root\(\((.*?)\)\)/);
-    const rootOK = !root || root[1].split(/<br\/?>/).every((p) => texts.includes(p));
+    const nodes = doc.querySelectorAll('g.mindmap-node, .mindmap-node, g.node').length;
+    const texts = [...doc.querySelectorAll('text, span, p')].map((e) => e.textContent).join('');
+    const root = f.mermaid.match(/root\(\((.*?)\)\)/);
+    // 长标签会被 mermaid 按空格折行成多个 tspan，比对时去掉空白
+    const flat = texts.replace(/\s+/g, '');
+    const rootOK = !root || root[1].split(/<br\/?>/).every((p) => flat.includes(p.replace(/\s+/g, '')));
     ok(
       svg.startsWith('<svg') && nodes > 0 && rootOK,
-      `${m.name}：SVG ${(svg.length / 1024).toFixed(1)} KB，mindmap 节点 ${nodes} 个，根节点文字${rootOK ? '已渲染' : '缺失'}`
+      `${f.name}：SVG ${(svg.length / 1024).toFixed(1)} KB，图元节点 ${nodes} 个，根节点文字${rootOK ? '已渲染' : '（无 root 节点，跳过）'}`
     );
     if (OUT) {
       fs.mkdirSync(OUT, { recursive: true });
-      fs.writeFileSync(path.join(OUT, `mindmap-${m.id}.svg`), svg);
+      fs.writeFileSync(path.join(OUT, `mindmap-${f.id}.svg`), svg);
     }
   } catch (e) {
-    ok(false, `${m.name}：渲染失败（${(e.message || e).toString().split('\n')[0]}）`);
+    ok(false, `${f.name}：渲染失败（${(e.message || e).toString().split('\n')[0]}）`);
   }
 }
 if (OUT) console.log('         SVG 已导出至 ' + OUT);

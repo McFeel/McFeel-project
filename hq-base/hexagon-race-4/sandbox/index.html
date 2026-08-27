@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>南网总部基地既有园 · 六边形沙盘（第四轮赛马 六路对照）</title>
+<title>既有园升级 · 六家独立顶层设计（沙盘）</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,59 +14,45 @@
     <!-- ================= 顶栏 ================= -->
     <header id="topbar">
       <div class="brand">
-        <div class="brand-title">南网总部基地既有园 · 世界一流园区六边形沙盘</div>
-        <div class="brand-sub">第四轮赛马 · 六路模型原文对照（GLM-5.2 / Gemini 3.1 / GPT-5.6 / Kimi K3 / Grok 4.6 / Opus 4.8）</div>
+        <div class="brand-title" id="brand-title"></div>
+        <div class="brand-sub" id="brand-sub"></div>
       </div>
-      <div class="mantra-wrap">
-        <div class="mantra" id="mantra"></div>
-        <div class="hypothesis" id="hypothesis"></div>
-      </div>
+      <div class="topnote" id="topnote"></div>
       <nav id="pagenav">
-        <button class="navbtn is-active" data-page="board"><span class="navnum">1</span>首页沙盘</button>
-        <button class="navbtn" data-page="matrix"><span class="navnum">2</span>六边 × 六模型对照表</button>
+        <button class="navbtn is-active" data-page="board"><span class="navnum">1</span>六家独立顶层设计</button>
+        <button class="navbtn" data-page="matrix"><span class="navnum">2</span>四行对照表</button>
       </nav>
     </header>
 
-    <!-- ================= 第一页：沙盘 ================= -->
+    <!-- ================= 第一页：六家 ================= -->
     <section id="page-board" class="page is-active">
       <div id="board">
-        <!-- 中心三层核 -->
-        <div id="core" role="button" tabindex="0" aria-label="打开三层核详情">
-          <div class="core-ring core-ring-1">
-            <div class="core-ring-label">国家 · 六张网建设</div>
-            <div class="core-ring-note">水网 / 新型电网 / 算力网 / 新一代通信网 / 城市地下管网 / 物流网</div>
-            <div class="core-ring core-ring-2">
-              <div class="core-ring-label">南网响应 · 六网协同</div>
-              <div class="core-ring-note">以新型电网为枢纽；算电协同（电碳算）为突破口<sup class="pending" data-tip="">待核</sup></div>
-              <div class="core-ring core-ring-3">
-                <div class="core-ring-label">南网自身</div>
-                <div class="core-ring-note">加快积累战略资产<br />驱动第二增长曲线</div>
-                <div class="core-hint">点击查看三层口径</div>
-              </div>
-            </div>
-          </div>
+        <div id="hub">
+          <div class="hub-title" id="hub-title"></div>
+          <div class="hub-sub" id="hub-sub"></div>
+          <div class="hub-hint" id="hub-hint"></div>
         </div>
-        <!-- 六边面板由 app.js 注入 -->
+        <!-- 六家卡片由 app.js 注入 -->
       </div>
 
       <div id="legend" class="corner-card">
-        <div class="corner-title">六路模型字标</div>
+        <div class="corner-title">六家机构字标</div>
         <div id="legend-chips"></div>
-        <div class="corner-note">点击任一字标：该模型原文脑图 + 该边完整方案</div>
+        <div class="corner-note">点任一机构：原文脑图 + 核全文 + 各边 + 普惠专节</div>
       </div>
 
       <div id="boardnote" class="corner-card">
-        <div class="corner-title">口径说明</div>
-        <div id="hexnote" class="corner-note"></div>
-        <div class="corner-note"><sup class="pending">待核</sup> 角标表示该处口径待核，不作正式文件引用。</div>
+        <div class="corner-title">读法</div>
+        <div class="corner-note">六家各写各的核、各切各的边、各主张各的普惠，本页不作统一收口；卡片上只露该家自己的核一句话与边的切法。</div>
+        <div class="corner-note">上一轮统一「一核六边」口径的六路一揽子存于 <code>archive/index.html</code>。</div>
       </div>
     </section>
 
     <!-- ================= 第二页：对照表 ================= -->
     <section id="page-matrix" class="page">
       <div class="matrix-head">
-        <h2>核 + 六边 × 六路模型：路径与厂商／园区对照</h2>
-        <div class="matrix-tip">格子过长时按三行收起，点击任一格子可展开该模型该边的原文完整方案与脑图；表格可上下滚动。</div>
+        <h2>核 / 边怎么切 / 普惠主张 / 否掉了什么 × 六家</h2>
+        <div class="matrix-tip">格子过长时按行数收起，点击任一格子展开该家原文；表格可上下滚动。</div>
       </div>
       <div id="matrix-wrap"><table id="matrix-table"></table></div>
     </section>
