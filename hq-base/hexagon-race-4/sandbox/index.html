@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>南网总部基地既有园 · 六边形沙盘（第四轮赛马 六路对照）</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="viewport">
+  <div id="stage">
+
+    <!-- ================= 顶栏 ================= -->
+    <header id="topbar">
+      <div class="brand">
+        <div class="brand-title">南网总部基地既有园 · 世界一流园区六边形沙盘</div>
+        <div class="brand-sub">第四轮赛马 · 六路模型原文对照（GLM-5.2 / Gemini 3.1 / GPT-5.6 / Kimi K3 / Grok 4.6 / Opus 4.8）</div>
+      </div>
+      <div class="mantra" id="mantra"></div>
+      <nav id="pagenav">
+        <button class="navbtn is-active" data-page="board"><span class="navnum">1</span>首页沙盘</button>
+        <button class="navbtn" data-page="matrix"><span class="navnum">2</span>六边 × 六模型对照表</button>
+      </nav>
+    </header>
+
+    <!-- ================= 第一页：沙盘 ================= -->
+    <section id="page-board" class="page is-active">
+      <div id="board">
+        <!-- 中心三层核 -->
+        <div id="core" role="button" tabindex="0" aria-label="打开三层核详情">
+          <div class="core-ring core-ring-1">
+            <div class="core-ring-label">国家 · 六张网建设</div>
+            <div class="core-ring-note">水网 / 新型电网 / 算力网 / 新一代通信网 / 城市地下管网 / 物流网</div>
+            <div class="core-ring core-ring-2">
+              <div class="core-ring-label">南网响应 · 六网协同</div>
+              <div class="core-ring-note">以新型电网为枢纽；算电协同（电碳算）为突破口<sup class="pending" data-tip="">待核</sup></div>
+              <div class="core-ring core-ring-3">
+                <div class="core-ring-label">南网自身</div>
+                <div class="core-ring-note">加快积累战略资产<br />驱动第二增长曲线</div>
+                <div class="core-hint">点击查看三层口径</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 六边面板由 app.js 注入 -->
+      </div>
+
+      <div id="legend" class="corner-card">
+        <div class="corner-title">六路模型字标</div>
+        <div id="legend-chips"></div>
+        <div class="corner-note">点击任一字标：该模型原文脑图 + 该边完整方案</div>
+      </div>
+
+      <div id="boardnote" class="corner-card">
+        <div class="corner-title">口径说明</div>
+        <div id="hexnote" class="corner-note"></div>
+        <div class="corner-note"><sup class="pending">待核</sup> 角标表示该处口径待核，不作正式文件引用。</div>
+      </div>
+    </section>
+
+    <!-- ================= 第二页：对照表 ================= -->
+    <section id="page-matrix" class="page">
+      <div class="matrix-head">
+        <h2>核 + 六边 × 六路模型：路径与厂商／园区对照</h2>
+        <div class="matrix-tip">点击任一格子可展开该模型该边的原文完整方案与脑图。</div>
+      </div>
+      <div id="matrix-wrap"><table id="matrix-table"></table></div>
+    </section>
+
+    <!-- ================= 弹层 ================= -->
+    <div id="overlay" hidden>
+      <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div id="modal-head">
+          <div class="modal-eyebrow" id="modal-eyebrow"></div>
+          <h3 id="modal-title"></h3>
+          <button id="modal-close" aria-label="关闭">×</button>
+        </div>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="scalehint">建议全屏（F11）投屏观看 · 16:9</div>
+
+<script>
+  // mermaid 从 CDN 加载；主源失败时自动切备用源。离线时页面仍可用，脑图退化为原文源码。
+  (function () {
+    var sources = [
+      'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js',
+      'https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js'
+    ];
+    var i = 0;
+    function load() {
+      if (i >= sources.length) { window.__mermaidFailed = true; return; }
+      var s = document.createElement('script');
+      s.src = sources[i++];
+      s.onerror = load;
+      document.head.appendChild(s);
+    }
+    load();
+  })();
+</script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
