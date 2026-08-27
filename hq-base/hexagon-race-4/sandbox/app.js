@@ -272,6 +272,16 @@
         '<div class="blk"><div class="blk-label">' + b.label + '</div>' +
         '<div class="blk-text">' + b.text + '</div></div>';
     });
+    if (model.sources && model.sources.length) {
+      html +=
+        '<details class="srcpack"><summary>该路原文所附公开案例与依据（' + model.sources.length + ' 条）</summary><ul class="srcs">' +
+        model.sources
+          .map(function (s) {
+            return '<li>' + (s.url ? '<a href="' + s.url + '" target="_blank" rel="noreferrer">' + s.text + '</a>' : s.text) + '</li>';
+          })
+          .join('') +
+        '</ul></details>';
+    }
     html +=
       '<div class="srcline">原文出处：<code>' + model.branch + '</code> ： <code>hq-base/hexagon-race-4/' +
       model.file + '</code><br />' + model.docTitle + '</div>';

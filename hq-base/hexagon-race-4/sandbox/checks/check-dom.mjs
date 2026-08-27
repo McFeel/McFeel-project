@@ -138,6 +138,20 @@ ok(srcFail === 0, `脑图 CDN 不可用时全部回退为原文 mermaid 源码�
 ok([...blockCounts].join(',') === '4', `每个弹层均为 4 段（是什么/为什么/怎么做/一揽子 等价分段）：${[...blockCounts].join(',')}`);
 ok(minEdge >= 200, `单边详情最短 ${minEdge} 字（未压成一句话），最短处：${minEdgeWhere}`);
 ok(minBlock >= 20, `最短段落 ${minBlock} 字，位于：${minBlockWhere}`);
+// 只有 GPT-5.6 与 Grok 4.6 两路原文自带来源清单，弹层里应当以折叠块呈现
+const srcPacks = {};
+for (const chip of chips.slice(0, 6)) {
+  chip.dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+  await tick();
+  const model = d.querySelector('#modal-title').textContent.split('　·　')[0];
+  srcPacks[model] = d.querySelectorAll('#modal-body .srcpack .srcs li').length;
+  d.querySelector('#modal-close').dispatchEvent(new w.MouseEvent('click', { bubbles: true }));
+}
+ok(
+  srcPacks['GPT-5.6'] === 9 && srcPacks['Grok 4.6'] === 14 && srcPacks['Kimi K3'] === 0,
+  `自带来源清单的两路已折叠呈现：GPT-5.6 ${srcPacks['GPT-5.6']} 条、Grok 4.6 ${srcPacks['Grok 4.6']} 条；其余四路无此块`
+);
+
 console.log('         各路分段标签：');
 Object.keys(labelSets).forEach((k) => console.log('           ' + k + '：' + [...labelSets[k]].join(' / ')));
 
