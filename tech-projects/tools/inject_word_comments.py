@@ -361,6 +361,13 @@ def _sha256(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
 
 
+def _display_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(REPO_ROOT))
+    except ValueError:
+        return str(path)
+
+
 def verify(
     source: Path, output: Path, comments: list[dict[str, Any]]
 ) -> dict[str, Any]:
@@ -416,8 +423,8 @@ def verify(
         raise InjectionError(f"{output}: 批注作者或 initials 不正确")
 
     return {
-        "source": str(source.relative_to(REPO_ROOT)),
-        "output": str(output.relative_to(REPO_ROOT)),
+        "source": _display_path(source),
+        "output": _display_path(output),
         "comment_count": expected_count,
         "body_text_unchanged": True,
         "source_sha256": _sha256(source.read_bytes()),
