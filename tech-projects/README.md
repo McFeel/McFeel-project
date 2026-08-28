@@ -6,22 +6,30 @@
 Cloud Agent 产物中均未找到两份原始 Word 二进制文件。PR #3 的历史任务只收到
 了 RD19 的纯文本抽取结果，没有收到或保存 `.docx`；该抽取结果不能用于重建原稿。
 
-因此，本提交严格按任务中的阻塞分支处理：
+因此，PR #49 仅包含：
 
-- 未从抽取文本重新排版或臆造 Word 正文；
-- 未生成看似完整、实为重建的“批注稿”；
-- 收录完整批注清单和原位注入工具；
-- 工具仅接受下列固定路径的真实原稿，缺任一文件即退出，且不产生部分输出。
+- 完整批注 JSON；
+- 原位注入原始 DOCX 的原生 Word 批注工具；
+- 批注清单、正文文字一致性和 OOXML 结构测试。
 
-所需原稿路径：
+两份已批注 `.docx` **不在本 PR 中**，因为 Cloud VM 无法取得原稿。严禁添加
+占位 DOCX，也严禁根据纯文本抽取结果新打字、重建或臆造 DOCX。
 
-- `tech-projects/procurement/specs/RD19-技术规范书-用户交来.docx`
-- `tech-projects/templates/RD10-技术规范书-用户交来.docx`
+## 已向用户交付的文件
 
-计划输出路径：
+真实、已验证的批注稿已在共享电脑上于 VM 外生成并交付给用户；正文文字不变，
+且使用原生 Word 批注。交付记录如下（文件不在本 PR 中）：
 
 - `tech-projects/procurement/specs/commented/RD19-技术规范书-批注稿.docx`
+  - 大小：34636 bytes
+  - SHA-256：`4c46da8cfba1d5cbbae1475d8c44e3ec3b03522c89d0bd56bef77d3c067d19cc`
+  - 原生 Word 批注：34 条
 - `tech-projects/procurement/specs/commented/RD10-技术规范书-批注稿.docx`
+  - 大小：32359 bytes
+  - SHA-256：`f8af90a922ccda66b745a4de3d77c4625e342f21e0f6d0e9a71079a10d4c6ca1`
+  - 原生 Word 批注：13 条
+
+以上路径用于标识已交付文件，不表示这些文件存在于当前分支或 PR。
 
 ## 批注清单
 
@@ -71,5 +79,4 @@ python3 tech-projects/tools/inject_word_comments.py --check-config
 python3 -m unittest discover -s tech-projects/tests -v
 ```
 
-原稿补入后，必须提交两份原稿和两份生成的批注稿，并把生成命令输出中的
-正文一致性和批注计数写入 PR 说明，方可解除本阻塞状态。
+除非取得两份真实原稿，不得运行生成流程并向本 PR 添加任何 DOCX。
