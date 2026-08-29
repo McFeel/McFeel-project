@@ -1,0 +1,10 @@
+{
+  "_comment": "启成平台上传格式未公布：真格式到手后只改这个文件，不改代码。",
+  "timestamp_column": "timeStamp",
+  "timestamp_format": "%Y-%m-%d %H:%M:%S",
+  "station_column": "stationId",
+  "load_column": "TotalRealTimeLoad_pred",
+  "equipment_column_suffix": "_pred",
+  "float_format": "%.3f",
+  "encoding": "utf-8-sig"
+}

@@ -12,6 +12,17 @@ dist-ssr
 *.local
 *.tsbuildinfo
 
+# Real training data must NEVER be committed (company operational data).
+*.xlsx
+*.xlsm
+*.xls
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+coldstation/out/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
