@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="576pt" height="662.4pt" viewBox="0 0 576 662.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-30T05:24:23.089451</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 662.4 
+L 576 662.4 
+L 576 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 88.0704 202.409568 
+L 285.8256 202.409568 
+Q 291.1824 202.409568 291.1824 196.288992 
+L 291.1824 146.304288 
+Q 291.1824 140.183712 285.8256 140.183712 
+L 88.0704 140.183712 
+Q 82.7136 140.183712 82.7136 146.304288 
+L 82.7136 196.288992 
+Q 82.7136 202.409568 88.0704 202.409568 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e8f3fa; stroke: #0068b7; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 304.5744 202.409568 
+L 502.3296 202.409568 
+Q 507.6864 202.409568 507.6864 196.288992 
+L 507.6864 146.304288 
+Q 507.6864 140.183712 502.3296 140.183712 
+L 304.5744 140.183712 
+Q 299.2176 140.183712 299.2176 146.304288 
+L 299.2176 196.288992 
+Q 299.2176 202.409568 304.5744 202.409568 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #00a86b; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 83.16 237.60288 
+L 210.384 237.60288 
+L 210.384 209.55024 
+L 83.16 209.55024 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #174a72; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 210.384 237.60288 
+L 341.8488 237.60288 
+L 341.8488 209.55024 
+L 210.384 209.55024 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #174a72; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 341.8488 237.60288 
+L 507.24 237.60288 
+L 507.24 209.55024 
+L 341.8488 209.55024 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #087a58; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 83.16 283.87152 
+L 210.384 283.87152 
+L 210.384 237.60288 
+L 83.16 237.60288 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 210.384 283.87152 
+L 341.8488 283.87152 
+L 341.8488 237.60288 
+L 210.384 237.60288 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 341.8488 283.87152 
+L 507.24 283.87152 
+L 507.24 237.60288 
+L 341.8488 237.60288 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 83.16 330.14016 
+L 210.384 330.14016 
+L 210.384 283.87152 
+L 83.16 283.87152 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 210.384 330.14016 
+L 341.8488 330.14016 
+L 341.8488 283.87152 
+L 210.384 283.87152 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 341.8488 330.14016 
+L 507.24 330.14016 
+L 507.24 283.87152 
+L 341.8488 283.87152 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 83.16 376.4088 
+L 210.384 376.4088 
+L 210.384 330.14016 
+L 83.16 330.14016 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 210.384 376.4088 
+L 341.8488 376.4088 
+L 341.8488 330.14016 
+L 210.384 330.14016 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 341.8488 376.4088 
+L 507.24 376.4088 
+L 507.24 330.14016 
+L 341.8488 330.14016 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 83.16 422.67744 
+L 210.384 422.67744 
+L 210.384 376.4088 
+L 83.16 376.4088 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 210.384 422.67744 
+L 341.8488 422.67744 
+L 341.8488 376.4088 
+L 210.384 376.4088 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 341.8488 422.67744 
+L 507.24 422.67744 
+L 507.24 376.4088 
+L 341.8488 376.4088 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 83.16 468.94608 
+L 210.384 468.94608 
+L 210.384 422.67744 
+L 83.16 422.67744 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 210.384 468.94608 
+L 341.8488 468.94608 
+L 341.8488 422.67744 
+L 210.384 422.67744 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 341.8488 468.94608 
+L 507.24 468.94608 
+L 507.24 422.67744 
+L 341.8488 422.67744 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 83.16 515.21472 
+L 210.384 515.21472 
+L 210.384 468.94608 
+L 83.16 468.94608 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 210.384 515.21472 
+L 341.8488 515.21472 
+L 341.8488 468.94608 
+L 210.384 468.94608 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 341.8488 515.21472 
+L 507.24 515.21472 
+L 507.24 468.94608 
+L 341.8488 468.94608 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 83.16 561.48336 
+L 210.384 561.48336 
+L 210.384 515.21472 
+L 83.16 515.21472 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 210.384 561.48336 
+L 341.8488 561.48336 
+L 341.8488 515.21472 
+L 210.384 515.21472 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 341.8488 561.48336 
+L 507.24 561.48336 
+L 507.24 515.21472 
+L 341.8488 515.21472 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 82.7136 112.131072 
+L 105.48 112.131072 
+Q 109.0512 112.131072 109.0512 108.050688 
+L 109.0512 87.13872 
+Q 109.0512 83.058336 105.48 83.058336 
+L 82.7136 83.058336 
+Q 79.1424 83.058336 79.1424 87.13872 
+L 79.1424 108.050688 
+Q 79.1424 112.131072 82.7136 112.131072 
+z
+" clip-path="url(#p1422b939d7)" style="fill: #0068b7; stroke: #0068b7; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 83.16 117.7416 
+L 507.24 117.7416 
+" clip-path="url(#p1422b939d7)" style="fill: none; stroke: #00a86b; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #ffffff" x="85.392" y="100.974055" transform="rotate(-0 85.392 100.974055)">F08</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="114.408" y="102.847318" transform="rotate(-0 114.408 102.847318)">信息港做法 → 总部基地落点</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: end; fill: #087a58" x="507.24" y="133.983769" transform="rotate(-0 507.24 133.983769)">逐条映射 · 每行都说明差异化</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #0068b7" x="94.32" y="161.005296" transform="rotate(-0 94.32 161.005296)">信息港｜办公＋数据中心复合园区</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(94.32 178.272504)">602 亩｜约 77 万㎡｜约 2.4 万机架</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(94.32 189.522504)">日均约 5200 人【公开报道】</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #087a58" x="310.824" y="161.005296" transform="rotate(-0 310.824 161.005296)">总部基地｜持续运行的既有园区</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(310.824 178.199004)">既有园区｜约 5000 人持续办公</text>
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(310.824 189.838535)">【交流纪要】</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="146.772" y="227.56656" transform="rotate(-0 146.772 227.56656)">信息港做法（证据等级）</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="276.1164" y="227.613318" transform="rotate(-0 276.1164 227.613318)">总部基地落点</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="424.5444" y="227.56656" transform="rotate(-0 424.5444 227.56656)">差异化（服务一核）</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 258.609348)">会议预约联动</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 270.0472)">照明／空调（A）</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 258.661302)">会议室与公共区首批轻改造</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 270.056848)">接入统一平台</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 258.658505)">联动数据进入园区碳账本</text>
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 269.837395)">支撑碳普惠个人记账</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 304.901738)">四级用能监测＋</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 316.31584)">智慧用电（A／B）</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 304.953692)">补齐全园分项计量</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 316.329942)">建设能碳数字底座</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 304.954754)">计量口径同时服务</text>
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 316.138731)">碳核算与电力交易结算</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 351.227527)">数字孪生＋AI 管控</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 362.58448)">分钟级自检（A）</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 351.179285)">AIOC 智能运营中心</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 362.589675)">以真实运行数据为展项</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 350.824511)">不做大屏秀；叠加电网侧</text>
+    <text style="font-weight: 700; font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 362.360871)">负荷／电价／绿电数据</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 397.457573)">楼宇 64 项</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 408.85312)">诊断分档（B）</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 397.485776)">全园楼宇摸底排序</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 408.819722)">形成分期改造计划</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 397.506565)">诊断结论回到国家标准口径</text>
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 408.68037)">校核认证达标</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 443.749963)">机房余热经热泵</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 455.12176)">供办公（A）</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 443.741057)">机房余热—生活热水／</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 455.135862)">除湿再热试点</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 443.728705)">广州气候下先摸需求侧</text>
+    <text style="font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 454.930846)">与机房核算边界专题绑定</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 489.994853)">算力中心与园区</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 501.3904)">同地共生（A）</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 489.629697)">绿电就近供算力；算力负荷</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 501.400048)">参与需求响应／交易</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 490.030041)">信息港无此公开叙事</text>
+    <text style="font-weight: 700; font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 501.013486)">南网独有增量，落在核上</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 536.278337)">本地化部署需</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(86.7312 547.65904)">按设备重训（C）</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 536.253845)">评估数据归属、合规、</text>
+    <text style="font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(213.9552 547.625642)">模型重训与退出成本</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 536.297954)">数据主权自持为前置条件</text>
+    <text style="font-weight: 700; font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(345.42 547.50954)">必要时自建底座、外购模块</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 7.6px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #5f6f7a" x="83.16" y="577.134603" transform="rotate(-0 83.16 577.134603)">信息港底数与 A/B 级做法未经本次调研核证；数字仅作量级参照，不进入总部基地指标。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1422b939d7">
+   <rect x="72" y="79.488" width="446.4" height="510.048"/>
+  </clipPath>
+ </defs>
+</svg>

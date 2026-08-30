@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="446.4pt" viewBox="0 0 518.4 446.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-30T05:24:23.405479</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 446.4 
+L 518.4 446.4 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 209.4336 266.67936 
+C 230.743199 266.67936 251.182882 259.43589 266.251044 246.54424 
+C 281.319206 233.65259 289.7856 216.165306 289.7856 197.93376 
+C 289.7856 179.702214 281.319206 162.21493 266.251044 149.32328 
+C 251.182882 136.43163 230.743199 129.18816 209.4336 129.18816 
+C 188.124001 129.18816 167.684318 136.43163 152.616156 149.32328 
+C 137.547994 162.21493 129.0816 179.702214 129.0816 197.93376 
+C 129.0816 216.165306 137.547994 233.65259 152.616156 246.54424 
+C 167.684318 259.43589 188.124001 266.67936 209.4336 266.67936 
+z
+" clip-path="url(#pb2d573f578)" style="fill: #e8f3fa; opacity: 0.82; stroke: #0068b7; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 321.9264 266.67936 
+C 343.235999 266.67936 363.675682 259.43589 378.743844 246.54424 
+C 393.812006 233.65259 402.2784 216.165306 402.2784 197.93376 
+C 402.2784 179.702214 393.812006 162.21493 378.743844 149.32328 
+C 363.675682 136.43163 343.235999 129.18816 321.9264 129.18816 
+C 300.616801 129.18816 280.177118 136.43163 265.108956 149.32328 
+C 250.040794 162.21493 241.5744 179.702214 241.5744 197.93376 
+C 241.5744 216.165306 250.040794 233.65259 265.108956 246.54424 
+C 280.177118 259.43589 300.616801 266.67936 321.9264 266.67936 
+z
+" clip-path="url(#pb2d573f578)" style="fill: #e6f6ef; opacity: 0.82; stroke: #00a86b; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 265.68 342.29952 
+C 286.989599 342.29952 307.429282 335.05605 322.497444 322.1644 
+C 337.565606 309.27275 346.032 291.785466 346.032 273.55392 
+C 346.032 255.322374 337.565606 237.83509 322.497444 224.94344 
+C 307.429282 212.05179 286.989599 204.80832 265.68 204.80832 
+C 244.370401 204.80832 223.930718 212.05179 208.862556 224.94344 
+C 193.794394 237.83509 185.328 255.322374 185.328 273.55392 
+C 185.328 291.785466 193.794394 309.27275 208.862556 322.1644 
+C 223.930718 335.05605 244.370401 342.29952 265.68 342.29952 
+z
+" clip-path="url(#pb2d573f578)" style="fill: #e7f7f6; opacity: 0.82; stroke: #13a7a0; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 99.35136 371.860128 
+L 432.00864 371.860128 
+Q 436.82976 371.860128 436.82976 367.735392 
+L 436.82976 346.080528 
+Q 436.82976 341.955792 432.00864 341.955792 
+L 99.35136 341.955792 
+Q 94.53024 341.955792 94.53024 346.080528 
+L 94.53024 367.735392 
+Q 94.53024 371.860128 99.35136 371.860128 
+z
+" clip-path="url(#pb2d573f578)" style="fill: #f5f8fa; stroke: #174a72; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 74.44224 75.566592 
+L 94.932 75.566592 
+Q 98.14608 75.566592 98.14608 72.816768 
+L 98.14608 58.72392 
+Q 98.14608 55.974096 94.932 55.974096 
+L 74.44224 55.974096 
+Q 71.22816 55.974096 71.22816 58.72392 
+L 71.22816 72.816768 
+Q 71.22816 75.566592 74.44224 75.566592 
+z
+" clip-path="url(#pb2d573f578)" style="fill: #0068b7; stroke: #0068b7; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 74.844 79.3476 
+L 456.516 79.3476 
+" clip-path="url(#pb2d573f578)" style="fill: none; stroke: #00a86b; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 355.970067 305.099943 
+Q 386.205706 314.800544 414.312175 323.818036 
+" clip-path="url(#pb2d573f578)" style="fill: none; stroke: #00a86b; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 410.474835 320.066394 
+L 414.312175 323.818036 
+L 409.008457 324.636923 
+z
+" clip-path="url(#pb2d573f578)" style="fill: #00a86b; stroke: #00a86b; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #ffffff" x="76.8528" y="69.232855" transform="rotate(-0 76.8528 69.232855)">F10</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="102.9672" y="71.456024" transform="rotate(-0 102.9672 71.456024)">普惠三环：人人参与、人人受益</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: end; fill: #087a58" x="456.516" y="91.4368" transform="rotate(-0 456.516 91.4368)">参与聚合为园区碳账资产</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #0068b7" x="209.4336" y="171.576053" transform="rotate(-0 209.4336 171.576053)">碳普惠</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(180.7336 189.0502)">个人／团队碳账</text>
+    <text style="font-size: 8.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(176.6336 199.275856)">园区总账人人可见</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #00a86b" x="321.9264" y="171.576053" transform="rotate(-0 321.9264 171.576053)">算力普惠</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(299.995244 189.078388)">全员 AI 工具</text>
+    <text style="font-size: 8.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(289.1264 199.3002)">算力可用、门槛低</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #13a7a0" x="265.68" y="302.180505" transform="rotate(-0 265.68 302.180505)">资源普惠</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(220.58 319.66684)">充电／会议／文体／空间</text>
+    <text style="font-size: 8.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(228.78 329.859184)">规则透明、公平可及</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #174a72" x="265.68" y="360.916096" transform="rotate(-0 265.68 360.916096)">无障碍与适老化＝标配（地板）</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #087a58" transform="translate(383.3136 302.316081)">个人参与聚合</text>
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #087a58" transform="translate(382.291959 313.521081)">→ 园区碳账本</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 7.6px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #5f6f7a" x="74.844" y="388.267315" transform="rotate(-0 74.844 388.267315)">普惠不是投资收益；经营复制叙事归核管理，不进入普惠边。</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 219.07584 251.555328 
+L 312.28416 251.555328 
+Q 320.31936 251.555328 320.31936 244.680768 
+L 320.31936 226.806912 
+Q 320.31936 219.932352 312.28416 219.932352 
+L 219.07584 219.932352 
+Q 211.04064 219.932352 211.04064 226.806912 
+L 211.04064 244.680768 
+Q 211.04064 251.555328 219.07584 251.555328 
+z
+" clip-path="url(#pb2d573f578)" style="fill: #174a72; stroke: #ffffff; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 11.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="265.68" y="240.17134" transform="rotate(-0 265.68 240.17134)">人人参与 · 人人受益</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb2d573f578">
+   <rect x="64.8" y="53.568" width="401.76" height="343.728"/>
+  </clipPath>
+ </defs>
+</svg>

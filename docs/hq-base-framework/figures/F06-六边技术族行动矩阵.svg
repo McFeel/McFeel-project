@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="576pt" height="561.6pt" viewBox="0 0 576 561.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-30T05:24:22.594790</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 561.6 
+L 576 561.6 
+L 576 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 116.64 147.39192 
+L 507.24 147.39192 
+L 507.24 117.12168 
+L 116.64 117.12168 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #174a72; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 83.16 202.16664 
+L 507.24 202.16664 
+L 507.24 147.39192 
+L 83.16 147.39192 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 83.16 202.16664 
+L 116.64 202.16664 
+L 116.64 147.39192 
+L 83.16 147.39192 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #174a72; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 83.16 256.94136 
+L 507.24 256.94136 
+L 507.24 202.16664 
+L 83.16 202.16664 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 83.16 256.94136 
+L 116.64 256.94136 
+L 116.64 202.16664 
+L 83.16 202.16664 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #0068b7; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 83.16 311.71608 
+L 507.24 311.71608 
+L 507.24 256.94136 
+L 83.16 256.94136 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #e6f6ef; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 83.16 311.71608 
+L 116.64 311.71608 
+L 116.64 256.94136 
+L 83.16 256.94136 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #13a7a0; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 83.16 366.4908 
+L 507.24 366.4908 
+L 507.24 311.71608 
+L 83.16 311.71608 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 83.16 366.4908 
+L 116.64 366.4908 
+L 116.64 311.71608 
+L 83.16 311.71608 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #00a86b; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 83.16 421.26552 
+L 507.24 421.26552 
+L 507.24 366.4908 
+L 83.16 366.4908 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 83.16 421.26552 
+L 116.64 421.26552 
+L 116.64 366.4908 
+L 83.16 366.4908 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #e59b22; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 83.16 476.04024 
+L 507.24 476.04024 
+L 507.24 421.26552 
+L 83.16 421.26552 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 83.16 476.04024 
+L 116.64 476.04024 
+L 116.64 421.26552 
+L 83.16 421.26552 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #5f6f7a; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 419.7456 119.716272 
+L 500.9904 119.716272 
+Q 503.2224 119.716272 503.2224 117.554112 
+L 503.2224 101.554128 
+Q 503.2224 99.391968 500.9904 99.391968 
+L 419.7456 99.391968 
+Q 417.5136 99.391968 417.5136 101.554128 
+L 417.5136 117.554112 
+Q 417.5136 119.716272 419.7456 119.716272 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #00a86b; stroke: #00a86b; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 82.7136 95.067648 
+L 105.48 95.067648 
+Q 109.0512 95.067648 109.0512 91.608192 
+L 109.0512 73.87848 
+Q 109.0512 70.419024 105.48 70.419024 
+L 82.7136 70.419024 
+Q 79.1424 70.419024 79.1424 73.87848 
+L 79.1424 91.608192 
+Q 79.1424 95.067648 82.7136 95.067648 
+z
+" clip-path="url(#pc9614025ec)" style="fill: #0068b7; stroke: #0068b7; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 83.16 99.8244 
+L 507.24 99.8244 
+" clip-path="url(#pc9614025ec)" style="fill: none; stroke: #00a86b; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #ffffff" x="85.392" y="86.161495" transform="rotate(-0 85.392 86.161495)">F06</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="114.408" y="88.14749" transform="rotate(-0 114.408 88.14749)">六边 × 技术族：第五章行动导览</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="151.794" y="135.681019" transform="rotate(-0 151.794 135.681019)">边的定义</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="263.115" y="135.6993" transform="rotate(-0 263.115 135.6993)">硬技术族</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="376.389" y="135.708441" transform="rotate(-0 376.389 135.708441)">首批动作</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="460.368" y="135.6543" transform="rotate(-0 460.368 135.6543)">沉淀资产</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="99.9" y="178.624593" transform="rotate(-0 99.9 178.624593)">绿色</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 172.727561)">能碳算清、管住</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 183.698421)">形成可交易闭环</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 167.215061)">G1 碳账台阶　G2 核算边界</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 178.208421)">G3 绿电抵消　G4 光伏普查</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 189.17928)">G5 源网荷储　G6 水与微气候</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 172.713499)">碳账立账</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 183.68928)">光伏资源普查</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 172.68678)">碳账口径</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 183.706858)">抵消结构方法</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="99.9" y="233.364156" transform="rotate(-0 99.9 233.364156)">高效</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 227.488922)">以实测诊断</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 238.477359)">提升运行效率</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 221.989781)">E1 冷站水系统诊断　E2 AI 群控</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 232.947281)">E3 蓄冷电价　E4 行为联动</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 243.980719)">E5 余热回收　E6 楼宇分档</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 227.470641)">冷站诊断进场</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 238.478063)">蓄冷策略专题</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 227.524781)">实测基线</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 238.450641)">诊断与调控模型</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="99.9" y="288.163095" transform="rotate(-0 99.9 288.163095)">智慧</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 282.272079)">统一数字底座</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 293.233798)">连接园内园外</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 276.76872)">智慧① 一个平台两类功能</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 287.357079)">② 四级计量　③ 孪生/AIOC</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 298.72872)">④ 预测与 AI 调优　⑤ 数据主权</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 282.263642)">平台总体设计</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 293.247861)">会议室联动轻改</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 282.263642)">平台架构·数据目录</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 293.252079)">接口标准·训练模型</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="99.9" y="342.922971" transform="rotate(-0 99.9 342.922971)">普惠</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 337.046799)">人人参与</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 348.045081)">人人受益</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 331.547659)">P1 碳普惠　P2 算力普惠</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 342.52344)">P3 园区资源普惠</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 353.521721)">P4 无障碍与适老化</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 337.01094)">碳账规则设计</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 348.022581)">资源统一预约</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 337.064378)">全员参与机制</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 348.026799)">行为核算方法</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="99.9" y="397.718004" transform="rotate(-0 99.9 397.718004)">健康</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 391.826441)">环境可检测</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 402.801519)">改善可验收</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 386.331519)">H1 环境连续监测</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 397.311519)">H2 新风与净化　H3 健康照明</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 408.287301)">H4 健身休憩与心理健康</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 391.794098)">楼层环境监测</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 402.783941)">风系统同步诊断</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 391.839801)">健康环境验收规则</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 402.72066)">隐私边界</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="99.9" y="452.513036" transform="rotate(-0 99.9 452.513036)">人文</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 446.56038)">风貌延续</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(120.2112 457.56288)">场所可感</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 441.102021)">C1 针灸式更新</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 452.081318)">C2 半开放空间与微气候</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(190.5192 463.066239)">C3 电网文化科普　C4 获得感运营</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 446.578661)">公共节点试点</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(342.8532 457.594521)">真实系统动线</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 446.564599)">连续办公园区</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(417.0672 457.56288)">以人为本改造方法</text>
+   </g>
+   <g id="text_37">
+    <text style="font-weight: 700; font-size: 8.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="460.368" y="112.471154" transform="rotate(-0 460.368 112.471154)">5.3 偏重展开</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 7.6px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #5f6f7a" x="83.16" y="489.04736" transform="rotate(-0 83.16 489.04736)">技术族编号与内容均取《01-技术与案例清单》；矩阵用于导航，不替代各节技术说明。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc9614025ec">
+   <rect x="72" y="67.392" width="446.4" height="432.432"/>
+  </clipPath>
+ </defs>
+</svg>
