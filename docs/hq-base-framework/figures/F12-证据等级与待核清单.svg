@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="576pt" height="633.6pt" viewBox="0 0 576 633.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-30T05:24:23.784765</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 633.6 
+L 576 633.6 
+L 576 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 87.624 168.72768 
+L 502.776 168.72768 
+L 502.776 144.33408 
+L 87.624 144.33408 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 87.624 168.72768 
+L 118.872 168.72768 
+L 118.872 144.33408 
+L 87.624 144.33408 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #174a72; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 87.624 193.12128 
+L 502.776 193.12128 
+L 502.776 168.72768 
+L 87.624 168.72768 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 87.624 193.12128 
+L 118.872 193.12128 
+L 118.872 168.72768 
+L 87.624 168.72768 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #174a72; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 87.624 217.51488 
+L 502.776 217.51488 
+L 502.776 193.12128 
+L 87.624 193.12128 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 87.624 217.51488 
+L 118.872 217.51488 
+L 118.872 193.12128 
+L 87.624 193.12128 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #174a72; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 87.624 241.90848 
+L 502.776 241.90848 
+L 502.776 217.51488 
+L 87.624 217.51488 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 87.624 241.90848 
+L 118.872 241.90848 
+L 118.872 217.51488 
+L 87.624 217.51488 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #5f6f7a; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 87.624 266.30208 
+L 502.776 266.30208 
+L 502.776 241.90848 
+L 87.624 241.90848 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 87.624 266.30208 
+L 118.872 266.30208 
+L 118.872 241.90848 
+L 87.624 241.90848 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #5f6f7a; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 87.624 324.84672 
+L 195.56352 324.84672 
+L 195.56352 300.45312 
+L 87.624 300.45312 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #087a58; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 195.56352 324.84672 
+L 378.2304 324.84672 
+L 378.2304 300.45312 
+L 195.56352 300.45312 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #087a58; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 378.2304 324.84672 
+L 502.776 324.84672 
+L 502.776 300.45312 
+L 378.2304 300.45312 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #087a58; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 87.624 350.76492 
+L 195.56352 350.76492 
+L 195.56352 324.84672 
+L 87.624 324.84672 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 195.56352 350.76492 
+L 378.2304 350.76492 
+L 378.2304 324.84672 
+L 195.56352 324.84672 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 378.2304 350.76492 
+L 502.776 350.76492 
+L 502.776 324.84672 
+L 378.2304 324.84672 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 87.624 376.68312 
+L 195.56352 376.68312 
+L 195.56352 350.76492 
+L 87.624 350.76492 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 195.56352 376.68312 
+L 378.2304 376.68312 
+L 378.2304 350.76492 
+L 195.56352 350.76492 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 378.2304 376.68312 
+L 502.776 376.68312 
+L 502.776 350.76492 
+L 378.2304 350.76492 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 87.624 402.60132 
+L 195.56352 402.60132 
+L 195.56352 376.68312 
+L 87.624 376.68312 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 195.56352 402.60132 
+L 378.2304 402.60132 
+L 378.2304 376.68312 
+L 195.56352 376.68312 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 378.2304 402.60132 
+L 502.776 402.60132 
+L 502.776 376.68312 
+L 378.2304 376.68312 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 87.624 428.51952 
+L 195.56352 428.51952 
+L 195.56352 402.60132 
+L 87.624 402.60132 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 195.56352 428.51952 
+L 378.2304 428.51952 
+L 378.2304 402.60132 
+L 195.56352 402.60132 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 378.2304 428.51952 
+L 502.776 428.51952 
+L 502.776 402.60132 
+L 378.2304 402.60132 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 87.624 454.43772 
+L 195.56352 454.43772 
+L 195.56352 428.51952 
+L 87.624 428.51952 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 195.56352 454.43772 
+L 378.2304 454.43772 
+L 378.2304 428.51952 
+L 195.56352 428.51952 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 378.2304 454.43772 
+L 502.776 454.43772 
+L 502.776 428.51952 
+L 378.2304 428.51952 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 87.624 480.35592 
+L 195.56352 480.35592 
+L 195.56352 454.43772 
+L 87.624 454.43772 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 195.56352 480.35592 
+L 378.2304 480.35592 
+L 378.2304 454.43772 
+L 195.56352 454.43772 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 378.2304 480.35592 
+L 502.776 480.35592 
+L 502.776 454.43772 
+L 378.2304 454.43772 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_33">
+    <path d="M 87.624 506.27412 
+L 195.56352 506.27412 
+L 195.56352 480.35592 
+L 87.624 480.35592 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_34">
+    <path d="M 195.56352 506.27412 
+L 378.2304 506.27412 
+L 378.2304 480.35592 
+L 195.56352 480.35592 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_35">
+    <path d="M 378.2304 506.27412 
+L 502.776 506.27412 
+L 502.776 480.35592 
+L 378.2304 480.35592 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #ffffff; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_36">
+    <path d="M 87.624 532.19232 
+L 195.56352 532.19232 
+L 195.56352 506.27412 
+L 87.624 506.27412 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_37">
+    <path d="M 195.56352 532.19232 
+L 378.2304 532.19232 
+L 378.2304 506.27412 
+L 195.56352 506.27412 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_38">
+    <path d="M 378.2304 532.19232 
+L 502.776 532.19232 
+L 502.776 506.27412 
+L 378.2304 506.27412 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #f5f8fa; stroke: #9aaab4; stroke-width: 0.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_39">
+    <path d="M 82.7136 107.255808 
+L 105.48 107.255808 
+Q 109.0512 107.255808 109.0512 103.352832 
+L 109.0512 83.35008 
+Q 109.0512 79.447104 105.48 79.447104 
+L 82.7136 79.447104 
+Q 79.1424 79.447104 79.1424 83.35008 
+L 79.1424 103.352832 
+Q 79.1424 107.255808 82.7136 107.255808 
+z
+" clip-path="url(#p85e11ee52e)" style="fill: #0068b7; stroke: #0068b7; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 83.16 112.6224 
+L 507.24 112.6224 
+" clip-path="url(#p85e11ee52e)" style="fill: none; stroke: #00a86b; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #ffffff" x="85.392" y="96.812208" transform="rotate(-0 85.392 96.812208)">F12</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="114.408" y="98.609042" transform="rotate(-0 114.408 98.609042)">证据等级与预可研待核清单</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: end; fill: #087a58" x="507.24" y="128.343231" transform="rotate(-0 507.24 128.343231)">弱证据不升级 · 未核事项不进入指标</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #174a72" x="87.624" y="138.75664" transform="rotate(-0 87.624 138.75664)">上表｜五级证据使用规则</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="103.248" y="160.235568" transform="rotate(-0 103.248 160.235568)">A</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="125.568" y="159.892068" transform="rotate(-0 125.568 159.892068)">公开报道</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="281.808" y="159.446778" transform="rotate(-0 281.808 159.446778)">可作事实背景；注明未经本次调研核证</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="103.248" y="184.629167" transform="rotate(-0 103.248 184.629167)">B</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="125.568" y="184.24648" transform="rotate(-0 125.568 184.24648)">宣讲材料／产品资料宣称</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="281.808" y="184.064832" transform="rotate(-0 281.808 184.064832)">只作量级参照，不进入方案指标</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="103.248" y="209.01808" transform="rotate(-0 103.248 209.01808)">C</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="125.568" y="208.70608" transform="rotate(-0 125.568 208.70608)">交流纪要／会中口述估算</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="281.808" y="208.233978" transform="rotate(-0 281.808 208.233978)">只作背景与约束；数字标待核实</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="103.248" y="233.416367" transform="rotate(-0 103.248 233.416367)">D</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="125.568" y="233.073555" transform="rotate(-0 125.568 233.073555)">交流判断</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="281.808" y="232.627578" transform="rotate(-0 281.808 232.627578)">明确为本方判断；书面确认后定稿</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="103.248" y="257.809967" transform="rotate(-0 103.248 257.809967)">E</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="125.568" y="257.502217" transform="rotate(-0 125.568 257.502217)">待核实</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="281.808" y="257.25028" transform="rotate(-0 281.808 257.25028)">不进入正文结论，只进入待核清单</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #087a58" x="87.624" y="285.11824" transform="rotate(-0 87.624 285.11824)">下表｜进入预可研前必须核掉的八项</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="141.59376" y="316.136576" transform="rotate(-0 141.59376 316.136576)">事项</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="286.89696" y="316.159576" transform="rotate(-0 286.89696 316.159576)">当前口径</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 9.2px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="440.5032" y="316.186889" transform="rotate(-0 440.5032 316.186889)">核验方式</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="91.1952" y="340.880023" transform="rotate(-0 91.1952 340.880023)">园区年用电量口径</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="199.13472" y="340.576273" transform="rotate(-0 199.13472 340.576273)">约 7000 万度；机房是否计入</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="381.8016" y="340.900273" transform="rotate(-0 381.8016 340.900273)">园区平台数据核验</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="91.1952" y="366.785567" transform="rotate(-0 91.1952 366.785567)">现状光伏装机</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="199.13472" y="366.793793" transform="rotate(-0 199.13472 366.793793)">约 2 点几 MW</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="381.8016" y="366.80202" transform="rotate(-0 381.8016 366.80202)">并网资料核验</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="91.1952" y="392.732243" transform="rotate(-0 91.1952 392.732243)">标准稿件状态</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="199.13472" y="392.732876" transform="rotate(-0 199.13472 392.732876)">报批稿／征求意见稿两说</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="381.8016" y="392.748697" transform="rotate(-0 381.8016 392.748697)">向建科院书面确认</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="91.1952" y="418.61374" transform="rotate(-0 91.1952 418.61374)">中移产品用语</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="199.13472" y="418.6631" transform="rotate(-0 199.13472 418.6631)">“引导值”待确认</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="381.8016" y="418.63399" transform="rotate(-0 381.8016 418.63399)">向中移书面确认</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="91.1952" y="444.580667" transform="rotate(-0 91.1952 444.580667)">信息港运行绩效</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="199.13472" y="444.55662" transform="rotate(-0 199.13472 444.55662)">公开材料未见核证</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="381.8016" y="444.568643" transform="rotate(-0 381.8016 444.568643)">实地调研重点了解</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="91.1952" y="470.503297" transform="rotate(-0 91.1952 470.503297)">信息港 6 号地信息</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="199.13472" y="470.39382" transform="rotate(-0 199.13472 470.39382)">弱来源，核实前不引用</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="381.8016" y="470.4995" transform="rotate(-0 381.8016 470.4995)">实地环节核实</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="91.1952" y="496.380997" transform="rotate(-0 91.1952 496.380997)">广东实时电价细则</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="199.13472" y="496.396817" transform="rotate(-0 199.13472 496.396817)">进度与约 15 分钟尺度</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="381.8016" y="496.41327" transform="rotate(-0 381.8016 496.41327)">跟踪官方文件</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="91.1952" y="522.335267" transform="rotate(-0 91.1952 522.335267)">机房余热需求侧</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="199.13472" y="522.274517" transform="rotate(-0 199.13472 522.274517)">广州热需求量级未知</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 8.1px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="381.8016" y="522.30679" transform="rotate(-0 381.8016 522.30679)">园区踏勘摸底</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 7.6px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #5f6f7a" x="83.16" y="552.003716" transform="rotate(-0 83.16 552.003716)">数字口径均源自《01-技术与案例清单》；口述／宣称数字未经核证，仅作量级参照。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p85e11ee52e">
+   <rect x="72" y="76.032" width="446.4" height="487.872"/>
+  </clipPath>
+ </defs>
+</svg>

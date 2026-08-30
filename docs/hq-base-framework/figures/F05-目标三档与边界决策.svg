@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="453.6pt" viewBox="0 0 518.4 453.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-30T05:24:22.353926</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 453.6 
+L 518.4 453.6 
+L 518.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 91.31616 206.714592 
+L 186.93504 206.714592 
+Q 191.75616 206.714592 191.75616 202.523328 
+L 191.75616 150.831072 
+Q 191.75616 146.639808 186.93504 146.639808 
+L 91.31616 146.639808 
+Q 86.49504 146.639808 86.49504 150.831072 
+L 86.49504 202.523328 
+Q 86.49504 206.714592 91.31616 206.714592 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #e8f3fa; stroke: #0068b7; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 195.77376 206.714592 
+L 311.48064 206.714592 
+Q 316.30176 206.714592 316.30176 202.523328 
+L 316.30176 129.874752 
+Q 316.30176 125.683488 311.48064 125.683488 
+L 195.77376 125.683488 
+Q 190.95264 125.683488 190.95264 129.874752 
+L 190.95264 202.523328 
+Q 190.95264 206.714592 195.77376 206.714592 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #e6f6ef; stroke: #00a86b; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 320.31936 206.714592 
+L 440.04384 206.714592 
+Q 444.86496 206.714592 444.86496 202.523328 
+L 444.86496 108.918432 
+Q 444.86496 104.727168 440.04384 104.727168 
+L 320.31936 104.727168 
+Q 315.49824 104.727168 315.49824 108.918432 
+L 315.49824 202.523328 
+Q 315.49824 206.714592 320.31936 206.714592 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #fff4dd; stroke: #e59b22; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 83.28096 367.379712 
+L 448.07904 367.379712 
+Q 452.90016 367.379712 452.90016 363.188448 
+L 452.90016 234.656352 
+Q 452.90016 230.465088 448.07904 230.465088 
+L 83.28096 230.465088 
+Q 78.45984 230.465088 78.45984 234.656352 
+L 78.45984 363.188448 
+Q 78.45984 367.379712 83.28096 367.379712 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #f5f8fa; stroke: #174a72; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 219.87936 266.090832 
+L 311.48064 266.090832 
+Q 316.30176 266.090832 316.30176 261.899568 
+L 316.30176 243.388152 
+Q 316.30176 239.196888 311.48064 239.196888 
+L 219.87936 239.196888 
+Q 215.05824 239.196888 215.05824 243.388152 
+L 215.05824 261.899568 
+Q 215.05824 266.090832 219.87936 266.090832 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #174a72; stroke: #174a72; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 99.35136 349.916112 
+L 239.16384 349.916112 
+Q 243.98496 349.916112 243.98496 345.724848 
+L 243.98496 290.539872 
+Q 243.98496 286.348608 239.16384 286.348608 
+L 99.35136 286.348608 
+Q 94.53024 286.348608 94.53024 290.539872 
+L 94.53024 345.724848 
+Q 94.53024 349.916112 99.35136 349.916112 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #ffffff; stroke: #0068b7; stroke-width: 1.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 292.19616 349.916112 
+L 432.00864 349.916112 
+Q 436.82976 349.916112 436.82976 345.724848 
+L 436.82976 290.539872 
+Q 436.82976 286.348608 432.00864 286.348608 
+L 292.19616 286.348608 
+Q 287.37504 286.348608 287.37504 290.539872 
+L 287.37504 345.724848 
+Q 287.37504 349.916112 292.19616 349.916112 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #ffffff; stroke: #00a86b; stroke-width: 1.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 74.44224 76.785408 
+L 94.932 76.785408 
+Q 98.14608 76.785408 98.14608 73.991232 
+L 98.14608 59.67108 
+Q 98.14608 56.876904 94.932 56.876904 
+L 74.44224 56.876904 
+Q 71.22816 56.876904 71.22816 59.67108 
+L 71.22816 73.991232 
+Q 71.22816 76.785408 74.44224 76.785408 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #0068b7; stroke: #0068b7; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 74.844 80.6274 
+L 456.516 80.6274 
+" clip-path="url(#p9bb352f677)" style="fill: none; stroke: #00a86b; stroke-width: 2.4; stroke-linecap: square"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 253.6272 96.595125 
+Q 253.6272 109.441889 253.6272 119.717175 
+" clip-path="url(#p9bb352f677)" style="fill: none; stroke: #00a86b; stroke-width: 2.3; stroke-linecap: round"/>
+    <path d="M 256.0272 114.917175 
+L 253.6272 119.717175 
+L 251.2272 114.917175 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #00a86b; stroke: #00a86b; stroke-width: 2.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 263.7314 264.437119 
+Q 219.479138 274.473011 177.189499 284.063803 
+" clip-path="url(#p9bb352f677)" style="fill: none; stroke: #0068b7; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 182.401438 285.342742 
+L 177.189499 284.063803 
+L 181.339814 280.661615 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #0068b7; stroke: #0068b7; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 267.6286 264.437119 
+Q 311.880862 274.473011 354.170501 284.063803 
+" clip-path="url(#p9bb352f677)" style="fill: none; stroke: #00a86b; stroke-width: 1.8; stroke-linecap: round"/>
+    <path d="M 350.020186 280.661615 
+L 354.170501 284.063803 
+L 348.958562 285.342742 
+z
+" clip-path="url(#p9bb352f677)" style="fill: #00a86b; stroke: #00a86b; stroke-width: 1.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #ffffff" x="76.8528" y="70.290895" transform="rotate(-0 76.8528 70.290895)">F05</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 17px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #20303c" x="102.9672" y="72.417976" transform="rotate(-0 102.9672 72.417976)">目标三档与核算边界决策</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #0068b7" x="139.1256" y="169.855255" transform="rotate(-0 139.1256 169.855255)">低碳</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #20303c" x="139.1256" y="184.046461" transform="rotate(-0 139.1256 184.046461)">降碳率 ≥30%</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(104.0256 193.766597)">条件较宽｜代价较低</text>
+    <text style="font-size: 7.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(119.6256 203.536097)">示范度有限</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #00a86b" x="253.6272" y="154.918377" transform="rotate(-0 253.6272 154.918377)">近零碳</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #20303c" x="253.6272" y="174.82568" transform="rotate(-0 253.6272 174.82568)">降碳率 ≥60%</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(226.3272 190.413586)">节能＋绿电协同</text>
+    <text style="font-size: 7.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(230.2272 200.175773)">认证口径待核</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #e59b22" x="380.1816" y="140.052593" transform="rotate(-0 380.1816 140.052593)">碳中和／零碳</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #20303c" x="380.1816" y="165.138142" transform="rotate(-0 380.1816 165.138142)">总量 ≤0；抵消 ≤30%</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(341.1816 187.060574)">边界敏感｜抵消依赖高</text>
+    <text style="font-size: 7.8px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(356.7816 196.822762)">标准状态待核</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #087a58" x="253.6272" y="94.003038" transform="rotate(-0 253.6272 94.003038)">项目名称“绿色近零碳”</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 7.6px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: start; fill: #5f6f7a" x="74.844" y="394.575716" transform="rotate(-0 74.844 394.575716)">三级台阶据【宣讲材料】；标准稿件状态待核实。宣讲数据未经核证，仅作口径参照。</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #ffffff" x="265.68" y="256.649224" transform="rotate(-0 265.68 256.649224)">核算边界前置决策</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #0068b7" x="169.2576" y="307.958692" transform="rotate(-0 169.2576 307.958692)">数据机房入账</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(115.2576 324.65916)">园区基数大｜余热收益可计</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(119.7576 335.90916)">边界统一｜达标压力更高</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #087a58" x="362.1024" y="308.013692" transform="rotate(-0 362.1024 308.013692)">机房独立核算</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(321.6024 324.645801)">机房专题叙事更集中</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; fill: #20303c" transform="translate(308.1024 335.93166)">暂无全国统一专项判定标准</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 9.3px; font-family: 'Noto Sans CJK SC', 'Droid Sans Fallback', 'WenQuanYi Micro Hei', sans-serif; text-anchor: middle; fill: #20303c" x="265.68" y="361.847171" transform="rotate(-0 265.68 361.847171)">边界选择联动目标档位、余热利用与算力普惠</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9bb352f677">
+   <rect x="64.8" y="54.432" width="401.76" height="349.272"/>
+  </clipPath>
+ </defs>
+</svg>
