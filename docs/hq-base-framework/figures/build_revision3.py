@@ -91,6 +91,17 @@ def replace_placeholder(document: Document, code: str, filename: str, caption: s
     raise RuntimeError(f"Placeholder not found: {code}")
 
 
+def remove_placeholder_tables(document: Document):
+    removed = 0
+    for table in list(document.tables):
+        table_text = "\n".join(cell.text for row in table.rows for cell in row.cells)
+        if "【插图占位】" in table_text:
+            table._element.getparent().remove(table._element)
+            removed += 1
+    if removed != 12:
+        raise RuntimeError(f"Expected 12 placeholder tables, removed {removed}")
+
+
 def main():
     if not SOURCE.exists():
         raise FileNotFoundError(SOURCE)
@@ -101,6 +112,7 @@ def main():
     document = Document(SOURCE)
     for _, (marker, sentence) in REFERENCES.items():
         append_reference(document, marker, sentence)
+    remove_placeholder_tables(document)
     for code, (filename, caption, width_cm) in FIGURE_SPECS.items():
         replace_placeholder(document, code, filename, caption, width_cm)
 
