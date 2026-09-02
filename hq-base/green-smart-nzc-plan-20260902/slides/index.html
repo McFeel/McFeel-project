@@ -202,9 +202,13 @@
     margin-bottom: 1.4em;
   }
   .cover h1 {
-    font-size: clamp(42px, 4.4vw, 64px);
-    max-width: 15em;
+    font-size: clamp(40px, 4.1vw, 60px);
+    max-width: 16em;
     margin-bottom: 0.45em;
+  }
+  .cover h1.tight {
+    font-size: clamp(34px, 3.5vw, 50px);
+    line-height: 1.28;
   }
   .cover .sub {
     font-size: clamp(18px, 1.7vw, 24px);
@@ -671,8 +675,8 @@
       <div class="kicker">第四章 · 空间结构</div>
       <h2>既有格局不变 · 系统重组 · 节点更新</h2>
       <div class="grid-2-1">
-        <div>
-          <div class="fig-wrap" style="height:100%">
+        <div class="stack">
+          <div class="fig-wrap">
             <img src="fig-1.png" alt="园区空间结构示意" />
           </div>
           <p class="fig-caption">拓扑示意，不代表实际方位与尺度 · 能源中心为枢纽，园中园先行验证</p>
@@ -1020,7 +1024,7 @@
     <!-- 18 封底 -->
     <section class="slide cover" data-title="封底">
       <div class="brand">规划方案 · 工作稿 · 2026-09-02</div>
-      <h1>绿色智慧近零碳<br />一次规划 · 分期建设 · 成果可复制</h1>
+      <h1 class="tight">绿色智慧近零碳<br />一次规划 · 分期建设 · 成果可复制</h1>
       <p class="sub">本地打开 <code style="color:#9de0c0">slides/index.html</code> 即可投屏。<br />← → / 空格 / PgUp PgDn 翻页 · F 全屏</p>
       <div class="meta">
         <div>主笔 <span>南网能源公司</span></div>
