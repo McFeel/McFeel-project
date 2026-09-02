@@ -90,6 +90,8 @@ show("隐含油耗率 (kg/kWh)", DIESEL_T * 1000 / (DG_N * DG_KW * DG_H))
 show("财务口径 IT 电量（85%，万kWh）", TEL_IT_KW * 0.85 * HOURS / 10000)
 show("财务口径电费 (万元)", TEL_IT_KW * 0.85 * HOURS / 10000 * 0.75, "稿内约 20104 万元")
 show("能效章与财务章电量差 (万kWh)", TEL_TOTAL_WAN_KWH - TEL_IT_KW * 0.85 * HOURS / 10000)
+show("IT电量(负荷1.0)−财务IT电量(85%) (万kWh)",
+     tel_it_wan_kwh - TEL_IT_KW * 0.85 * HOURS / 10000)
 
 PFLOPS = 11483.0
 show("其他收入 11483P×3.3万/P/月×85% (万元)", PFLOPS * 3.3 * 0.85, "稿内 32210 万元")
@@ -108,6 +110,7 @@ show("现状支撑 80000 架 × 2.5kW (kW)", 80000 * STD_RACK_KW, "＝200MW，�
 show("现状支撑用地 ÷ 里水用地 (倍)", 244.3 / 46.55)
 show("11483 PFLOPS ÷ 20992 张 (TFLOPS/张)", PFLOPS / 20992 * 1000)
 show("11483 PFLOPS ÷ 17100 张 (TFLOPS/张)", PFLOPS / 17100 * 1000)
+show("两套芯片方案单卡算力之差 (TFLOPS/张)", PFLOPS / 17100 * 1000 - PFLOPS / 20992 * 1000)
 show("20992 张 ÷ 492 台 (张/台)", 20992 / 492)
 show("邦程7MW＋唯颐55MW (MW)", 7 + 55)
 show("已签约36MW 占 62MW 需求比 (%)", 36 / 62 * 100)
