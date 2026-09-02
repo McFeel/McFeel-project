@@ -89,6 +89,17 @@ show("隐含油耗率 (kg/kWh)", DIESEL_T * 1000 / (DG_N * DG_KW * DG_H))
 # 申请书财务口径
 show("财务口径 IT 电量（85%，万kWh）", TEL_IT_KW * 0.85 * HOURS / 10000)
 show("财务口径电费 (万元)", TEL_IT_KW * 0.85 * HOURS / 10000 * 0.75, "稿内约 20104 万元")
+
+# 电费口径反算：稿内电费 ÷ 电价 ÷ 85%负荷IT电量 ＝ 该电费隐含的 PUE
+tel_fin_kwh = TEL_IT_KW * 0.85 * HOURS / 10000
+show("稿内电费反算隐含 PUE", 20104.2 / 0.75 / tel_fin_kwh, "＝1.0，即辅助电量电费未计")
+show("按 85%负荷×PUE1.199 的电量 (万kWh)", tel_fin_kwh * 1.199)
+show("按 85%负荷×PUE1.199 的电费 (万元)", tel_fin_kwh * 1.199 * 0.75)
+show("电费少计额（85%负荷口径，万元）", tel_fin_kwh * 1.199 * 0.75 - 20104.2)
+show("少计额占稿载利润总额 29561 比 (%)",
+     (tel_fin_kwh * 1.199 * 0.75 - 20104.2) / 29561 * 100)
+show("按全口径年电量 37818.35 的电费 (万元)", TEL_TOTAL_WAN_KWH * 0.75)
+show("电费少计额（全口径，万元）", TEL_TOTAL_WAN_KWH * 0.75 - 20104.2)
 show("能效章与财务章电量差 (万kWh)", TEL_TOTAL_WAN_KWH - TEL_IT_KW * 0.85 * HOURS / 10000)
 show("IT电量(负荷1.0)−财务IT电量(85%) (万kWh)",
      tel_it_wan_kwh - TEL_IT_KW * 0.85 * HOURS / 10000)
@@ -148,6 +159,7 @@ show("等价值/大型阈值 24000tce 倍数", TL_PR / 24000)
 show("年总电量 × 1.229 (tce)", tl_wan_kwh * COEF_EQ, "稿载当量 256355.86")
 show("与稿载当量值之差 (tce)", tl_wan_kwh * COEF_EQ - TL_EQ, "≈0：当量值仅由电量折算")
 show("辅助电量＝总电量−IT电量 (亿kWh)", TL_TOTAL_YI - TL_IT_YI)
+show("辅助电量占年总电量比 (%)", (TL_TOTAL_YI - TL_IT_YI) / TL_TOTAL_YI * 100)
 show("一期 136MW 占整体 IT 功率比 (%)", 136 / (tl_kw / 1000) * 100)
 show("一期投资 31.52 占整体 41.81 比 (%)", 31.52 / 41.81 * 100)
 
