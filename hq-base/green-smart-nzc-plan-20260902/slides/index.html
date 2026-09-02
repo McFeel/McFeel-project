@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>南网总部基地绿色智慧近零碳园区规划</title>
+<style>
+  :root {
+    --bg: #0a1620;
+    --bg-elev: #122433;
+    --card: #163044;
+    --line: rgba(120, 180, 200, 0.22);
+    --text: #e8f1f6;
+    --muted: #8aa3b5;
+    --green: #2db87a;
+    --teal: #3db8c9;
+    --amber: #d4a84b;
+    --soft: rgba(255, 255, 255, 0.06);
+    --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #050b10;
+    color: var(--text);
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+      "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .deck {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(1200px 700px at 12% -10%, rgba(45, 184, 122, 0.12), transparent 55%),
+      radial-gradient(900px 600px at 100% 0%, rgba(61, 184, 201, 0.10), transparent 50%),
+      linear-gradient(160deg, #071018 0%, #0a1620 45%, #0d1c28 100%);
+  }
+
+  .stage {
+    width: min(100vw, calc(100vh * 16 / 9));
+    height: min(100vh, calc(100vw * 9 / 16));
+    position: relative;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    padding: 4.2% 5% 6.5%;
+    display: none;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateX(28px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+  }
+  .slide.active {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .slide.exit-left {
+    display: flex;
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+
+  .kicker {
+    font-size: clamp(13px, 1.35vw, 18px);
+    letter-spacing: 0.18em;
+    color: var(--teal);
+    text-transform: none;
+    margin-bottom: 0.7em;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: clamp(36px, 3.6vw, 54px);
+    line-height: 1.22;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.35em;
+  }
+
+  h2 {
+    font-size: clamp(32px, 3.1vw, 46px);
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 0.55em;
+  }
+
+  .lead {
+    font-size: clamp(18px, 1.7vw, 24px);
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 92%;
+  }
+
+  .lead strong, .card strong, li strong {
+    color: var(--text);
+    font-weight: 650;
+  }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2vw; flex: 1; min-height: 0; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.1vw; flex: 1; min-height: 0; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1vw; flex: 1; min-height: 0; }
+  .grid-2-1 { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.2vw; flex: 1; min-height: 0; }
+  .grid-1-1 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2vw; flex: 1; min-height: 0; }
+
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent 40%), var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.15em 1.2em 1.2em;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .card .label {
+    font-size: clamp(13px, 1.2vw, 16px);
+    color: var(--green);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.45em;
+    font-weight: 600;
+  }
+  .card .label.teal { color: var(--teal); }
+  .card .label.amber { color: var(--amber); }
+
+  .card h3 {
+    font-size: clamp(20px, 1.85vw, 26px);
+    line-height: 1.35;
+    margin-bottom: 0.45em;
+    font-weight: 650;
+  }
+
+  .card p, .card li {
+    font-size: clamp(15px, 1.35vw, 19px);
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .card ul, .bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45em;
+  }
+  .card ul li::before, .bullets li::before {
+    content: "";
+    display: inline-block;
+    width: 0.45em;
+    height: 0.45em;
+    border-radius: 50%;
+    background: var(--green);
+    margin-right: 0.55em;
+    transform: translateY(-0.08em);
+  }
+  .bullets.teal li::before { background: var(--teal); }
+  .bullets.amber li::before { background: var(--amber); }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55em;
+    margin-top: 0.9em;
+  }
+  .pill {
+    border: 1px solid var(--line);
+    background: var(--soft);
+    border-radius: 999px;
+    padding: 0.35em 0.9em;
+    font-size: clamp(13px, 1.2vw, 16px);
+    color: var(--text);
+  }
+  .pill.green { border-color: rgba(45,184,122,0.45); color: #9de0c0; }
+  .pill.teal { border-color: rgba(61,184,201,0.45); color: #9fd8e2; }
+  .pill.amber { border-color: rgba(212,168,75,0.45); color: #e6c98a; }
+
+  .cover {
+    justify-content: center;
+    padding-left: 7%;
+    padding-right: 7%;
+    background:
+      linear-gradient(115deg, rgba(10,22,32,0.92) 35%, rgba(10,22,32,0.55) 70%, rgba(10,22,32,0.25)),
+      radial-gradient(800px 500px at 80% 30%, rgba(45,184,122,0.18), transparent 60%);
+  }
+  .cover .brand {
+    font-size: clamp(14px, 1.35vw, 18px);
+    color: var(--muted);
+    letter-spacing: 0.22em;
+    margin-bottom: 1.4em;
+  }
+  .cover h1 {
+    font-size: clamp(42px, 4.4vw, 64px);
+    max-width: 15em;
+    margin-bottom: 0.45em;
+  }
+  .cover .sub {
+    font-size: clamp(18px, 1.7vw, 24px);
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 28em;
+  }
+  .cover .meta {
+    margin-top: 2.2em;
+    display: flex;
+    gap: 1.4em;
+    flex-wrap: wrap;
+    font-size: clamp(14px, 1.25vw, 17px);
+    color: var(--muted);
+  }
+  .cover .meta span { color: var(--text); }
+
+  .fig-wrap {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f4df;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    padding: 0.6em;
+  }
+  .fig-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .fig-caption {
+    margin-top: 0.55em;
+    font-size: clamp(13px, 1.2vw, 16px);
+    color: var(--muted);
+  }
+
+  .metric-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(14px, 1.3vw, 18px);
+  }
+  .metric-table th, .metric-table td {
+    text-align: left;
+    padding: 0.55em 0.65em;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .metric-table th {
+    color: var(--teal);
+    font-weight: 600;
+    font-size: 0.92em;
+  }
+  .metric-table td { color: var(--muted); }
+  .metric-table td:first-child { color: var(--text); font-weight: 550; width: 38%; }
+  .metric-table .yr { color: #b8e6cf; white-space: nowrap; }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.78em;
+    padding: 0.12em 0.45em;
+    border-radius: 4px;
+    background: rgba(45,184,122,0.18);
+    color: #9de0c0;
+    margin-left: 0.35em;
+    vertical-align: middle;
+  }
+  .tag.warn {
+    background: rgba(212,168,75,0.18);
+    color: #e6c98a;
+  }
+
+  .footer-bar {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 5.2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.2%;
+    font-size: clamp(11px, 1.05vw, 14px);
+    color: var(--muted);
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,0.35));
+    pointer-events: none;
+    z-index: 5;
+  }
+  .progress {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 3px;
+    background: rgba(255,255,255,0.06);
+    z-index: 6;
+  }
+  .progress > i {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--green), var(--teal));
+    transition: width 0.25s ease;
+  }
+
+  .hint {
+    position: absolute;
+    right: 1.6%;
+    bottom: 6.2%;
+    font-size: clamp(11px, 1.05vw, 13px);
+    color: rgba(138,163,181,0.75);
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .nav-hot {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 12%;
+    z-index: 4;
+    cursor: pointer;
+    background: transparent;
+  }
+  .nav-hot.prev { left: 0; }
+  .nav-hot.next { right: 0; }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85em;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .row-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.9vw;
+  }
+  .mini {
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.9em 1em;
+  }
+  .mini .n {
+    font-size: clamp(22px, 2.1vw, 30px);
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 0.2em;
+  }
+  .mini .t {
+    font-size: clamp(15px, 1.35vw, 18px);
+    color: var(--text);
+    margin-bottom: 0.3em;
+    font-weight: 600;
+  }
+  .mini p {
+    font-size: clamp(13px, 1.15vw, 16px);
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .two-col-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7em 1.4em;
+    font-size: clamp(15px, 1.35vw, 19px);
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .two-col-list div::before {
+    content: "·";
+    color: var(--green);
+    margin-right: 0.4em;
+    font-weight: 700;
+  }
+
+  .confirm-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65em;
+  }
+  .confirm-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.8em;
+    align-items: start;
+    font-size: clamp(16px, 1.45vw, 20px);
+    line-height: 1.45;
+    color: var(--muted);
+    padding: 0.7em 0.9em;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  .confirm-list .num {
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 50%;
+    background: rgba(45,184,122,0.2);
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .confirm-list strong { color: var(--text); }
+
+  .path-flow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7vw;
+    margin-top: 0.3em;
+  }
+  .path-flow .step {
+    position: relative;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.95em 1em;
+  }
+  .path-flow .step .n {
+    font-size: clamp(12px, 1.1vw, 14px);
+    color: var(--amber);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35em;
+  }
+  .path-flow .step h4 {
+    font-size: clamp(16px, 1.45vw, 20px);
+    margin-bottom: 0.3em;
+  }
+  .path-flow .step p {
+    font-size: clamp(13px, 1.15vw, 16px);
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  .end-note {
+    margin-top: auto;
+    padding-top: 0.8em;
+    font-size: clamp(13px, 1.2vw, 16px);
+    color: var(--muted);
+  }
+
+  @media (max-aspect-ratio: 16/10) {
+    .slide { padding: 3.5% 4% 7%; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+  <div class="stage" id="stage">
+    <!-- 1 封面 -->
+    <section class="slide cover active" data-title="封面">
+      <div class="brand">南网总部基地 · 园区规划方案</div>
+      <h1>绿色智慧近零碳园区规划</h1>
+      <p class="sub">回答四件事：改什么、改到什么水平、空间怎么布、分期怎么建。<br />近零碳是目标属性；绿色与智慧是两条主专项。</p>
+      <div class="meta">
+        <div>对象 <span>既有园区</span></div>
+        <div>规划期 <span>2027—2035</span></div>
+        <div>目标年 <span>2028 低碳 · 2030 近零碳</span></div>
+        <div>主笔 <span>南网能源公司</span></div>
+      </div>
+    </section>
+
+    <!-- 2 结论先行 -->
+    <section class="slide" data-title="结论先行">
+      <div class="kicker">结论先行</div>
+      <h2>一页说清规划主线</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="label">改什么</div>
+          <h3>底座一次到位，工程分期落地</h3>
+          <ul>
+            <li><strong>冷站与机电</strong>：诊断—群控—蓄冷接实时电价，不换主机优先</li>
+            <li><strong>数字底座</strong>：一个平台、两类功能、四级计量</li>
+            <li><strong>碳账</strong>：全园总账 + 办公区 / 机房子账</li>
+            <li><strong>生态与场所</strong>：微气候、海绵、无障碍、真实系统展项</li>
+          </ul>
+        </div>
+        <div class="stack">
+          <div class="card">
+            <div class="label teal">改到什么水平</div>
+            <ul class="bullets teal">
+              <li><strong>2028</strong>：低碳档 · 园中园试点跑通一个供冷季</li>
+              <li><strong>2030</strong>：近零碳档 · 绿色智慧近零碳园区建成</li>
+              <li>冷站能效较基期：2028 ≥10%，2030 ≥15%<span class="tag warn">待核</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="label amber">怎么布 · 怎么分期</div>
+            <ul class="bullets amber">
+              <li><strong>空间</strong>：既有格局不变 · 系统重组 · 节点更新</li>
+              <li><strong>三件先行</strong>：冷站诊断 · 碳账本 · 平台总体设计</li>
+              <li><strong>路径</strong>：园中园试点 → 全园推广 → 内园复制</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 范围期限依据 -->
+    <section class="slide" data-title="范围·期限·依据">
+      <div class="kicker">第一章</div>
+      <h2>规划范围 · 期限 · 依据</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="label">范围</div>
+          <h3>既有园区全边界</h3>
+          <ul>
+            <li>办公楼群、冷站与冰蓄冷、数据机房</li>
+            <li>供配电与既有光伏、充电设施</li>
+            <li>道路庭院绿地与信息化系统</li>
+            <li>碳账：全园总账 + 办公 / 机房子账</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label teal">期限</div>
+          <h3>基期 2027 · 三期推进</h3>
+          <ul class="bullets teal">
+            <li><strong>近期 2027—2028</strong>：基线 · 试点 · 低碳档</li>
+            <li><strong>中期 2029—2030</strong>：全园推广 · 近零碳档</li>
+            <li><strong>远期 2031—2035</strong>：深化运营 · 内园复制</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label amber">定位与原则</div>
+          <h3>验证场，不是第二曲线</h3>
+          <ul class="bullets amber">
+            <li>总部基地 = 战略资产价值体系<strong>验证场</strong></li>
+            <li>能源公司<strong>主笔牵头</strong>，战略主体是南网</li>
+            <li>不停机分区 · 先测后改 · 一次规划分期建 · 可复制</li>
+          </ul>
+        </div>
+      </div>
+      <p class="end-note">依据：国家节能降碳与近零能耗相关规范、公司既定安排与调研材料；建设方案 V3 仅作家底与卡点参考。政策文号不在投屏展开。</p>
+    </section>
+
+    <!-- 4 现状与约束 -->
+    <section class="slide" data-title="现状与约束">
+      <div class="kicker">第二章</div>
+      <h2>现状卡点 · 规划怎么应对</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="label">家底量级<span class="tag warn">待核</span></div>
+          <div class="two-col-list" style="margin-top:0.4em">
+            <div>约 5000 人持续办公</div>
+            <div>年用电约 7000 万度</div>
+            <div>空调办公约一半用电</div>
+            <div>既有光伏约 2 点几兆瓦</div>
+            <div>机电 2016 投运满十年</div>
+            <div>外立面不可大改</div>
+          </div>
+          <p style="margin-top:0.9em">尚未建立碳账本；基期以 <strong>2027 供冷季实测</strong> 为准，基线前降碳率只给台阶、不给绝对值。</p>
+        </div>
+        <div class="card">
+          <div class="label amber">六条硬约束</div>
+          <ul class="bullets amber">
+            <li><strong>不停机</strong> → 园中园、分区试点，控制回路与增量设施为主</li>
+            <li><strong>风貌限立面</strong> → 光伏上屋顶/车棚，微气候靠庭院</li>
+            <li><strong>设备未到报废</strong> → 先诊断分档，不换主机优先</li>
+            <li><strong>屋顶光伏有限</strong> → 降碳主力是需求侧节能 + 绿电交易</li>
+            <li><strong>实时电价转向</strong> → 蓄冷策略与交易接口列为近期必做</li>
+            <li><strong>机房口径未定</strong> → 先立总账加子账，再定档</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 目标 -->
+    <section class="slide" data-title="总体目标">
+      <div class="kicker">第三章 · 目标</div>
+      <h2>到 2030：绿色 · 智慧 · 近零碳园区</h2>
+      <div class="grid-3" style="flex:0 0 auto; margin-bottom:1em">
+        <div class="card">
+          <div class="label">近零碳</div>
+          <h3>目标属性</h3>
+          <p>2028 低碳档 → 2030 近零碳档。路径：需求侧节能 → 本地光伏 → 绿电交易 → 合规抵消。</p>
+        </div>
+        <div class="card">
+          <div class="label">绿色</div>
+          <h3>能与碳 · 水与生态</h3>
+          <p>冷站高效化、柔性资源接电价；海绵与微气候；室内环境连续达标，节能不以空气品质为代价。</p>
+        </div>
+        <div class="card">
+          <div class="label teal">智慧</div>
+          <h3>数字底座与运营</h3>
+          <p>一个平台、两类功能；四级计量两用；模型本地化部署，数据主权归南网。</p>
+        </div>
+      </div>
+      <div class="pill-row">
+        <span class="pill green">绿色 · 高效 → 近零碳与能源 / 生态专项</span>
+        <span class="pill teal">智慧 → 智慧运营专项</span>
+        <span class="pill amber">普惠 · 健康 · 人文 → 专项与指标，不再各自成章</span>
+      </div>
+      <p class="end-note" style="margin-top:1.1em">六要素落到专项与指标体系；产出除工程实体外，须可带走方法、数据或规则，供南网内园区复用。</p>
+    </section>
+
+    <!-- 6 指标体系 -->
+    <section class="slide" data-title="控制性主指标">
+      <div class="kicker">第三章 · 指标投屏摘录</div>
+      <h2>控制性主指标 · 目标年 2028 / 2030</h2>
+      <div class="card" style="flex:1; padding:0.7em 1em 0.9em">
+        <table class="metric-table">
+          <thead>
+            <tr>
+              <th>指标</th>
+              <th>2028</th>
+              <th>2030</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>园区碳排放降碳率</td>
+              <td class="yr">达低碳档</td>
+              <td class="yr">达近零碳档</td>
+            </tr>
+            <tr>
+              <td>碳账本覆盖率</td>
+              <td class="yr">100%</td>
+              <td class="yr">100%</td>
+            </tr>
+            <tr>
+              <td>冷站综合能效（较基期）</td>
+              <td class="yr">≥ 10%<span class="tag warn">待核</span></td>
+              <td class="yr">≥ 15%<span class="tag warn">待核</span></td>
+            </tr>
+            <tr>
+              <td>蓄冷策略与实时电价 / 需求响应</td>
+              <td class="yr">过渡期上线</td>
+              <td class="yr">稳态在线</td>
+            </tr>
+            <tr>
+              <td>四级计量 / 预约联动覆盖</td>
+              <td class="yr">计量 100% · 试点联动 100%</td>
+              <td class="yr">计量 100% · 全园联动 100%</td>
+            </tr>
+            <tr>
+              <td>平台本地化与数据主权</td>
+              <td class="yr">落实</td>
+              <td class="yr">落实</td>
+            </tr>
+            <tr>
+              <td>室内环境达标时长 · 监测覆盖</td>
+              <td class="yr">试点区达标 / 100%</td>
+              <td class="yr">全园达标 / 100%</td>
+            </tr>
+            <tr>
+              <td>算力开通 · 无障碍 · 外立面大改</td>
+              <td class="yr">全员开通 · 排查整改 · 0</td>
+              <td class="yr">全员开通 · 100% · 0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="end-note">全表 27 项（控制性 + 引导性）；基期一律待 2027 实测。节能与健康互锁：冷站能效与室内 CO₂ 等达标须同时满足。</p>
+    </section>
+
+    <!-- 7 总体布局 -->
+    <section class="slide" data-title="总体布局">
+      <div class="kicker">第四章 · 空间结构</div>
+      <h2>既有格局不变 · 系统重组 · 节点更新</h2>
+      <div class="grid-2-1">
+        <div>
+          <div class="fig-wrap" style="height:100%">
+            <img src="fig-1.png" alt="园区空间结构示意" />
+          </div>
+          <p class="fig-caption">拓扑示意，不代表实际方位与尺度 · 能源中心为枢纽，园中园先行验证</p>
+        </div>
+        <div class="stack">
+          <div class="card">
+            <div class="label">五区 + 试点</div>
+            <ul>
+              <li>办公楼群 · 数据机房 · 能源中心</li>
+              <li>公共空间与庭院 · 出入口与停车</li>
+              <li>园中园试点（1 号楼后空地等<span class="tag warn">待核</span>）</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="label teal">三套落位</div>
+            <ul class="bullets teal">
+              <li><strong>能源</strong>：源—网—荷—储—市场</li>
+              <li><strong>碳</strong>：总账 · 两子账 · 三级普惠账</li>
+              <li><strong>智慧</strong>：一平台 · 两类功能 · 四级计量 · 运营中心</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 近零碳与能源 -->
+    <section class="slide" data-title="近零碳与能源">
+      <div class="kicker">第五章 · 专项一</div>
+      <h2>近零碳与能源 · 绿色 / 高效主路径</h2>
+      <div class="path-flow">
+        <div class="step">
+          <div class="n">第一步</div>
+          <h4>需求侧节能</h4>
+          <p>冷站群控、末端联动、机电调优</p>
+        </div>
+        <div class="step">
+          <div class="n">第二步</div>
+          <h4>本地光伏</h4>
+          <p>屋顶 / 露台 / 车棚应装尽装；立面不布置</p>
+        </div>
+        <div class="step">
+          <div class="n">第三步</div>
+          <h4>绿电交易</h4>
+          <p>按近零碳档缺口采购，来源可溯源</p>
+        </div>
+        <div class="step">
+          <div class="n">第四步</div>
+          <h4>合规抵消</h4>
+          <p>控制在标准上限内<span class="tag warn">待核</span></p>
+        </div>
+      </div>
+      <div class="grid-3" style="margin-top:1em; flex:1">
+        <div class="card">
+          <div class="label">冷站主战场</div>
+          <p>诊断—分档—改造—调优；不换主机条件下节能潜力约 10%—20%<span class="tag warn">待核</span>。</p>
+        </div>
+        <div class="card">
+          <div class="label amber">蓄冷接电价</div>
+          <p>过渡期 + 稳态期两套策略；约 15 分钟级实时电价接口<span class="tag warn">待核</span>。</p>
+        </div>
+        <div class="card">
+          <div class="label teal">机房与柔性资源</div>
+          <p>机房子账、余热摸底；蓄冷 / 光伏 / 充电 / 算力负荷进柔性资源池。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 绿色生态 -->
+    <section class="slide" data-title="绿色生态">
+      <div class="kicker">第五章 · 专项二</div>
+      <h2>绿色生态 · 水、微气候、半开放空间</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="label">水循环与海绵</div>
+          <h3>透水 · 雨水 · 中水</h3>
+          <ul>
+            <li>道路广场透水铺装</li>
+            <li>雨水回用于绿化水景</li>
+            <li>中水回用范围研究</li>
+            <li>试点场地先行</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label">植被与微气候</div>
+          <h3>乔木 · 廊道 · 遮阳</h3>
+          <ul>
+            <li>增补乔木与垂直绿化</li>
+            <li>组织通风廊道</li>
+            <li>室外环境监测入平台</li>
+            <li>以实测验证改善效果</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label amber">半开放空间</div>
+          <h3>架空层 · 连廊 · 庭院</h3>
+          <ul class="bullets amber">
+            <li>遮阳通风的休憩健身场所</li>
+            <li>1 号楼后空地作首个试点<span class="tag warn">待核</span></li>
+            <li>不改变建筑外立面</li>
+            <li>为健康、人文提供空间界面</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 智慧运营 -->
+    <section class="slide" data-title="智慧运营">
+      <div class="kicker">第五章 · 专项三</div>
+      <h2>智慧运营 · 一个平台、两类功能</h2>
+      <div class="fig-wrap" style="flex:0 0 42%">
+        <img src="fig-2.png" alt="平台架构示意" />
+      </div>
+      <div class="grid-3" style="margin-top:0.9em; flex:1">
+        <div class="card">
+          <div class="label teal">园内侧</div>
+          <p>行为联动 · 设备工单 · 资源预约与算力门户 · 碳普惠三级账</p>
+        </div>
+        <div class="card">
+          <div class="label">核心底座</div>
+          <p>四级计量与能碳数据 · 数字孪生运营中心 · 负荷预测与调优模型 · <strong>本地化 · 数据主权归南网</strong></p>
+        </div>
+        <div class="card">
+          <div class="label amber">园外侧</div>
+          <p>实时电价与需求响应 · 绿电与碳核算 · 南网内其他园区复用接口</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 普惠 -->
+    <section class="slide" data-title="普惠">
+      <div class="kicker">第五章 · 专项点到</div>
+      <h2>普惠 = 人人参与 · 人人受益</h2>
+      <p class="lead" style="margin-bottom:1em">不是投资收益，不是产品复制对外服务包。无障碍为标配。</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="label">碳普惠</div>
+          <h3>个人—团队—园区三级账</h3>
+          <ul>
+            <li>通勤、用能、会议、无纸化自动记账</li>
+            <li>园区总账人人可见</li>
+            <li>对接广东 / 广州碳普惠方法学<span class="tag warn">待核</span></li>
+            <li>积分兑换园区文体与服务</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label teal">算力普惠</div>
+          <h3>全员开通 · 用量透明</h3>
+          <ul class="bullets teal">
+            <li>办公助手、知识库、会议纪要等</li>
+            <li>申请门槛低</li>
+            <li>与算电协同共用算力底座</li>
+            <li>控制性：全员开通（2028 / 2030）</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label amber">园区资源普惠</div>
+          <h3>公平可及 · 规则公开</h3>
+          <ul class="bullets amber">
+            <li>充电、会议、文体、餐饮、共享空间</li>
+            <li>员工 / 外包 / 访客统一预约</li>
+            <li>部分公共空间双碳科普开放<span class="tag warn">待核</span></li>
+            <li>全域无障碍排查整改</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 健康 + 人文 -->
+    <section class="slide" data-title="健康与人文">
+      <div class="kicker">第五章 · 专项点到</div>
+      <h2>健康可检可验 · 人文风貌延续</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="label">健康</div>
+          <h3>对象是可验收的环境与服务</h3>
+          <ul>
+            <li><strong>楼层监测公示</strong>：CO₂、PM2.5、温湿度等接入平台</li>
+            <li><strong>新风与净化</strong>：与冷站诊断同步；节能与健康互锁</li>
+            <li><strong>节律照明与工位微环境</strong>：与末端联动同步实施</li>
+            <li><strong>健身休憩与心理健康</strong>：边角与半开放空间承载</li>
+            <li>健康数据只用于改善与验收，不用于个人考核</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label amber">人文</div>
+          <h3>场所品质 · 真实系统展示</h3>
+          <ul class="bullets amber">
+            <li><strong>针灸式更新</strong>：入口、连廊、庭院、灰空间；外立面大改 = 0</li>
+            <li><strong>真实系统展项</strong>：运营中心、冷站、碳账、柔性调控实况</li>
+            <li>不建独立展馆、不做大屏秀</li>
+            <li>节事与碳普惠、资源预约打通，形成日常获得感</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 项目库四包 -->
+    <section class="slide" data-title="重点项目库">
+      <div class="kicker">第六章 · 四包 25 项</div>
+      <h2>重点项目库 · 投屏看包不看行</h2>
+      <div class="grid-4">
+        <div class="card">
+          <div class="label">A · 近零碳与能源</div>
+          <h3>8 项</h3>
+          <p>冷站诊断与群控 · 蓄冷接电价 · 光伏 · 柔性资源 · 机房余热 · 碳账 · 绿电抵消</p>
+          <div class="pill-row"><span class="pill green">近期 7</span><span class="pill">中期 1</span></div>
+        </div>
+        <div class="card">
+          <div class="label">B · 绿色生态</div>
+          <h3>3 项</h3>
+          <p>庭院微气候试点 · 海绵与雨水中水 · 绿量与步行系统串联</p>
+          <div class="pill-row"><span class="pill green">近期 2</span><span class="pill">中期 1</span></div>
+        </div>
+        <div class="card">
+          <div class="label teal">C · 智慧运营</div>
+          <h3>5 项</h3>
+          <p>平台总体设计 · 四级计量 · 预约联动 · 数字孪生运营中心 · 负荷预测模型</p>
+          <div class="pill-row"><span class="pill teal">近期 4</span><span class="pill">中期 1</span></div>
+        </div>
+        <div class="card">
+          <div class="label amber">D · 普惠健康人文</div>
+          <h3>9 项</h3>
+          <p>碳普惠 · 算力门户 · 统一预约 · 无障碍 · 环境监测 · 新风照明 · 展项动线等</p>
+          <div class="pill-row"><span class="pill amber">近期 7</span><span class="pill">中期 2</span></div>
+        </div>
+      </div>
+      <p class="end-note">投资额不在本规划列；规模与资金在预可研与各项目任务书确定。近期标注「先行」的三项最先启动。</p>
+    </section>
+
+    <!-- 14 三件先行 -->
+    <section class="slide" data-title="三件先行">
+      <div class="kicker">第七章 · 最先启动</div>
+      <h2>三件先行 · 互为输入</h2>
+      <div class="row-items" style="grid-template-columns:repeat(3,1fr); flex:1">
+        <div class="card">
+          <div class="label">A1</div>
+          <h3>冷站与水系统深度诊断</h3>
+          <ul>
+            <li>覆盖 2027 完整供冷季</li>
+            <li>分项基线 · 设备分档 · 楼宇改造顺序</li>
+            <li>输出指标 6、7 基期值，支撑 A2</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label">A7</div>
+          <h3>园区碳账本与核算体系</h3>
+          <ul>
+            <li>总账 + 两子账 · 规则书面化</li>
+            <li>供冷季后形成第一个年度账</li>
+            <li>支撑指标 1—3 与 A8 抵消结构</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label teal">C1</div>
+          <h3>平台总体设计与数据主权</h3>
+          <ul class="bullets teal">
+            <li>预可研批准后半年内完成</li>
+            <li>接口清单 · 计量布置 · 安全分区</li>
+            <li>避免分头建设后的二次集成</li>
+          </ul>
+        </div>
+      </div>
+      <p class="end-note">预可行性方案批准后即行组织。园中园试点候选：1 号楼后空地及邻近楼宇<span class="tag warn">待核</span>。</p>
+    </section>
+
+    <!-- 15 分期时序 -->
+    <section class="slide" data-title="分期时序">
+      <div class="kicker">第七章 · 分期</div>
+      <h2>近期试点 · 中期建成 · 远期复制</h2>
+      <div class="fig-wrap" style="flex:0 0 48%">
+        <img src="fig-3.png" alt="分期建设时序示意" />
+      </div>
+      <div class="grid-3" style="margin-top:0.85em; flex:1">
+        <div class="card">
+          <div class="label">近期 2027—2028</div>
+          <p>三件先行 · 园中园 · 计量与联动试点 · 碳普惠 / 算力 / 无障碍上线 → <strong>低碳档</strong></p>
+        </div>
+        <div class="card">
+          <div class="label teal">中期 2029—2030</div>
+          <p>全园推广 · 光伏分批 · 柔性接入 · 绿电抵消 · 运营中心与展项 → <strong>近零碳档</strong></p>
+        </div>
+        <div class="card">
+          <div class="label amber">远期 2031—2035</div>
+          <p>模型迭代 · 储能 / V2G / 直流比选 · 内园复制 · 研究碳中和路径</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16 近期半年节奏 -->
+    <section class="slide" data-title="近期半年节奏">
+      <div class="kicker">第七章 · 逐半年</div>
+      <h2>近期建设节奏 · 园中园验收口径</h2>
+      <div class="grid-2" style="flex:1">
+        <div class="card">
+          <div class="label">逐半年要点</div>
+          <ul>
+            <li><strong>2026 Q4</strong>：预可研 · 资料核验 · 三件先行任务书</li>
+            <li><strong>2027 上</strong>：A1 进场 · A7 立账 · C1 设计 · 光伏普查 · 无障碍排查</li>
+            <li><strong>2027 下</strong>：试点区计量 / 联动 / 监测 / 微气候 · 碳普惠与算力门户</li>
+            <li><strong>2028 上</strong>：基线报告 · 群控试点 · 首批光伏 · 柔性清单</li>
+            <li><strong>2028 下</strong>：试点供冷季验收 · 年度碳账 · 低碳档校核</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label amber">园中园试点</div>
+          <h3>可停机 · 可计量 · 可复制 · 可验证</h3>
+          <ul class="bullets amber">
+            <li>集中实施：C2、C3、D5、D6、A2、B1</li>
+            <li>时段：2027 下半年 — 2028 供冷季</li>
+            <li>验收：完整供冷季实测数据</li>
+            <li><strong>节能与健康指标同时达标</strong></li>
+            <li>做法直接输入中期全园推广</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17 实施运营 + 确认事项 -->
+    <section class="slide" data-title="实施与确认">
+      <div class="kicker">第八章 · 六边小组会</div>
+      <h2>实施要点 · 今日拟确认</h2>
+      <div class="grid-2-1">
+        <div class="card">
+          <div class="label">实施与运营</div>
+          <ul>
+            <li>实施主体：<strong>南网总部</strong>；能源公司主笔与实施牵头</li>
+            <li>联合工作组：总部相关部门 + 能源公司 + 园区运维</li>
+            <li>智能运营中心设能碳运营岗；规程按企业技术标准固化</li>
+            <li>每年碳账公示；每供冷季评估冷站与试点</li>
+            <li>资金：规划不列投资额，按程序衔接分阶段预算</li>
+            <li>中期起选一个南网内园区开始复用方法与平台</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="confirm-list">
+            <li><span class="num">1</span><span>是否确认<strong>绿色 / 智慧 / 近零碳</strong>三条主线与六要素落专项的结构？</span></li>
+            <li><span class="num">2</span><span>是否锁定<strong>三件先行</strong>（A1 · A7 · C1）及园中园试点路径？</span></li>
+            <li><span class="num">3</span><span>控制性主指标台阶与「节能—健康互锁」是否作为验收底线？</span></li>
+            <li><span class="num">4</span><span>机房进出账、实时电价细则、零碳标准台阶等【待核】项，是否按预可研前核销？</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 18 封底 -->
+    <section class="slide cover" data-title="封底">
+      <div class="brand">规划方案 · 工作稿 · 2026-09-02</div>
+      <h1>绿色智慧近零碳<br />一次规划 · 分期建设 · 成果可复制</h1>
+      <p class="sub">本地打开 <code style="color:#9de0c0">slides/index.html</code> 即可投屏。<br />← → / 空格 / PgUp PgDn 翻页 · F 全屏</p>
+      <div class="meta">
+        <div>主笔 <span>南网能源公司</span></div>
+        <div>对象 <span>南网总部基地既有园区</span></div>
+        <div>底稿 <span>规划方案 2026-09-02</span></div>
+      </div>
+    </section>
+
+    <div class="nav-hot prev" id="hotPrev" title="上一页"></div>
+    <div class="nav-hot next" id="hotNext" title="下一页"></div>
+    <div class="footer-bar">
+      <span>南网总部基地绿色智慧近零碳园区规划</span>
+      <span id="pageLabel">1 / 1</span>
+    </div>
+    <div class="progress"><i id="progressBar"></i></div>
+    <div class="hint">← → 翻页 · F 全屏</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  const pageLabel = document.getElementById("pageLabel");
+  const progressBar = document.getElementById("progressBar");
+  const stage = document.getElementById("stage");
+  let index = -1;
+  let touching = false;
+  let touchX = 0;
+  let syncingHash = false;
+
+  function show(i) {
+    const nextIndex = Math.max(0, Math.min(slides.length - 1, i));
+    if (nextIndex === index) return;
+    index = nextIndex;
+    slides.forEach((s, n) => {
+      s.classList.toggle("active", n === index);
+    });
+    pageLabel.textContent = (index + 1) + " / " + slides.length;
+    progressBar.style.width = ((index + 1) / slides.length * 100) + "%";
+    document.title = "南网近零碳园区规划 · " + (slides[index].dataset.title || (index + 1));
+    const desired = "#" + (index + 1);
+    if (location.hash !== desired) {
+      syncingHash = true;
+      history.replaceState(null, "", desired);
+      syncingHash = false;
+    }
+  }
+
+  function next() { show(index + 1); }
+  function prev() { show(index - 1); }
+
+  function toggleFullscreen() {
+    const el = document.documentElement;
+    if (!document.fullscreenElement) {
+      const req = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+      if (req) req.call(el);
+    } else {
+      const exit = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+      if (exit) exit.call(document);
+    }
+  }
+
+  document.addEventListener("keydown", (e) => {
+    const k = e.key;
+    if (k === "ArrowRight" || k === "PageDown" || k === " " || k === "Spacebar") {
+      e.preventDefault();
+      next();
+    } else if (k === "ArrowLeft" || k === "PageUp") {
+      e.preventDefault();
+      prev();
+    } else if (k === "Home") {
+      e.preventDefault();
+      show(0);
+    } else if (k === "End") {
+      e.preventDefault();
+      show(slides.length - 1);
+    } else if (k === "f" || k === "F") {
+      e.preventDefault();
+      toggleFullscreen();
+    }
+  });
+
+  document.getElementById("hotPrev").addEventListener("click", prev);
+  document.getElementById("hotNext").addEventListener("click", next);
+
+  stage.addEventListener("touchstart", (e) => {
+    if (!e.changedTouches.length) return;
+    touching = true;
+    touchX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  stage.addEventListener("touchend", (e) => {
+    if (!touching || !e.changedTouches.length) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    touching = false;
+    if (Math.abs(dx) < 40) return;
+    if (dx < 0) next();
+    else prev();
+  }, { passive: true });
+
+  window.addEventListener("hashchange", () => {
+    if (syncingHash) return;
+    const h = parseInt((location.hash || "").replace("#", ""), 10);
+    if (Number.isFinite(h) && h > 0) show(h - 1);
+  });
+
+  const hash = parseInt((location.hash || "").replace("#", ""), 10);
+  show(Number.isFinite(hash) && hash > 0 ? hash - 1 : 0);
+})();
+</script>
+</body>
+</html>
