@@ -72,21 +72,28 @@ open "hq-base/leader-deck-20260906-guizang/leader-deck-20260906_by小七.html"
 
 **换图只要覆盖同名文件，HTML 一个字都不用改。**
 
-| 页 | 逻辑图内容 | 文件名 |
+| 页 | 逻辑图内容 | 文件名（Imagine 交付名） |
 |---|---|---|
-| 02 | 战略三栏递进：国家 → 公司 → 园区 | `images/logic/p02-strategic-alignment-chain.png` |
+| 02 | 战略三栏递进：国家 → 公司 → 园区 | `images/logic/p02-strategic-chain.png` |
 | 08 | 三主线 × 六属性关系图（分叉连线） | `images/logic/p08-six-dimension-map.png` |
 | 09 | 调研 → 方案映射（三路汇入一揽子） | `images/logic/p09-research-to-scheme.png` |
-| 12 | 三端协同（中心端 / 管理端 / 员工端 + 联动回路） | `images/logic/p12-mpark-three-ends.png` |
+| 12 | 三端协同（中心端 / 管理端 / 员工端 + 联动回路） | `images/logic/p12-three-ends.png` |
 | 13 | 数字底座分层（四层 + 南网增量三件） | `images/logic/p13-digital-base.png` |
-| 14 | 诊断—监测—控制闭环（四步 + 回到诊断的闭环弧） | `images/logic/p14-green-smart-building.png` |
+| 14 | 诊断—监测—控制闭环（四步 + 回到诊断的闭环弧） | `images/logic/p14-building-loop.png` |
 | 18 | 六属性互证闭环（六边形 + 两两互连） | `images/logic/p18-six-proofs.png` |
 | 19 | 指标树（目标 → 五类指标 → 条目） | `images/logic/p19-indicator-tree.png` |
 | 21 | 四步推进阶段图（三道过关闸口） | `images/logic/p21-four-steps.png` |
 
-**命名规则**：`p{两位页码}-{slide-id}.png`。为防写法不一致，每个图位还挂了一个备用文件名（例如 `p02-…` 取不到会再试 `p2-…`），两个都取不到才回落 SVG。
+**图文件不入库**：云端 VM 读不到小七 Mac 上的交付夹，`images/logic/` 在本 PR 里是空的。落 Mac 时一条命令拷进来即可：
 
-**导出建议**：宽 ≥ 2400 px，横向长条比例（约 3:1 ～ 21:9）最贴合图区；透明底或 `#fafaf8` 纸白底；图内不要画页眉页脚、页码、标题、边框、署名。
+```bash
+cp /workspace/content/nanwang-hq-base/assets/logic/*.png \
+   hq-base/leader-deck-20260906-guizang/images/logic/
+```
+
+**写错名也能挂上**：每个图位除主名外还挂了一条候选链（例如 14 页主名 `p14-building-loop.png`，取不到会依次再试 `p14-green-smart-building.png`、`p14-diagnose-monitor-control.png`），全部取不到才回落 SVG。完整候选表见 [`LOGIC-IMAGE-MAP-20260906.md`](LOGIC-IMAGE-MAP-20260906.md)。
+
+**导出建议**：宽 ≥ 2400 px，甜点比例约 **3:1**（图区实测 2.92:1 ～ 3.72:1，`object-fit:contain` 不裁切，比例不一致只留边）；**透明底最稳**——14 页是暗底页，白底 PNG 挂上去会出现一块白板。图内不要画页眉页脚、页码、标题、边框、署名，也不要出现新的数字或新口径。
 
 ---
 

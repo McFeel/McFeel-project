@@ -1467,7 +1467,7 @@
 
 <!-- ============================================================
      02 · strategic-alignment-chain · S18 Why Now · 战略三栏递进（国家 → 公司 → 园区）
-     逻辑图位 images/logic/p02-strategic-alignment-chain.png
+     逻辑图位 images/logic/p02-strategic-chain.png
      ============================================================ -->
 <section class="slide" data-layout="S18" data-animate="why-now" data-slide-id="strategic-alignment-chain">
   <div class="canvas-card">
@@ -1486,7 +1486,7 @@
 
       <div class="dk-logic">
         <div class="frame-img fit-contain photo-slot logic-img">
-          <img src="images/logic/p02-strategic-alignment-chain.png" data-alt-src="images/logic/p2-strategic-alignment-chain.png" data-image-slot="s18-logic-figure" alt="战略递进关系图：国家全面绿色转型、公司生态强企、园区落成可建设可运营可验证的能力">
+          <img src="images/logic/p02-strategic-chain.png" data-alt-src="images/logic/p02-strategic-alignment-chain.png,images/logic/p2-strategic-chain.png,images/logic/p2-strategic-alignment-chain.png" data-image-slot="s18-logic-figure" alt="战略递进关系图：国家全面绿色转型、公司生态强企、园区落成可建设可运营可验证的能力">
           <span class="ph" aria-hidden="true"></span>
         </div>
 
@@ -2095,7 +2095,7 @@
 
 <!-- ============================================================
      12 · mpark-three-ends · S05 Three Layers · 三端协同
-     逻辑图位 images/logic/p12-mpark-three-ends.png
+     逻辑图位 images/logic/p12-three-ends.png
      ============================================================ -->
 <section class="slide grey" data-layout="S05" data-animate="stack-build" data-slide-id="mpark-three-ends">
   <div class="canvas-card">
@@ -2114,7 +2114,7 @@
 
       <div class="dk-logic">
         <div class="frame-img fit-contain photo-slot logic-img">
-          <img src="images/logic/p12-mpark-three-ends.png" data-alt-src="images/logic/p12-three-ends.png" data-image-slot="s05-logic-figure" alt="三端协同关系图：中心端、管理端、员工端通过一次预约联动末端、一套数据同时用于运营和核算">
+          <img src="images/logic/p12-three-ends.png" data-alt-src="images/logic/p12-mpark-three-ends.png" data-image-slot="s05-logic-figure" alt="三端协同关系图：中心端、管理端、员工端通过一次预约联动末端、一套数据同时用于运营和核算">
           <span class="ph" aria-hidden="true"></span>
         </div>
 
@@ -2239,7 +2239,7 @@
 
 <!-- ============================================================
      14 · green-smart-building · S11 Horizontal Timeline · 诊断—监测—控制闭环
-     逻辑图位 images/logic/p14-green-smart-building.png
+     逻辑图位 images/logic/p14-building-loop.png
      ============================================================ -->
 <section class="slide dark" data-layout="S11" data-animate="timeline-walk" data-slide-id="green-smart-building">
   <div class="canvas-card">
@@ -2258,7 +2258,7 @@
 
       <div class="dk-logic">
         <div class="frame-img fit-contain photo-slot logic-img">
-          <img src="images/logic/p14-green-smart-building.png" data-alt-src="images/logic/p14-diagnose-monitor-control.png" data-image-slot="s11-logic-figure" alt="绿智楼宇诊断—监测—控制闭环图：诊断起点、分区改造、四级监测、控制闭环四步首尾相连">
+          <img src="images/logic/p14-building-loop.png" data-alt-src="images/logic/p14-green-smart-building.png,images/logic/p14-diagnose-monitor-control.png" data-image-slot="s11-logic-figure" alt="绿智楼宇诊断—监测—控制闭环图：诊断起点、分区改造、四级监测、控制闭环四步首尾相连">
           <span class="ph" aria-hidden="true"></span>
         </div>
 
@@ -4667,17 +4667,22 @@ if(motion){
    2) .logic-img         逻辑图位（images/logic/ 下）。图在就用 PNG 覆盖整块图区；
                          图不在就回落到页面内联的瑞士风 SVG 逻辑图。
 
-   两者都支持 data-alt-src：主文件名取不到时再试一次备用文件名（例如 p02- / p2- 两种写法），
-   两次都取不到才判定为缺图。 */
+   两者都支持 data-alt-src（逗号分隔的候选清单）：主文件名取不到时按顺序逐个再试，
+   全部取不到才判定为缺图。这样 Imagine 交付名、历史命名、少一位页码等写法都能挂上。 */
 (function(){
   'use strict';
 
   function nextSrc(img){
-    var alt = img.getAttribute('data-alt-src');
-    if(alt && !img.dataset.triedAlt && alt !== img.getAttribute('src')){
-      img.dataset.triedAlt = '1';
-      img.src = alt;
-      return true;
+    var list = (img.getAttribute('data-alt-src') || '').split(',');
+    var i = parseInt(img.getAttribute('data-alt-idx') || '0', 10);
+    while(i < list.length){
+      var cand = list[i].replace(/^\s+|\s+$/g, '');
+      i += 1;
+      img.setAttribute('data-alt-idx', String(i));
+      if(cand && cand !== img.getAttribute('src')){
+        img.src = cand;
+        return true;
+      }
     }
     return false;
   }
@@ -4696,9 +4701,11 @@ if(motion){
   /* ---- 逻辑图位 ---- */
   Array.prototype.forEach.call(document.querySelectorAll('.logic-img > img'), function(img){
     var box = img.parentNode;
-    function ok(){ if(img.naturalWidth > 0) box.classList.add('is-ok'); }
+    function ok(){ if(img.naturalWidth > 0) box.classList.add('is-ok'); else nextSrc(img); }
     img.addEventListener('load', ok);
     img.addEventListener('error', function(){ nextSrc(img); });
+    /* 本脚本在 body 末尾执行，主文件名很可能已经先失败过一轮，
+       此时 error 事件早已错过，必须在这里补跑一次候选链，否则回落名永远挂不上 */
     if(img.complete) ok();
   });
 })();

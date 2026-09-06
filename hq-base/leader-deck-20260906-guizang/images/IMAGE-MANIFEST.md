@@ -13,26 +13,36 @@
 
 ## 一、逻辑图位 · `logic/`（9 张）
 
-命名规则 `p{两位页码}-{slide-id}.png`。每个图位另挂一个备用文件名，主名取不到会再试一次，两个都取不到才回落到内联 SVG。
+主名取不到时会按候选链逐个再试，全部取不到才回落到页面内联的瑞士风 SVG 逻辑图（也能直接投屏，不会开天窗）。
 
-| 主文件名 | 备用文件名 | 落在哪一页 | 图应该说清什么 |
-|---|---|---|---|
-| `logic/p02-strategic-alignment-chain.png` | `logic/p2-strategic-alignment-chain.png` | 02 战略对齐 | 国家 → 公司 → 园区 三栏递进，落点在园区能力 |
-| `logic/p08-six-dimension-map.png` | `logic/p8-six-dimension-map.png` | 08 三主线六属性 | 绿色主线辖绿色+高效，智慧主线辖智慧，人文主线辖普惠+健康+人文 |
-| `logic/p09-research-to-scheme.png` | `logic/p9-research-to-scheme.png` | 09 一揽子方案 | 三路调研来源 → 各自吸收什么 → 进入方案哪一块 |
-| `logic/p12-mpark-three-ends.png` | `logic/p12-three-ends.png` | 12 三端协同 | 中心端 / 管理端 / 员工端 + 一次预约联动末端的回路 |
-| `logic/p13-digital-base.png` | `logic/p13-unified-digital-base.png` | 13 数字底座 | 统一接入 / 数据 / 管理 / 联动 四层 + 南网增量三件 |
-| `logic/p14-green-smart-building.png` | `logic/p14-diagnose-monitor-control.png` | 14 绿智楼宇 | 诊断起点 → 分区改造 → 四级监测 → 控制闭环，末端回到诊断 |
-| `logic/p18-six-proofs.png` | `logic/p18-six-proofs-clean.png` | 18 六属性互证 | 六项属性两两互连的闭环（**已换干净版：箭头无 IKB 残色、无拉丁残字**） |
-| `logic/p19-indicator-tree.png` | `logic/p19-indicators.png` | 19 指标结构 | 目标 → 绿色/高效/智慧/人文/协同 五类 → 各自条目 |
-| `logic/p21-four-steps.png` | `logic/p21-rollout.png` | 21 四步推进 | 四步阶段轴 + 三道「数据合格才进下一步」过关闸口 |
+图文件不入库。落 Mac 时一条命令拷进来：
+
+```bash
+cp /workspace/content/nanwang-hq-base/assets/logic/*.png \
+   hq-base/leader-deck-20260906-guizang/images/logic/
+```
+
+完整对照表（含每个图位的候选文件名链、图区实测尺寸、底色要求）见仓库里的
+[`../LOGIC-IMAGE-MAP-20260906.md`](../LOGIC-IMAGE-MAP-20260906.md)。这里只列主文件名：
+
+| 主文件名（Imagine 交付名） | 落在哪一页 | 图应该说清什么 |
+|---|---|---|
+| `logic/p02-strategic-chain.png` | 02 战略对齐 | 国家 → 公司 → 园区 三栏递进，落点在园区能力 |
+| `logic/p08-six-dimension-map.png` | 08 三主线六属性 | 绿色主线辖绿色+高效，智慧主线辖智慧，人文主线辖普惠+健康+人文 |
+| `logic/p09-research-to-scheme.png` | 09 一揽子方案 | 三路调研来源 → 各自吸收什么 → 进入方案哪一块 |
+| `logic/p12-three-ends.png` | 12 三端协同 | 中心端 / 管理端 / 员工端 + 一次预约联动末端的回路 |
+| `logic/p13-digital-base.png` | 13 数字底座 | 统一接入 / 数据 / 管理 / 联动 四层 + 南网增量三件 |
+| `logic/p14-building-loop.png` | 14 绿智楼宇 | 诊断起点 → 分区改造 → 四级监测 → 控制闭环，末端回到诊断 |
+| `logic/p18-six-proofs.png` | 18 六属性互证 | 六项属性两两互连的闭环。当前版箭头旁若还带「IKB」字样，先挂不影响放映，干净版出来后**覆盖同名文件**即可 |
+| `logic/p19-indicator-tree.png` | 19 指标结构 | 目标 → 绿色/高效/智慧/人文/协同 五类 → 各自条目 |
+| `logic/p21-four-steps.png` | 21 四步推进 | 四步阶段轴 + 三道「数据合格才进下一步」过关闸口 |
 
 **导出要求**
 
-- 宽 ≥ 2400 px；横向长条比例（约 3:1 ～ 21:9）最贴合图区；图区按 `object-fit:contain` 显示，不会裁切，比例不一致只会留边。
-- 透明底或 `#fafaf8` 纸白底。14 页是暗底页，透明底最稳。
+- 宽 ≥ 2400 px；甜点比例约 **3:1**（九个图区实测 2.92:1 ～ 3.72:1）。图区按 `object-fit:contain` 显示，不会裁切，比例不一致只会留边。
+- **透明底最稳**。14 页是暗底（ink）页，白底 PNG 挂上去会出现一块白板；09 / 12 / 19 是浅灰底页，纸白 `#fafaf8` 会有极轻色差。
 - 图内**不要**画页眉、页脚、页码、标题、边框、署名、Logo——这些页面自己有。
-- 图内不要出现新的数字或新口径；标签用页面上已有的措辞。
+- 图内不要出现新的数字或新口径；标签用页面上已有的措辞。百分比、PUE、EER 这类参照量级若出现在图内，必须同样带「参照」字样，不能读成已实现承诺。
 
 ---
 

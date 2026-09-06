@@ -87,6 +87,20 @@ FORBIDDEN = ["本页", "不上", "待核", "不构成"]
 # 参照量级数字：出现即必须在其后 80 字内挂「参照」角标
 NEEDS_REF_TAG = ["约 1.4", "约 3.2%", "约 4.5", "约 4.8", "约 128"]
 
+# 九张逻辑图的主文件名锁：必须与 LOGIC-IMAGE-MAP-20260906.md 登记的 Imagine 交付名一致，
+# 否则小七把图拷进 images/logic/ 后会挂不上。
+LOGIC_SLOTS = {
+    "strategic-alignment-chain": "images/logic/p02-strategic-chain.png",
+    "six-dimension-map": "images/logic/p08-six-dimension-map.png",
+    "research-to-scheme": "images/logic/p09-research-to-scheme.png",
+    "mpark-three-ends": "images/logic/p12-three-ends.png",
+    "digital-base": "images/logic/p13-digital-base.png",
+    "green-smart-building": "images/logic/p14-building-loop.png",
+    "six-proofs": "images/logic/p18-six-proofs.png",
+    "indicator-tree": "images/logic/p19-indicator-tree.png",
+    "four-steps": "images/logic/p21-four-steps.png",
+}
+
 errors: list[str] = []
 checked = 0
 
@@ -239,6 +253,31 @@ for num in NEEDS_REF_TAG:
             errors.append("参照量级数字「%s」附近没有「参照」角标/说明，可能被读成已实现承诺" % num)
             break
         idx = visible.find(n, idx + 1)
+
+# 兜底：页面上任何一个百分比都必须落在「参照 / 现状」的语境里，不能裸着当承诺念
+for m in re.finditer(r"\d+(?:\.\d+)?%", visible):
+    checked += 1
+    window = visible[max(0, m.start() - 80): m.end() + 80]
+    if "参照" not in window and "现状" not in window:
+        errors.append("百分比「%s」附近没有参照/现状口径，上下文：…%s…" % (m.group(0), window))
+
+
+# ---------------------------------------------------------------- 5. 逻辑图位主文件名
+for slide_id, want in LOGIC_SLOTS.items():
+    checked += 1
+    sec = re.search(
+        r'<section\b[^>]*data-slide-id="%s".*?</section>' % re.escape(slide_id), raw, re.S
+    )
+    if not sec:
+        errors.append("找不到逻辑图页 %s" % slide_id)
+        continue
+    got = re.search(r'<img src="(images/logic/[^"]+)"', sec.group(0))
+    if not got:
+        errors.append("[%s] 缺逻辑图位 img" % slide_id)
+    elif got.group(1) != want:
+        errors.append(
+            "[%s] 逻辑图主文件名与交付名不一致：页面 %s，应为 %s" % (slide_id, got.group(1), want)
+        )
 
 
 # ---------------------------------------------------------------- 结果
