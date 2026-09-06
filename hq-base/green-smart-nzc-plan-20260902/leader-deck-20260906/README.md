@@ -26,7 +26,27 @@
 | `leader-deck-20260906_by小七.html` | 幻灯主文件，单文件可投屏 |
 | `images/fig-1-park-system.png` | 09 页配图，复用 `../figures/fig-1.png` |
 | `images/fig-2-digital-base.png` | 13 页配图，复用 `../figures/fig-2.png` |
+| `images/green/` `images/efficient/` `images/human/` | 11 个待拷入的图位，目录已建好，图放进去就出图 |
 | `images/IMAGE-MANIFEST.md` | 配图清单：已复用哪几张、还缺哪几张、缺的叫什么名字、画面要什么 |
+
+## 补图怎么补
+
+按 `images/IMAGE-MANIFEST.md` 里的**路径和文件名**把图拷进去，刷新页面就出图，**HTML 一个字都不用改**。
+
+图位是自动兜底的：图片在就显示图片，图片不在就退回虚线占位框，框里印的正是它等的那个文件名。所以补一张出一张，不用一次配齐，也不会因为少一张图把版面弄坏——两种状态下版式完全一样。
+
+云端读不到 Box 和 Mac 本地盘，11 张图都要在本地由小七拷入。目录清单：
+
+```
+images/green/      datacenter-cold-aisle.png  waste-heat-flow.png
+                   pv-rooftop-carport.png     carbon-ledger.png
+images/efficient/  chiller-plant.png          lighting-before-after.png
+                   smart-pole.png             night-lighting-path.png
+images/human/      parking-reserve.png        env-dashboard.png
+                   meeting-endpoint-auto.png
+```
+
+**图内自带的角标数字不是本方案口径。** `night-lighting-path.png` 的「节能率 60%」和 `lighting-before-after.png` 的「40%+」都是素材自带的示意角标，不是承诺数，也不拿去改文案；11 页照明的口径仍是 PR #69 的参照方向：参照测算一年省约 113 万千瓦时，幅度约三成。这一句已经落在页面上，就印在那一排图下面。
 
 ## 文案来自哪里
 
@@ -44,8 +64,9 @@
 
 - 02 页标题按锁定口径落成「总部基地建设本质上是一项战略能力建设」，该页导语、正文、页脚仍逐字取自主链 md。
 - 10、11 两页的对照表加表脚「内部测算，待基线书面核验」，可提升方向一列的每个数字挂「参照」角标——这是 PR #69 文案包里写明的整页要求。
+- 11 页那排图下面加了一句「配图角标（节能率 60%、40%+）是素材自带示意，不是本方案口径；照明数字以正文与对照表为准。」
 - 文案包开头的「统一口径」「落版说明」是给落版看的，不上页面。
-- 配图占位框里的画面说明，逐字取自文案包的「配图提示」。
+- 10、11 两页的图位说明逐字取自文案包的「配图提示」；15—17 三页因为 Box 图的画面与原配图提示不是同一组，图位说明改取本页正文原句，原配图提示仍记在 `images/IMAGE-MANIFEST.md` 里备查。
 
 ## 页序（锁定）
 

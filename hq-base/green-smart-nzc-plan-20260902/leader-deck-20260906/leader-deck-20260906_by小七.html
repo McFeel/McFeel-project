@@ -171,17 +171,29 @@ figcaption{margin-top:9px;padding-top:8px;border-top:1px solid var(--border-subt
 figcaption em{font-style:normal;font-family:var(--sans);font-size:13.5px;letter-spacing:0;
   text-transform:none;color:var(--text-secondary);display:block;margin-top:4px}
 
+/* 图位：图片在就显示图片，不在就退回带文件名的占位框，补图不用改 HTML */
 .slot{margin:0;display:flex;flex-direction:column;min-width:0}
-.slot .box{position:relative;width:100%;aspect-ratio:16/10;border:1px dashed var(--border-strong);
-  border-top:2px solid var(--accent);background:repeating-linear-gradient(135deg,transparent,transparent 9px,rgba(0,47,167,.045) 9px,rgba(0,47,167,.045) 10px);
-  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;padding:10px;text-align:center}
+.slot .box{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;
+  border:1px solid var(--border-subtle);border-top:2px solid var(--accent);background:#fff}
+.slot .box img{width:100%;height:100%;object-fit:cover;display:block}
+.slot .box .ph{display:none}
+.slot.missing .box{border:1px dashed var(--border-strong);border-top:2px solid var(--accent);
+  background:repeating-linear-gradient(135deg,transparent,transparent 9px,rgba(0,47,167,.045) 9px,rgba(0,47,167,.045) 10px)}
+.slot.missing .box img{display:none}
+.slot.missing .box .ph{display:flex;flex-direction:column;justify-content:center;align-items:center;
+  gap:6px;padding:10px;text-align:center;width:100%;height:100%}
 .slot .box .t{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--accent);font-weight:600}
 .slot .box .f{font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--text-secondary);
   word-break:break-all;line-height:1.4}
 .slot .cap{margin-top:8px;font-size:13.5px;line-height:1.5;color:var(--text-secondary)}
 .slot.wide .box{aspect-ratio:16/9}
-.slide.dark .slot .box{border-color:rgba(250,250,248,.35);border-top-color:var(--accent-bright)}
+.slide.dark .slot.missing .box{border-color:rgba(250,250,248,.35);border-top-color:var(--accent-bright)}
 .slide.dark .slot .cap{color:rgba(250,250,248,.7)}
+
+/* 素材自带角标的免责一句 */
+.slot-note{margin-top:12px;padding-top:9px;border-top:1px solid var(--border-subtle);
+  font-size:13px;line-height:1.55;color:var(--text-helper)}
+.slot-note::before{content:"※ ";color:var(--accent)}
 
 /* ============ 封面 / 决策页 ============ */
 .cover-grid{flex:1 1 auto;min-height:0;display:grid;grid-template-rows:auto 1fr auto;padding:44px 0 24px}
@@ -586,19 +598,31 @@ body.on-dark #pnum{color:rgba(255,255,255,.55)}
       </ol>
       <div class="cards c4" style="margin-top:22px;gap:14px">
         <figure class="slot">
-          <div class="box"><span class="t">IMG · 待补</span><span class="f">green-datacenter-cold-aisle.jpg</span></div>
+          <div class="box">
+            <img src="images/green/datacenter-cold-aisle.png" alt="绿色机房冷通道封闭">
+            <span class="ph"><span class="t">IMG · 待补</span><span class="f">green/datacenter-cold-aisle.png</span></span>
+          </div>
           <div class="cap">绿色机房冷通道封闭实拍或轴测图</div>
         </figure>
         <figure class="slot">
-          <div class="box"><span class="t">IMG · 待补</span><span class="f">green-waste-heat-heatpump.jpg</span></div>
+          <div class="box">
+            <img src="images/green/waste-heat-flow.png" alt="余热回收流程：机房排热经热泵变成生活热水">
+            <span class="ph"><span class="t">IMG · 待补</span><span class="f">green/waste-heat-flow.png</span></span>
+          </div>
           <div class="cap">机房排热经热泵变成生活热水</div>
         </figure>
         <figure class="slot">
-          <div class="box"><span class="t">IMG · 待补</span><span class="f">green-pv-rooftop-carport.jpg</span></div>
+          <div class="box">
+            <img src="images/green/pv-rooftop-carport.png" alt="屋顶与车棚光伏普查示意">
+            <span class="ph"><span class="t">IMG · 待补</span><span class="f">green/pv-rooftop-carport.png</span></span>
+          </div>
           <div class="cap">屋顶与车棚光伏普查示意</div>
         </figure>
         <figure class="slot">
-          <div class="box"><span class="t">IMG · 待补</span><span class="f">green-carbon-ledger.jpg</span></div>
+          <div class="box">
+            <img src="images/green/carbon-ledger.png" alt="碳账本：一本总账加办公与机房两个子账">
+            <span class="ph"><span class="t">IMG · 待补</span><span class="f">green/carbon-ledger.png</span></span>
+          </div>
           <div class="cap">一本总账在中间，办公与机房两个子账在两侧</div>
         </figure>
       </div>
@@ -638,20 +662,37 @@ body.on-dark #pnum{color:rgba(255,255,255,.55)}
         <li><b>智慧路灯</b><p>人来灯亮、人走灯暗，光伏和微风给杆上供电。</p></li>
         <li><b>一杆多用</b><p>同一根杆挂照明、安防、环境监测和广播四件事；路灯 85 套、庭院灯 74 套是方案参照规模，采购随设计核定。</p></li>
       </ol>
-      <div class="cards c3" style="margin-top:22px;gap:16px">
+      <div class="cards c4" style="margin-top:20px;gap:14px">
         <figure class="slot">
-          <div class="box"><span class="t">IMG · 待补</span><span class="f">efficient-chiller-plant.jpg</span></div>
+          <div class="box">
+            <img src="images/efficient/chiller-plant.png" alt="冷站机房实拍">
+            <span class="ph"><span class="t">IMG · 待补</span><span class="f">efficient/chiller-plant.png</span></span>
+          </div>
           <div class="cap">冷站机房实拍，机组旁边挂一条能效标尺</div>
         </figure>
         <figure class="slot">
-          <div class="box"><span class="t">IMG · 待补</span><span class="f">efficient-lighting-retrofit.jpg</span></div>
+          <div class="box">
+            <img src="images/efficient/lighting-before-after.png" alt="照明改造前后对比：同一条走廊，左右各一张">
+            <span class="ph"><span class="t">IMG · 待补</span><span class="f">efficient/lighting-before-after.png</span></span>
+          </div>
           <div class="cap">照明改造前后对比：同一条走廊，左右各一张</div>
         </figure>
         <figure class="slot">
-          <div class="box"><span class="t">IMG · 待补</span><span class="f">efficient-smart-pole.jpg</span></div>
+          <div class="box">
+            <img src="images/efficient/smart-pole.png" alt="智慧路灯一杆多用爆炸图">
+            <span class="ph"><span class="t">IMG · 待补</span><span class="f">efficient/smart-pole.png</span></span>
+          </div>
           <div class="cap">智慧路灯一杆多用爆炸图</div>
         </figure>
+        <figure class="slot">
+          <div class="box">
+            <img src="images/efficient/night-lighting-path.png" alt="夜间动线示意：人走到哪一段，哪一段灯亮">
+            <span class="ph"><span class="t">IMG · 待补</span><span class="f">efficient/night-lighting-path.png</span></span>
+          </div>
+          <div class="cap">夜间动线示意：人走到哪一段，哪一段灯亮</div>
+        </figure>
       </div>
+      <div class="slot-note">配图角标（节能率 60%、40%+）是素材自带示意，不是本方案口径；照明数字以正文与对照表为准。</div>
     </div>
   </div>
   <div class="foot">
@@ -786,8 +827,11 @@ body.on-dark #pnum{color:rgba(255,255,255,.55)}
       <h2 class="t">普惠：一个规则，人人可及</h2>
       <p class="lead" style="margin-top:18px;padding-top:16px">普惠讲的是人人参与、人人受益，同一件事对所有人一套规则。</p>
       <figure class="slot wide" style="margin-top:26px">
-        <div class="box"><span class="t">IMG · 待补</span><span class="f">human-inclusive-gate.jpg</span></div>
-        <div class="cap">清晨园区入口，员工、访客、外包人员在同一道闸机前刷同一个码进园，旁边指示牌显示车位和充电桩的实时余量。</div>
+        <div class="box">
+          <img src="images/human/parking-reserve.png" alt="入园停车充电一次约好，车位与充电桩余量实时可见">
+          <span class="ph"><span class="t">IMG · 待补</span><span class="f">human/parking-reserve.png</span></span>
+        </div>
+        <div class="cap">车位和充电桩按同一队列排，先约先用，不留专属位</div>
       </figure>
     </div>
     <div class="col">
@@ -818,8 +862,11 @@ body.on-dark #pnum{color:rgba(255,255,255,.55)}
       <h2 class="t sm">健康：空气、光、声、温湿度可测可调可公示</h2>
       <p class="lead" style="margin-top:16px;padding-top:14px">健康不靠说法，靠四项环境数据能测、能调、能看得见。</p>
       <figure class="slot wide" style="margin-top:24px">
-        <div class="box"><span class="t">IMG · 待补</span><span class="f">human-health-display.jpg</span></div>
-        <div class="cap">办公楼层电梯厅的环境公示牌显示二氧化碳、PM2.5、照度、温湿度的实时数值和当日达标时长，一名员工在旁边工位用手机调风口。</div>
+        <div class="box">
+          <img src="images/human/env-dashboard.png" alt="楼层环境公示牌：二氧化碳、PM2.5、照度、温湿度实时数值与当日达标时长">
+          <span class="ph"><span class="t">IMG · 待补</span><span class="f">human/env-dashboard.png</span></span>
+        </div>
+        <div class="cap">每层电梯厅一块环境牌，实时数值和当日达标时长都写在牌面上</div>
       </figure>
     </div>
     <div class="col">
@@ -850,8 +897,11 @@ body.on-dark #pnum{color:rgba(255,255,255,.55)}
       <h2 class="t sm">人文：一次预约联动末端，一次参观看见运行</h2>
       <p class="lead" style="margin-top:16px;padding-top:14px">人文是把运行变成场所感：会议一预约末端就动，客人一进园就看见真实运行。</p>
       <figure class="slot wide" style="margin-top:24px">
-        <div class="box"><span class="t">IMG · 待补</span><span class="f">human-culture-visit.jpg</span></div>
-        <div class="cap">访客站在冷站观察窗前看运行中的机组，旁边墙面显示当日碳账的发电、用电和降碳量，说明牌直接贴在管道旁。</div>
+        <div class="box">
+          <img src="images/human/meeting-endpoint-auto.png" alt="会议预约即末端开关：人到灯亮风起，散会自动回落">
+          <span class="ph"><span class="t">IMG · 待补</span><span class="f">human/meeting-endpoint-auto.png</span></span>
+        </div>
+        <div class="cap">预约就是末端开关，人到灯亮风起，散会自动回落</div>
       </figure>
     </div>
     <div class="col">
@@ -1118,6 +1168,16 @@ body.on-dark #pnum{color:rgba(255,255,255,.55)}
   var i=0;
 
   function pad(n){return (n<10?'0':'')+n;}
+
+  /* 图位兜底：images/ 下没有这张图就退回占位框，图拷进来就自动显示，HTML 不用改 */
+  Array.prototype.forEach.call(document.querySelectorAll('.slot img'), function(im){
+    function miss(){
+      var slot=im.parentNode&&im.parentNode.parentNode;
+      if(slot&&slot.classList) slot.classList.add('missing');
+    }
+    im.addEventListener('error',miss);
+    if(im.complete&&im.naturalWidth===0) miss();
+  });
 
   /* 等比缩放，把 1600×900 画布装进任意窗口 */
   function fit(){
