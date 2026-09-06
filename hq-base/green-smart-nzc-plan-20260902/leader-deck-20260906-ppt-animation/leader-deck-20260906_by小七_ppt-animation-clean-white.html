@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建设世界一流智慧零碳园区 · 南网总部基地领导汇报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   ppt-animation skill · 主题 clean-white（白底 + 深色字 + 彩色点缀）
+   固定画布 1600×900（16:9），等比缩放适配任意窗口
+   ========================================================================== */
+
+:root{
+  --paper:#ffffff;
+  --ink:#0f1319;
+  --ink-2:#3d4550;
+  --ink-3:#79818f;
+  --line:#e3e7ec;
+  --line-2:#f0f2f6;
+  --wash:#f7f8fa;
+  --c:#0b8457;
+  --c-soft:rgba(11,132,87,.09);
+  --c-line:rgba(11,132,87,.28);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+/* 分组点缀色：白底上唯一的彩色变量，一页只用一种 */
+[data-accent="green"] {--c:#0b8457;--c-soft:rgba(11,132,87,.09); --c-line:rgba(11,132,87,.30)}
+[data-accent="indigo"]{--c:#4338ca;--c-soft:rgba(67,56,202,.08); --c-line:rgba(67,56,202,.28)}
+[data-accent="teal"]  {--c:#0e7490;--c-soft:rgba(14,116,144,.09);--c-line:rgba(14,116,144,.28)}
+[data-accent="violet"]{--c:#7c3aed;--c-soft:rgba(124,58,237,.08); --c-line:rgba(124,58,237,.26)}
+[data-accent="blue"]  {--c:#2563eb;--c-soft:rgba(37,99,235,.08);  --c-line:rgba(37,99,235,.26)}
+[data-accent="orange"]{--c:#d9480f;--c-soft:rgba(217,72,15,.08);  --c-line:rgba(217,72,15,.26)}
+[data-accent="rose"]  {--c:#be185d;--c-soft:rgba(190,24,93,.08);  --c-line:rgba(190,24,93,.26)}
+[data-accent="amber"] {--c:#b45309;--c-soft:rgba(180,83,9,.09);   --c-line:rgba(180,83,9,.28)}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#eceef1;
+  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+#viewport{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden}
+#deck{width:1600px;height:900px;background:var(--paper);position:relative;overflow:hidden;
+  transform-origin:center center;box-shadow:0 26px 90px rgba(15,19,25,.20)}
+
+/* ============ 顶部细进度条（23 段，可点击跳页） ============ */
+#bar{position:absolute;top:0;left:0;right:0;height:3px;display:flex;gap:2px;z-index:60;background:transparent}
+#bar .seg{flex:1;background:var(--line);cursor:pointer;transition:background .35s ease,transform .35s ease;transform-origin:center bottom}
+#bar .seg.done{background:#c7ccd4}
+#bar .seg.now{background:var(--c);transform:scaleY(2.2)}
+
+/* ============ 页 ============ */
+.slide{position:absolute;inset:0;display:none;flex-direction:column;padding:46px 84px 128px}
+.slide.active{display:flex;animation:pageIn .48s var(--ease) both}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}
+
+/* 元素依次缓入 */
+.a{opacity:0;transform:translateY(22px);transition:opacity .62s var(--ease),transform .62s var(--ease)}
+.a.show{opacity:1;transform:none}
+.a.fig{transform:translateY(18px) scale(.985)}
+.a.fig.show{transform:none}
+
+/* ============ 页眉 ============ */
+.chrome{display:flex;align-items:center;justify-content:space-between;
+  font-size:12.5px;letter-spacing:.14em;color:var(--ink-3);
+  padding-bottom:14px;border-bottom:1px solid var(--line-2)}
+.chrome .l{display:flex;align-items:center;gap:10px;color:var(--ink-2);font-weight:500}
+.chrome .sq{width:9px;height:9px;background:var(--c);display:inline-block;border-radius:2px}
+.chrome .r{font-family:'Noto Sans SC',sans-serif;letter-spacing:.1em;text-transform:lowercase}
+
+/* ============ 主体网格 ============ */
+.main{flex:1;display:grid;gap:52px;padding-top:30px;min-height:0}
+.g57{grid-template-columns:5fr 7fr}
+.g66{grid-template-columns:1fr 1fr}
+.g75{grid-template-columns:7fr 5fr}
+/* 单列页按内容自然堆叠，不让 auto 行被拉伸出空档 */
+.g1 {grid-template-columns:1fr;grid-template-rows:auto auto 1fr;gap:26px}
+.g1>.lead{margin-top:0}
+/* 标题、导语定在顶部，其余内容在剩下的画布里居中，避免页面头重脚轻 */
+.body{display:flex;flex-direction:column;justify-content:center;gap:26px;min-height:0}
+.col{min-width:0;display:flex;flex-direction:column}
+
+/* ============ 文字层级 ============ */
+.kicker{font-size:12.5px;letter-spacing:.24em;color:var(--c);font-weight:700}
+h2.t{font-size:46px;line-height:1.2;font-weight:700;letter-spacing:-.012em;color:var(--ink);margin-top:14px}
+h2.t.sm{font-size:38px}
+h2.t.xs{font-size:33px;line-height:1.28}
+p.lead{font-size:20.5px;line-height:1.62;color:var(--ink-2);margin-top:18px;font-weight:400;max-width:44em}
+.hair{height:1px;background:var(--line);margin:22px 0}
+.emph{color:var(--c);font-weight:700}
+.mark{background:linear-gradient(180deg,transparent 62%,var(--c-soft) 62%);font-weight:700;color:var(--ink)}
+
+/* ============ 要点列表 ============ */
+ol.pts{list-style:none;counter-reset:p}
+ol.pts>li{position:relative;padding-left:36px;margin-bottom:17px}
+ol.pts>li:last-child{margin-bottom:0}
+ol.pts>li::before{counter-increment:p;content:counter(p,decimal-leading-zero);
+  position:absolute;left:0;top:4px;font-size:11.5px;font-weight:700;color:var(--c);letter-spacing:.06em}
+ol.pts>li::after{content:'';position:absolute;left:5px;top:22px;bottom:-13px;width:1px;background:var(--line-2)}
+ol.pts>li:last-child::after{display:none}
+ol.pts b{display:block;font-size:18.5px;font-weight:700;color:var(--ink);margin-bottom:5px;letter-spacing:-.005em}
+ol.pts p{font-size:17px;line-height:1.66;color:var(--ink-2)}
+ol.pts.tight>li{margin-bottom:13px}
+ol.pts.tight p{font-size:16.5px;line-height:1.6}
+
+ul.plain{list-style:none}
+ul.plain li{position:relative;padding-left:22px;margin-bottom:14px;font-size:17px;line-height:1.66;color:var(--ink-2)}
+ul.plain li:last-child{margin-bottom:0}
+ul.plain li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:2px;background:var(--c)}
+
+/* ============ 卡片 ============ */
+.card{border:1px solid var(--line);border-radius:12px;padding:22px 24px;background:var(--paper);height:100%}
+.card.tint{background:var(--c-soft);border-color:var(--c-line)}
+.card .ch{font-size:18.5px;font-weight:700;color:var(--ink);margin-bottom:9px;display:flex;align-items:center;gap:10px}
+.card .cb{font-size:16.5px;line-height:1.64;color:var(--ink-2)}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.row5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.strip{border-left:3px solid var(--c);background:var(--wash);padding:16px 22px;font-size:17.5px;
+  line-height:1.6;color:var(--ink);border-radius:0 8px 8px 0}
+.strip b{color:var(--c)}
+.numbadge{width:48px;height:48px;border-radius:50%;background:var(--c);color:#fff;display:flex;
+  align-items:center;justify-content:center;font-size:23px;font-weight:700;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--c-line);color:var(--c);background:var(--c-soft);
+  border-radius:999px;padding:6px 14px;font-size:14.5px;font-weight:500}
+.chip.n{border-color:var(--line);color:var(--ink-2);background:var(--wash)}
+
+/* ============ 参照角标 / 对照条 ============ */
+.rt{font-size:9.5px;line-height:1;font-style:normal;font-weight:700;letter-spacing:.06em;
+  color:var(--c);border:1px solid var(--c-line);border-radius:3px;padding:2px 3px;
+  vertical-align:super;margin-left:3px;white-space:nowrap}
+.cmp{border-top:1px solid var(--ink)}
+.cmp .chead{display:grid;grid-template-columns:9.5em 1fr;gap:18px;padding:9px 0 10px;
+  font-size:11.5px;letter-spacing:.14em;color:var(--ink-3);font-weight:700;border-bottom:1px solid var(--line)}
+.cmp .chead span:last-child{display:flex;justify-content:space-between}
+.crow{display:grid;grid-template-columns:9.5em 1fr;gap:18px;align-items:center;
+  padding:13px 0;border-bottom:1px solid var(--line)}
+.crow .ck{font-size:15.5px;color:var(--ink);font-weight:500;line-height:1.4}
+.ctrack{display:flex;align-items:center;gap:12px}
+.cnow{background:#eceef2;color:#6b7280;border-radius:5px;padding:6px 12px;font-size:15px;font-weight:700;white-space:nowrap}
+.cnow .rt{color:#8b93a1;border-color:#cfd4dc}
+.cline{flex:1;height:2px;background:linear-gradient(90deg,#dfe3e9,var(--c));position:relative;min-width:26px}
+.cline::after{content:'';position:absolute;right:-1px;top:-4px;border-left:8px solid var(--c);
+  border-top:5px solid transparent;border-bottom:5px solid transparent}
+.cto{background:var(--c-soft);color:var(--c);border:1px solid var(--c-line);border-radius:5px;
+  padding:5px 12px;font-size:15px;font-weight:700;white-space:nowrap}
+.tfoot{margin-top:11px;font-size:12.5px;color:var(--ink-3);letter-spacing:.02em}
+
+/* ============ 页脚 ============ */
+.foot{position:absolute;left:84px;right:84px;bottom:42px;display:flex;align-items:flex-end;
+  justify-content:space-between;gap:44px}
+.nb{font-size:16px;line-height:1.5;color:var(--ink-2);padding-left:14px;border-left:3px solid var(--c);max-width:1120px}
+.pg{font-size:12.5px;color:var(--ink-3);letter-spacing:.16em;font-variant-numeric:tabular-nums;white-space:nowrap;padding-bottom:2px}
+
+/* ============ 封面 ============ */
+.cover.active{display:flex;flex-direction:column;justify-content:center;padding:0 110px 132px 110px}
+.cover .band{position:absolute;left:0;top:0;bottom:0;width:14px;
+  background:linear-gradient(180deg,#0b8457 0 33.3%,#2563eb 33.3% 66.6%,#d9480f 66.6% 100%)}
+.cover h1{font-family:'Noto Serif SC',serif;font-size:76px;line-height:1.16;font-weight:900;
+  color:var(--ink);letter-spacing:-.02em;margin-top:18px}
+.cover .meta{margin-top:40px}
+.cover .meta li{font-size:17.5px;margin-bottom:11px;padding-left:0}
+.cover .meta li::before{display:none}
+.cover .meta b{display:inline-block;min-width:6.4em;color:var(--ink);font-weight:700}
+.cover .stamp{position:absolute;right:110px;top:76px;text-align:right;font-size:12.5px;
+  letter-spacing:.2em;color:var(--ink-3);line-height:2}
+.tri{display:flex;gap:0;margin-top:36px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.tri .t3{flex:1;padding:20px 24px;border-right:1px solid var(--line)}
+.tri .t3:last-child{border-right:none}
+.tri .t3 .lb{font-size:13px;letter-spacing:.2em;font-weight:700;margin-bottom:8px}
+.tri .t3 .tx{font-size:19px;color:var(--ink);font-weight:500}
+.tri .g{border-top:4px solid #0b8457}.tri .g .lb{color:#0b8457}
+.tri .b{border-top:4px solid #2563eb}.tri .b .lb{color:#2563eb}
+.tri .o{border-top:4px solid #d9480f}.tri .o .lb{color:#d9480f}
+
+/* ============ 图形通用 ============ */
+svg{display:block;overflow:visible}
+.fig-t{font-size:13px;fill:var(--ink-2);font-family:'Noto Sans SC',sans-serif}
+.fig-k{font-size:14.5px;fill:var(--ink);font-weight:700;font-family:'Noto Sans SC',sans-serif}
+.fig-s{font-size:11.5px;fill:var(--ink-3);font-family:'Noto Sans SC',sans-serif}
+.fig-c{font-size:14px;fill:var(--c);font-weight:700;font-family:'Noto Sans SC',sans-serif}
+.figbox{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:var(--paper)}
+.figcap{font-size:12.5px;color:var(--ink-3);letter-spacing:.1em;margin-bottom:14px;font-weight:700}
+
+/* ============ 总览（ESC） ============ */
+#ov{position:absolute;inset:0;background:rgba(255,255,255,.985);z-index:80;display:none;
+  padding:56px 72px;overflow:auto}
+#ov.on{display:block}
+#ov h3{font-size:15px;letter-spacing:.24em;color:var(--ink-3);margin-bottom:24px;font-weight:700}
+#ov .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+#ov .ovc{border:1px solid var(--line);border-radius:9px;padding:13px 14px;cursor:pointer;transition:.2s}
+#ov .ovc:hover{border-color:var(--ink);background:var(--wash)}
+#ov .ovc.now{border-color:var(--c);background:var(--c-soft)}
+#ov .ovc .n{font-size:11px;color:var(--ink-3);letter-spacing:.12em;margin-bottom:6px}
+#ov .ovc .nm{font-size:13.5px;color:var(--ink);line-height:1.42;font-weight:500;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+#hint{position:absolute;left:84px;bottom:16px;font-size:11.5px;color:#aeb4bd;letter-spacing:.14em;z-index:50}
+</style>
+</head>
+<body>
+
+<div id="viewport">
+<div id="deck">
+<div id="bar"></div>
+
+<!-- ==================== 01 · cover ==================== -->
+<section class="slide cover" data-id="cover" data-group="封面" data-accent="green"
+         data-name="建设世界一流智慧零碳园区">
+  <div class="band"></div>
+  <div class="stamp">南方电网 · 总部基地 · 领导汇报</div>
+  <div class="a"><div class="kicker">内部讨论稿 · 2026.09</div></div>
+  <h1 class="a">建设世界一流<br>智慧零碳园区</h1>
+  <div class="tri a fig">
+    <div class="t3 g"><div class="lb">绿色</div><div class="tx">以绿色夯实底座</div></div>
+    <div class="t3 b"><div class="lb">智慧</div><div class="tx">以智慧贯通运行</div></div>
+    <div class="t3 o"><div class="lb">人文</div><div class="tx">以人文定义品质</div></div>
+  </div>
+  <ul class="plain meta">
+    <li class="a"><b>汇报对象</b>南网总部基地既有园区，在风貌不变、办公不停的前提下做系统性改造。</li>
+    <li class="a"><b>汇报路线</b>先讲战略要求，再讲调研看到的世界一流，再讲我们的方案，最后请决策。</li>
+  </ul>
+  <div class="foot">
+    <div class="nb a">今天请领导定三件事：目标、框架、启动机制。</div>
+    <div class="pg">01 / 23</div>
+  </div>
+</section>
+
+<!-- ==================== 02 · strategic-alignment-chain ==================== -->
+<section class="slide" data-id="strategic-alignment-chain" data-group="战略 · 约束 · 目标" data-accent="indigo"
+         data-name="总部基地建设本质上是一项战略能力建设">
+  <div class="chrome"><div class="l"><i class="sq"></i>战略 · 约束 · 目标</div><div class="r">strategic-alignment-chain</div></div>
+  <div class="main g57">
+    <div class="col">
+      <div class="a"><div class="kicker">战略对齐</div>
+        <h2 class="t sm">总部基地建设本质上是一项战略能力建设</h2></div>
+      <p class="lead a">国家推全面绿色转型，公司建生态强企，园区把两件事落到地上。</p>
+      <div class="a fig" style="margin-top:auto">
+        <svg viewBox="0 0 470 178" width="100%">
+          <g fill="none" stroke="var(--c)" stroke-width="1.4">
+            <path d="M2 8 h330 l34 26 -34 26 H2 z" opacity=".95"/>
+            <path d="M42 68 h330 l34 26 -34 26 H42 z" opacity=".7"/>
+            <path d="M82 128 h330 l34 26 -34 26 H82 z" opacity=".45"/>
+          </g>
+          <rect x="2" y="8" width="364" height="52" fill="var(--c-soft)" opacity=".55"/>
+          <text class="fig-k" x="24" y="40">国家</text>
+          <text class="fig-t" x="80" y="40">全面绿色转型</text>
+          <text class="fig-k" x="64" y="100">公司</text>
+          <text class="fig-t" x="120" y="100">生态强企</text>
+          <text class="fig-k" x="104" y="160">园区</text>
+          <text class="fig-t" x="160" y="160">落到地上</text>
+        </svg>
+      </div>
+    </div>
+    <div class="col">
+      <ol class="pts">
+        <li class="a"><b>国家</b><p>绿色转型从单项节能，转向能源、建筑、数字化和运行管理协同推进。</p></li>
+        <li class="a"><b>依据</b><p>节能降碳行动方案（<span class="mark">国发〔2024〕12 号</span>）、新型电力系统行动方案（<span class="mark">发改能源〔2024〕1128 号</span>）。</p></li>
+        <li class="a"><b>公司五条</b><p>以电促绿；生态强企；融入六张网，落点咬新型电网枢纽和算电协同；融入人工智能；打造核心战略资产，牵引总部基地改造。</p></li>
+        <li class="a"><b>园区</b><p>战略要求落成能建设、能运营、能验证的园区能力——能碳基线、设备提效、数字底座、智慧运营、健康环境、电网互动。</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">政策是方向依据，不等于资金和审批到位。</div><div class="pg">02 / 23</div></div>
+</section>
+
+<!-- ==================== 03 · constraints ==================== -->
+<section class="slide" data-id="constraints" data-group="战略 · 约束 · 目标" data-accent="indigo"
+         data-name="现实约束决定了零碳要靠系统能力">
+  <div class="chrome"><div class="l"><i class="sq"></i>战略 · 约束 · 目标</div><div class="r">constraints</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">四道约束</div>
+      <h2 class="t">现实约束决定了零碳要靠系统能力</h2></div>
+    <p class="lead a">零碳不是多装几台设备就能到，这个园区有四道绕不开的约束。</p>
+    <div class="body">
+    <div class="row4" style="margin-top:6px">
+      <div class="card a fig">
+        <svg width="46" height="34" viewBox="0 0 46 34" fill="none" stroke="var(--c)" stroke-width="2">
+          <path d="M3 31 h40" stroke="var(--line)"/><path d="M8 31 V14"/><path d="M18 31 V6"/><path d="M28 31 V10"/><path d="M38 31 V19"/>
+        </svg>
+        <div class="ch" style="margin-top:12px">负荷重</div>
+        <div class="cb">数千人连续办公，冷站和数据机房是全年大户。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="46" height="34" viewBox="0 0 46 34" fill="none" stroke="var(--c)" stroke-width="2">
+          <path d="M4 16 L23 4 42 16"/><path d="M9 16 v15 h28 V16" stroke="var(--line)"/>
+          <path d="M14 20 h8 M26 20 h8 M14 26 h8" />
+        </svg>
+        <div class="ch" style="margin-top:12px">资源紧</div>
+        <div class="cb">屋顶光伏空间有限，外立面和历史风貌不能大改。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="46" height="34" viewBox="0 0 46 34" fill="none" stroke="var(--c)" stroke-width="2">
+          <circle cx="17" cy="17" r="13"/><path d="M17 9 v8 l6 4"/><path d="M33 27 h11 M38.5 21.5 v11" stroke="var(--line)"/>
+        </svg>
+        <div class="ch" style="margin-top:12px">不能停</div>
+        <div class="cb">办公一天也停不得，改造必须可分区、可并行、可回退。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="46" height="34" viewBox="0 0 46 34" fill="none" stroke="var(--c)" stroke-width="2">
+          <rect x="3" y="4" width="16" height="11" rx="2"/><rect x="27" y="4" width="16" height="11" rx="2"/>
+          <rect x="3" y="21" width="16" height="11" rx="2"/><rect x="27" y="21" width="16" height="11" rx="2"/>
+          <path d="M21 9.5 h4 M21 26.5 h4 M11 17 v2 M35 17 v2" stroke="var(--line)" stroke-dasharray="2 3"/>
+        </svg>
+        <div class="ch" style="margin-top:12px">专业多</div>
+        <div class="cb">能源、建筑、数字化、运维分头推进，容易碎成一堆单项工程包。</div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">出路是需求侧节能、本地可再生、绿电交易、柔性互动和碳核证合起来发力，单项工程解决不了。</div><div class="pg">03 / 23</div></div>
+</section>
+
+<!-- ==================== 04 · target-portrait ==================== -->
+<section class="slide" data-id="target-portrait" data-group="战略 · 约束 · 目标" data-accent="indigo"
+         data-name="打造世界一流智慧零碳园区">
+  <div class="chrome"><div class="l"><i class="sq"></i>战略 · 约束 · 目标</div><div class="r">target-portrait</div></div>
+  <div class="main g57">
+    <div class="col">
+      <div class="a"><div class="kicker">目标</div>
+        <h2 class="t">打造世界一流智慧零碳园区</h2></div>
+      <p class="lead a">目标先立住，然后回答一个问题：什么叫世界一流。</p>
+      <div class="a fig" style="margin-top:auto">
+        <svg viewBox="0 0 460 190" width="100%">
+          <circle cx="118" cy="95" r="86" fill="none" stroke="var(--line)" stroke-width="1.2"/>
+          <circle cx="118" cy="95" r="60" fill="none" stroke="var(--c-line)" stroke-width="1.2"/>
+          <circle cx="118" cy="95" r="34" fill="var(--c-soft)" stroke="var(--c)" stroke-width="1.6"/>
+          <text class="fig-c" x="118" y="92" text-anchor="middle">世界</text>
+          <text class="fig-c" x="118" y="108" text-anchor="middle">一流</text>
+          <g stroke="var(--c-line)" stroke-width="1.2" stroke-dasharray="3 4">
+            <path d="M204 42 h34"/><path d="M204 95 h34"/><path d="M204 148 h34"/>
+          </g>
+          <g fill="var(--c)"><circle cx="204" cy="42" r="3.5"/><circle cx="204" cy="95" r="3.5"/><circle cx="204" cy="148" r="3.5"/></g>
+          <text class="fig-k" x="248" y="47">运行绩效拿得出实测数据</text>
+          <text class="fig-k" x="248" y="100">智慧运营真在跑</text>
+          <text class="fig-k" x="248" y="153">人在园区里的体验能感受到</text>
+        </svg>
+      </div>
+    </div>
+    <div class="col">
+      <ol class="pts">
+        <li class="a"><p>世界一流<span class="mark">不看</span>楼新不新、设备贵不贵、大屏大不大。</p></li>
+        <li class="a"><b>一流看三件事</b><p>运行绩效拿得出实测数据，智慧运营真在跑，人在园区里的体验能感受到。</p></li>
+        <li class="a"><p>零碳的档位，等能碳基线核定后再比选。</p></li>
+        <li class="a"><p>标准不由我们自己定义，先去看已经建成的园区是怎么做到的。</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">世界一流是我们要建成的目标，不是已经戴上的帽子。</div><div class="pg">04 / 23</div></div>
+</section>
+
+<!-- ==================== 05 · three-sites ==================== -->
+<section class="slide" data-id="three-sites" data-group="调研" data-accent="teal"
+         data-name="三个现场：先进园区是怎么运行的">
+  <div class="chrome"><div class="l"><i class="sq"></i>调研</div><div class="r">three-sites</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">三个现场</div>
+      <h2 class="t">三个现场：先进园区是怎么运行的</h2></div>
+    <p class="lead a">我们去了三个建成园区，看的是运行方式，不是效果图。</p>
+    <div class="body">
+    <div class="row3" style="margin-top:6px">
+      <div class="card a fig">
+        <svg width="100%" height="52" viewBox="0 0 220 52" fill="none" stroke="var(--c)" stroke-width="1.5">
+          <path d="M0 50 h220" stroke="var(--line)" stroke-width="2"/>
+          <path d="M16 50 V22 h30 v28"/><path d="M56 50 V12 h26 v38"/><path d="M92 50 V30 h34 v20"/>
+          <path d="M136 50 V18 h24 v32"/><path d="M170 50 V34 h30 v16"/>
+          <g stroke="var(--c-line)"><path d="M24 30 h14 M24 38 h14 M64 22 h10 M64 32 h10 M64 42 h10 M144 28 h8 M144 38 h8"/></g>
+        </svg>
+        <div class="ch" style="margin-top:14px">博鳌</div>
+        <div class="cb">建成区的绿色更新做成了多领域系统集成，成效看得见、讲得清。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="100%" height="52" viewBox="0 0 220 52" fill="none" stroke="var(--c)" stroke-width="1.5">
+          <path d="M0 50 h220" stroke="var(--line)" stroke-width="2"/>
+          <circle cx="60" cy="26" r="17"/><circle cx="110" cy="26" r="17"/><circle cx="160" cy="26" r="17"/>
+          <path d="M77 26 h16 M127 26 h16" stroke="var(--c-line)"/>
+          <text class="fig-s" x="60" y="30" text-anchor="middle" fill="var(--ink-3)">节能</text>
+          <text class="fig-s" x="110" y="30" text-anchor="middle" fill="var(--ink-3)">清洁</text>
+          <text class="fig-s" x="160" y="30" text-anchor="middle" fill="var(--ink-3)">碳管</text>
+        </svg>
+        <div class="ch" style="margin-top:14px">国网雄安创新中心</div>
+        <div class="cb">节能、清洁能源和碳管理是一套协同在跑，不是三张皮。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="100%" height="52" viewBox="0 0 220 52" fill="none" stroke="var(--c)" stroke-width="1.5">
+          <path d="M0 50 h220" stroke="var(--line)" stroke-width="2"/>
+          <rect x="46" y="6" width="128" height="38" rx="4" fill="var(--c-soft)"/>
+          <path d="M78 6 v38 M110 6 v38 M142 6 v38" stroke="var(--c-line)"/>
+          <text class="fig-s" x="62" y="29" text-anchor="middle" fill="var(--ink-3)">绿色</text>
+          <text class="fig-s" x="94" y="29" text-anchor="middle" fill="var(--ink-3)">低碳</text>
+          <text class="fig-s" x="126" y="29" text-anchor="middle" fill="var(--ink-3)">智慧</text>
+          <text class="fig-s" x="158" y="29" text-anchor="middle" fill="var(--ink-3)">健康</text>
+        </svg>
+        <div class="ch" style="margin-top:14px">华能雄安总部</div>
+        <div class="cb">绿色、低碳、智慧、健康做成一体化，不是分头验收。</div>
+      </div>
+    </div>
+    <div class="strip a">三个现场的共同点：<b>先进不在单项设备，在系统一起工作。</b></div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">现场给的是做法参照，具体台阶要回到我们自己的基线上算。</div><div class="pg">05 / 23</div></div>
+</section>
+
+<!-- ==================== 06 · two-consultancies ==================== -->
+<section class="slide" data-id="two-consultancies" data-group="调研" data-accent="teal"
+         data-name="两次专题交流：把方法校准">
+  <div class="chrome"><div class="l"><i class="sq"></i>调研</div><div class="r">two-consultancies</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">两次交流</div>
+      <h2 class="t">两次专题交流：把方法校准</h2></div>
+    <p class="lead a">我们又和两家规划单位做了专题交流，问的都是方法。</p>
+    <div class="body">
+    <div class="g66" style="display:grid;gap:32px;margin-top:6px">
+      <div class="card a fig">
+        <div class="ch">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="var(--c)" stroke-width="1.6">
+            <rect x="3" y="3" width="20" height="20" rx="3"/><path d="M8 12 l3 3 7-7"/></svg>
+          建科院讲评价口径和检测方法
+        </div>
+        <div class="cb">怎么把检测、调试、运行评价做成可复核的步骤。</div>
+        <div class="chips" style="margin-top:16px"><span class="chip">检测</span><span class="chip">调试</span><span class="chip">运行评价</span></div>
+      </div>
+      <div class="card a fig">
+        <div class="ch">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="var(--c)" stroke-width="1.6">
+            <circle cx="13" cy="13" r="10"/><path d="M13 3 v20 M3 13 h20" stroke="var(--c-line)"/></svg>
+          清华讲诊断思路和更新节奏
+        </div>
+        <div class="cb">分区诊断、数字调控、小尺度更新，把连续办公下的改造风险降下来。</div>
+        <div class="chips" style="margin-top:16px"><span class="chip">分区诊断</span><span class="chip">数字调控</span><span class="chip">小尺度更新</span></div>
+      </div>
+    </div>
+    <div class="a fig" style="display:flex;justify-content:center;margin-top:-6px">
+      <svg width="240" height="30" viewBox="0 0 240 30" fill="none" stroke="var(--c-line)" stroke-width="1.4">
+        <path d="M40 0 V12 h80 V0 M200 0 V12 h-80 V0"/><path d="M120 12 v12"/>
+        <path d="M120 30 l-5 -7 h10 z" fill="var(--c)" stroke="none"/>
+      </svg>
+    </div>
+    <div class="strip a">共同收获一句话：<b>先核基线，再定目标，最后用运行数据验证成效。</b></div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">两次都是方法上的交流取经，还不是委托出去的咨询结论。</div><div class="pg">06 / 23</div></div>
+</section>
+
+<!-- ==================== 07 · research-standards ==================== -->
+<section class="slide" data-id="research-standards" data-group="调研" data-accent="teal"
+         data-name="调研归纳：世界一流的三把尺子">
+  <div class="chrome"><div class="l"><i class="sq"></i>调研</div><div class="r">research-standards</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">三把尺子</div>
+      <h2 class="t">调研归纳：世界一流的三把尺子</h2></div>
+    <p class="lead a">三个现场加两次交流，归纳下来就三句话。</p>
+    <div class="body">
+    <div class="row3" style="margin-top:12px">
+      <div class="card a fig">
+        <svg width="100%" height="42" viewBox="0 0 240 42" fill="none" stroke="var(--c)" stroke-width="1.5">
+          <rect x="1" y="12" width="238" height="26" rx="3" fill="var(--c-soft)"/>
+          <path d="M25 12 v12 M49 12 v8 M73 12 v12 M97 12 v8 M121 12 v12 M145 12 v8 M169 12 v12 M193 12 v8 M217 12 v12"/>
+          <text class="fig-c" x="1" y="6">01</text>
+        </svg>
+        <div class="ch" style="margin-top:14px">运行可核验</div>
+        <div class="cb">能账和碳账全年连续，口径公开，外部能复核。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="100%" height="42" viewBox="0 0 240 42" fill="none" stroke="var(--c)" stroke-width="1.5">
+          <rect x="1" y="12" width="238" height="26" rx="3" fill="var(--c-soft)"/>
+          <path d="M25 12 v12 M49 12 v8 M73 12 v12 M97 12 v8 M121 12 v12 M145 12 v8 M169 12 v12 M193 12 v8 M217 12 v12"/>
+          <text class="fig-c" x="1" y="6">02</text>
+        </svg>
+        <div class="ch" style="margin-top:14px">系统可协同</div>
+        <div class="cb">能源、建筑、数字化不是三张皮，是一个回路。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="100%" height="42" viewBox="0 0 240 42" fill="none" stroke="var(--c)" stroke-width="1.5">
+          <rect x="1" y="12" width="238" height="26" rx="3" fill="var(--c-soft)"/>
+          <path d="M25 12 v12 M49 12 v8 M73 12 v12 M97 12 v8 M121 12 v12 M145 12 v8 M169 12 v12 M193 12 v8 M217 12 v12"/>
+          <text class="fig-c" x="1" y="6">03</text>
+        </svg>
+        <div class="ch" style="margin-top:14px">体验可感知</div>
+        <div class="cb">员工和访客每天感受得到，不用讲解也看得懂。</div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">这三把尺子，就是我们定框架、定指标的依据。</div><div class="pg">07 / 23</div></div>
+</section>
+
+<!-- ==================== 08 · six-dimension-map ==================== -->
+<section class="slide" data-id="six-dimension-map" data-group="框架 · 方案" data-accent="violet"
+         data-name="三条主线统领六项属性">
+  <div class="chrome"><div class="l"><i class="sq"></i>框架 · 方案</div><div class="r">six-dimension-map</div></div>
+  <div class="main g57">
+    <div class="col">
+      <div class="a"><div class="kicker">框架</div>
+        <h2 class="t">三条主线统领六项属性</h2></div>
+      <p class="lead a">按这三把尺子，方案收成三条主线、六项属性。</p>
+      <div class="a fig" style="margin-top:auto">
+        <svg viewBox="0 0 560 336" width="100%">
+          <polygon points="280,42 420,105 420,231 280,294 140,231 140,105"
+                   fill="var(--c-soft)" stroke="var(--c-line)" stroke-width="1.4"/>
+          <g stroke="var(--line)" stroke-width="1">
+            <path d="M280 168 L280 42 M280 168 L420 105 M280 168 L420 231
+                     M280 168 L280 294 M280 168 L140 231 M280 168 L140 105"/>
+          </g>
+          <g>
+            <circle cx="280" cy="42"  r="7" fill="#2563eb"/>
+            <circle cx="420" cy="105" r="7" fill="#0b8457"/>
+            <circle cx="420" cy="231" r="7" fill="#0b8457"/>
+            <circle cx="280" cy="294" r="7" fill="#d9480f"/>
+            <circle cx="140" cy="231" r="7" fill="#d9480f"/>
+            <circle cx="140" cy="105" r="7" fill="#d9480f"/>
+          </g>
+          <text class="fig-k" x="280" y="26"  text-anchor="middle" fill="#2563eb">智慧</text>
+          <text class="fig-k" x="436" y="110" fill="#0b8457">绿色</text>
+          <text class="fig-k" x="436" y="236" fill="#0b8457">高效</text>
+          <text class="fig-k" x="280" y="320" text-anchor="middle" fill="#d9480f">人文</text>
+          <text class="fig-k" x="124" y="236" text-anchor="end" fill="#d9480f">普惠</text>
+          <text class="fig-k" x="124" y="110" text-anchor="end" fill="#d9480f">健康</text>
+          <text class="fig-s" x="280" y="164" text-anchor="middle">三条主线</text>
+          <text class="fig-s" x="280" y="182" text-anchor="middle">六项属性</text>
+        </svg>
+      </div>
+    </div>
+    <div class="col">
+      <ol class="pts tight">
+        <li class="a"><b style="color:#0b8457">绿色主线</b><p>绿色、高效两项属性，管能和碳，把账立住、把电用好。</p></li>
+        <li class="a"><b style="color:#2563eb">智慧主线</b><p>智慧一项属性，是三条主线的牵引线，数据从这里出。</p></li>
+        <li class="a"><b style="color:#d9480f">人文主线</b><p>普惠、健康、人文三项属性，管人在园区里的公平、体感和场所。</p></li>
+        <li class="a"><p>零碳是绿色主线的结果，<span class="mark">不另占一维</span>。</p></li>
+        <li class="a"><p>中国移动国际信息港的智慧园区做法，我们参照它的机制，不照搬它的产品。</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">三条主线是编专题的单位，六项属性是验收看的维度。</div><div class="pg">08 / 23</div></div>
+</section>
+
+<!-- ==================== 09 · research-to-scheme ==================== -->
+<section class="slide" data-id="research-to-scheme" data-group="框架 · 方案" data-accent="violet"
+         data-name="一揽子方案：调研成果怎么进方案">
+  <div class="chrome"><div class="l"><i class="sq"></i>框架 · 方案</div><div class="r">research-to-scheme</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">一揽子</div>
+      <h2 class="t sm">一揽子方案：调研成果怎么进方案</h2></div>
+    <p class="lead a">调研的价值要能对上号——谁的做法，进了哪一块。</p>
+    <div class="body">
+    <div class="a fig figbox" style="margin-top:4px;padding:18px 24px">
+      <div style="display:grid;grid-template-columns:1.15fr 26px 1.5fr 26px 1.15fr;gap:14px;align-items:center;
+                  font-size:11.5px;letter-spacing:.14em;color:var(--ink-3);font-weight:700;
+                  border-bottom:1px solid var(--ink);padding-bottom:9px;margin-bottom:4px">
+        <span>来源</span><span></span><span>吸收什么</span><span></span><span>进入方案哪里</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1.15fr 26px 1.5fr 26px 1.15fr;gap:14px;align-items:center;
+                  padding:13px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink-2)">
+        <span style="color:var(--ink);font-weight:500">博鳌 / 国网雄安 / 华能</span>
+        <svg width="26" height="8" viewBox="0 0 26 8" fill="none" stroke="var(--c-line)" stroke-width="1.4"><path d="M0 4 h20"/><path d="M26 4 l-7 -3.5 v7 z" fill="var(--c-line)" stroke="none"/></svg>
+        <span>建成区绿色更新、能碳协同、一体化运行</span>
+        <svg width="26" height="8" viewBox="0 0 26 8" fill="none" stroke="var(--c-line)" stroke-width="1.4"><path d="M0 4 h20"/><path d="M26 4 l-7 -3.5 v7 z" fill="var(--c-line)" stroke="none"/></svg>
+        <span class="emph">绿色主线与工程包</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1.15fr 26px 1.5fr 26px 1.15fr;gap:14px;align-items:center;
+                  padding:13px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink-2)">
+        <span style="color:var(--ink);font-weight:500">建科院 / 清华</span>
+        <svg width="26" height="8" viewBox="0 0 26 8" fill="none" stroke="var(--c-line)" stroke-width="1.4"><path d="M0 4 h20"/><path d="M26 4 l-7 -3.5 v7 z" fill="var(--c-line)" stroke="none"/></svg>
+        <span>评价口径、检测方法、分区诊断节奏</span>
+        <svg width="26" height="8" viewBox="0 0 26 8" fill="none" stroke="var(--c-line)" stroke-width="1.4"><path d="M0 4 h20"/><path d="M26 4 l-7 -3.5 v7 z" fill="var(--c-line)" stroke="none"/></svg>
+        <span class="emph">指标体系与实施路径</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1.15fr 26px 1.5fr 26px 1.15fr;gap:14px;align-items:center;
+                  padding:13px 0;font-size:16px;color:var(--ink-2)">
+        <span style="color:var(--ink);font-weight:500">中国移动国际信息港</span>
+        <svg width="26" height="8" viewBox="0 0 26 8" fill="none" stroke="var(--c-line)" stroke-width="1.4"><path d="M0 4 h20"/><path d="M26 4 l-7 -3.5 v7 z" fill="var(--c-line)" stroke="none"/></svg>
+        <span>三端协同与预约联动的机制</span>
+        <svg width="26" height="8" viewBox="0 0 26 8" fill="none" stroke="var(--c-line)" stroke-width="1.4"><path d="M0 4 h20"/><path d="M26 4 l-7 -3.5 v7 z" fill="var(--c-line)" stroke="none"/></svg>
+        <span class="emph">智慧主线的机制参照</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px">
+      <div class="strip a">次序不变：<b>先核基线，再定目标，后做工程。</b></div>
+      <div class="strip a">一揽子的意思是三个包一起交：<b>工程包、数据包、运营包。</b></div>
+    </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">方案每一块都有出处，不是拍脑袋定的。</div><div class="pg">09 / 23</div></div>
+</section>
+
+<!-- ==================== 10 · green-attr ==================== -->
+<section class="slide" data-id="green-attr" data-group="绿色主线" data-accent="green"
+         data-name="绿色属性：把排放结构调优，把账做成可核证的">
+  <div class="chrome"><div class="l"><i class="sq"></i>绿色主线</div><div class="r">green-attr</div></div>
+  <div class="main g66">
+    <div class="col">
+      <div class="a"><div class="kicker">绿色属性</div>
+        <h2 class="t xs">绿色属性：把排放结构调优，把账做成可核证的</h2></div>
+      <p class="lead a" style="font-size:19px;margin-top:14px">绿色这一项管两件事——排放结构往下调，账目往清楚里做。</p>
+      <ol class="pts tight" style="margin-top:22px">
+        <li class="a"><b>绿色机房</b><p>机房是全年用电大户，先把制冷和气流理顺，能效往行业先进量级靠。</p></li>
+        <li class="a"><b>余热回收</b><p>机房排掉的热用热泵接成生活热水，先摸清热需求再定规模；参照测算一年省运行成本约 50 万元<i class="rt">参照</i>。</p></li>
+        <li class="a"><b>应装尽装</b><p>屋顶、车棚、露台先普查一遍，能装光伏的都装上，外立面不动。</p></li>
+        <li class="a"><b>碳账可核证</b><p>一本总账加办公、机房两个子账，全年连续计量，第三方能复核。</p></li>
+      </ol>
+    </div>
+    <div class="col">
+      <div class="a fig">
+        <div class="figcap">余热回收 · 一条线走完</div>
+        <svg viewBox="0 0 560 66" width="100%">
+          <g fill="none" stroke="var(--c)" stroke-width="1.5">
+            <rect x="1" y="12" width="150" height="42" rx="6" fill="var(--c-soft)"/>
+            <rect x="205" y="12" width="150" height="42" rx="6" fill="var(--c-soft)"/>
+            <rect x="409" y="12" width="150" height="42" rx="6" fill="var(--c-soft)"/>
+            <path d="M151 33 h44" stroke="var(--c-line)"/><path d="M355 33 h44" stroke="var(--c-line)"/>
+          </g>
+          <path d="M205 33 l-11 -5 v10 z" fill="var(--c)"/><path d="M409 33 l-11 -5 v10 z" fill="var(--c)"/>
+          <text class="fig-k" x="76" y="38" text-anchor="middle">机房排热</text>
+          <text class="fig-k" x="280" y="38" text-anchor="middle">热泵</text>
+          <text class="fig-k" x="484" y="38" text-anchor="middle">生活热水</text>
+        </svg>
+      </div>
+      <div class="a fig" style="margin-top:20px">
+        <div class="figcap">碳账 · 一本总账加两个子账</div>
+        <svg viewBox="0 0 560 86" width="100%">
+          <rect x="180" y="1" width="200" height="34" rx="6" fill="var(--c-soft)" stroke="var(--c)" stroke-width="1.5"/>
+          <text class="fig-k" x="280" y="23" text-anchor="middle">园区一本总账</text>
+          <path d="M280 35 v14 M118 49 h324 M118 49 v14 M442 49 v14" fill="none" stroke="var(--c-line)" stroke-width="1.3"/>
+          <rect x="28" y="63" width="180" height="30" rx="6" fill="none" stroke="var(--line)" stroke-width="1.4"/>
+          <rect x="352" y="63" width="180" height="30" rx="6" fill="none" stroke="var(--line)" stroke-width="1.4"/>
+          <text class="fig-t" x="118" y="83" text-anchor="middle">办公子账</text>
+          <text class="fig-t" x="442" y="83" text-anchor="middle">机房子账</text>
+        </svg>
+      </div>
+      <div class="a fig cmp" style="margin-top:26px">
+        <div class="chead"><span>参照项</span><span><span>现状参照</span><span>可提升方向</span></span></div>
+        <div class="crow">
+          <div class="ck">绿色机房 PUE</div>
+          <div class="ctrack"><span class="cnow">约 1.66<i class="rt">参照</i></span><span class="cline"></span><span class="cto">约 1.4<i class="rt">参照</i></span></div>
+        </div>
+        <div class="crow">
+          <div class="ck">年新能源发电占比</div>
+          <div class="ctrack"><span class="cnow">约 2.3%<i class="rt">参照</i></span><span class="cline"></span><span class="cto">约 3.2%<i class="rt">参照</i></span></div>
+        </div>
+        <div class="crow">
+          <div class="ck">一揽子年节电与减碳</div>
+          <div class="ctrack"><span class="cnow">—</span><span class="cline"></span><span class="cto">约 501 万千瓦时、约 4171 吨（测算量级）<i class="rt">参照</i></span></div>
+        </div>
+        <div class="tfoot">内部测算，待基线书面核验</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">这些数字是参照方向，等能碳基线核定后再定南网自己的目标。</div><div class="pg">10 / 23</div></div>
+</section>
+
+<!-- ==================== 11 · efficient-attr ==================== -->
+<section class="slide" data-id="efficient-attr" data-group="绿色主线" data-accent="green"
+         data-name="高效属性：少用一点能，用好每一度电">
+  <div class="chrome"><div class="l"><i class="sq"></i>绿色主线</div><div class="r">efficient-attr</div></div>
+  <div class="main g66">
+    <div class="col">
+      <div class="a"><div class="kicker">高效属性</div>
+        <h2 class="t sm">高效属性：少用一点能，用好每一度电</h2></div>
+      <p class="lead a" style="font-size:19px;margin-top:14px">高效这一项看两个动作——能效往上走，用能时机往对的时候挪。</p>
+      <ol class="pts tight" style="margin-top:22px">
+        <li class="a"><b>冷源提效</b><p>配套冷源和基载空调是用电大头，先测后改，能效比往行业优秀量级靠。</p></li>
+        <li class="a"><b>照明再节能</b><p>灯具和控制一起改，参照测算一年省约 113 万千瓦时<i class="rt">参照</i>，幅度约三成<i class="rt">参照</i>。</p></li>
+        <li class="a"><b>智慧路灯</b><p>人来灯亮、人走灯暗，光伏和微风给杆上供电。</p></li>
+        <li class="a"><b>一杆多用</b><p>同一根杆挂照明、安防、环境监测和广播四件事；路灯 85 套<i class="rt">参照</i>、庭院灯 74 套是方案参照规模<i class="rt">参照</i>，采购随设计核定。</p></li>
+      </ol>
+    </div>
+    <div class="col">
+      <div class="a fig">
+        <div class="figcap">一杆多用 · 四件事挂一根杆</div>
+        <svg viewBox="0 0 560 112" width="100%">
+          <path d="M64 108 V10 h34" fill="none" stroke="var(--c)" stroke-width="2.4"/>
+          <path d="M52 108 h24" stroke="var(--ink-3)" stroke-width="2.4"/>
+          <ellipse cx="104" cy="12" rx="12" ry="5" fill="var(--c)"/>
+          <g fill="none" stroke="var(--c-line)" stroke-width="1.3" stroke-dasharray="3 4">
+            <path d="M64 22 h96"/><path d="M64 46 h96"/><path d="M64 70 h96"/><path d="M64 94 h96"/>
+          </g>
+          <g fill="var(--c)"><circle cx="64" cy="22" r="3.5"/><circle cx="64" cy="46" r="3.5"/><circle cx="64" cy="70" r="3.5"/><circle cx="64" cy="94" r="3.5"/></g>
+          <text class="fig-k" x="172" y="27">照明</text>
+          <text class="fig-k" x="172" y="51">安防</text>
+          <text class="fig-k" x="172" y="75">环境监测</text>
+          <text class="fig-k" x="172" y="99">广播</text>
+          <g fill="none" stroke="var(--line)" stroke-width="1.4">
+            <rect x="300" y="14" width="240" height="84" rx="8"/>
+          </g>
+          <text class="fig-s" x="320" y="38">人来灯亮</text>
+          <text class="fig-s" x="320" y="60">人走灯暗</text>
+          <text class="fig-s" x="320" y="82">光伏和微风给杆上供电</text>
+          <g fill="var(--c)"><circle cx="310" cy="34" r="2.6"/><circle cx="310" cy="56" r="2.6"/><circle cx="310" cy="78" r="2.6"/></g>
+        </svg>
+      </div>
+      <div class="a fig cmp" style="margin-top:26px">
+        <div class="chead"><span>参照项</span><span><span>现状参照</span><span>可提升方向</span></span></div>
+        <div class="crow">
+          <div class="ck">配套冷源空调系统 EER</div>
+          <div class="ctrack"><span class="cnow">约 2.5<i class="rt">参照</i></span><span class="cline"></span><span class="cto">约 4.5（行业优秀参照）<i class="rt">参照</i></span></div>
+        </div>
+        <div class="crow">
+          <div class="ck">基载空调系统 EER</div>
+          <div class="ctrack"><span class="cnow">约 3.5<i class="rt">参照</i></span><span class="cline"></span><span class="cto">约 4.8<i class="rt">参照</i></span></div>
+        </div>
+        <div class="crow">
+          <div class="ck">单位办公面积能耗</div>
+          <div class="ctrack"><span class="cnow">约 150 kWh/m²<i class="rt">参照</i></span><span class="cline"></span><span class="cto">约 128 kWh/m²（行业平均带）<i class="rt">参照</i></span></div>
+        </div>
+        <div class="tfoot">内部测算，待基线书面核验</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">表里是行业对标参照，南网自己的台阶等基线核定后再定。</div><div class="pg">11 / 23</div></div>
+</section>
+
+<!-- ==================== 12 · mpark-three-ends ==================== -->
+<section class="slide" data-id="mpark-three-ends" data-group="智慧主线" data-accent="blue"
+         data-name="智慧主线（一）：三端协同，先看别人怎么做">
+  <div class="chrome"><div class="l"><i class="sq"></i>智慧主线</div><div class="r">mpark-three-ends</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">智慧主线（一）</div>
+      <h2 class="t sm">智慧主线（一）：三端协同，先看别人怎么做</h2></div>
+    <p class="lead a">中国移动国际信息港把园区管理和员工服务连成了一套三端。</p>
+    <div class="body">
+    <div class="row3" style="margin-top:6px">
+      <div class="card a fig">
+        <svg width="100%" height="66" viewBox="0 0 240 66" fill="none" stroke="var(--c)" stroke-width="1.4">
+          <rect x="1" y="1" width="238" height="64" rx="5" fill="var(--c-soft)"/>
+          <path d="M1 15 h238" stroke="var(--c-line)"/>
+          <rect x="12" y="26" width="66" height="28" rx="3"/><rect x="87" y="26" width="66" height="28" rx="3"/><rect x="162" y="26" width="66" height="28" rx="3"/>
+          <path d="M20 46 l12 -10 10 7 12 -13" stroke="var(--c)"/>
+          <path d="M95 34 h50 M95 41 h34 M95 48 h44" stroke="var(--c-line)"/>
+          <circle cx="195" cy="40" r="10" stroke="var(--c-line)"/>
+        </svg>
+        <div class="ch" style="margin-top:14px">中心端</div>
+        <div class="cb">运行、能耗、安防、空间在一个界面上看得见、调得动。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="100%" height="66" viewBox="0 0 240 66" fill="none" stroke="var(--c)" stroke-width="1.4">
+          <rect x="1" y="1" width="238" height="64" rx="5" fill="var(--c-soft)"/>
+          <path d="M60 1 v64" stroke="var(--c-line)"/>
+          <path d="M14 16 h32 M14 28 h32 M14 40 h32 M14 52 h32" stroke="var(--c-line)"/>
+          <rect x="76" y="14" width="150" height="12" rx="2"/><rect x="76" y="32" width="150" height="12" rx="2"/><rect x="76" y="50" width="98" height="12" rx="2"/>
+        </svg>
+        <div class="ch" style="margin-top:14px">管理端</div>
+        <div class="cb">设备、工单、预约、报表在同一套数据上办。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="100%" height="66" viewBox="0 0 240 66" fill="none" stroke="var(--c)" stroke-width="1.4">
+          <rect x="92" y="1" width="56" height="64" rx="7" fill="var(--c-soft)"/>
+          <path d="M108 8 h24" stroke="var(--c-line)"/>
+          <rect x="100" y="16" width="40" height="14" rx="2"/><rect x="100" y="34" width="40" height="8" rx="2" stroke="var(--c-line)"/><rect x="100" y="46" width="40" height="8" rx="2" stroke="var(--c-line)"/>
+          <path d="M148 24 h40 M148 50 h40" stroke="var(--c-line)" stroke-dasharray="3 4"/>
+          <path d="M52 24 h40 M52 50 h40" stroke="var(--c-line)" stroke-dasharray="3 4"/>
+          <circle cx="44" cy="24" r="6"/><circle cx="196" cy="24" r="6"/><circle cx="44" cy="50" r="6"/><circle cx="196" cy="50" r="6"/>
+        </svg>
+        <div class="ch" style="margin-top:14px">员工端</div>
+        <div class="cb">会议预约就是空调和照明的开关，服务只有一个入口。</div>
+      </div>
+    </div>
+    <div class="strip a">值得学的是机制：<b>一次预约能联动末端，一套数据能同时用于运营和核算。</b></div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">我们参照它的机制，产品和指标回到南网自己的口径上定。</div><div class="pg">12 / 23</div></div>
+</section>
+
+<!-- ==================== 13 · digital-base ==================== -->
+<section class="slide" data-id="digital-base" data-group="智慧主线" data-accent="blue"
+         data-name="智慧主线（二）：统一数字底座，南网怎么落">
+  <div class="chrome"><div class="l"><i class="sq"></i>智慧主线</div><div class="r">digital-base</div></div>
+  <div class="main g57">
+    <div class="col">
+      <div class="a"><div class="kicker">智慧主线（二）</div>
+        <h2 class="t sm">智慧主线（二）：统一数字底座，南网怎么落</h2></div>
+      <p class="lead a">底座要把空间、设备、能源和园区服务一次打通。</p>
+      <div class="a fig" style="margin-top:auto">
+        <svg viewBox="0 0 470 210" width="100%">
+          <g stroke="var(--c)" stroke-width="1.5">
+            <rect x="1" y="1"   width="468" height="44" rx="6" fill="var(--c-soft)" opacity=".95"/>
+            <rect x="1" y="55"  width="468" height="44" rx="6" fill="var(--c-soft)" opacity=".75"/>
+            <rect x="1" y="109" width="468" height="44" rx="6" fill="var(--c-soft)" opacity=".55"/>
+            <rect x="1" y="163" width="468" height="44" rx="6" fill="var(--c-soft)" opacity=".35"/>
+          </g>
+          <text class="fig-k" x="24" y="29">统一联动</text>
+          <text class="fig-k" x="24" y="83">统一管理</text>
+          <text class="fig-k" x="24" y="137">统一数据</text>
+          <text class="fig-k" x="24" y="191">统一接入</text>
+          <text class="fig-s" x="132" y="29">预约 · 行为 · 末端</text>
+          <text class="fig-s" x="132" y="83">设备 · 工单 · 预约 · 报表</text>
+          <text class="fig-s" x="132" y="137">运营调优 · 碳核算</text>
+          <text class="fig-s" x="132" y="191">楼宇自控 · 能耗监测 · 安防 · 办公</text>
+          <g fill="none" stroke="var(--c-line)" stroke-width="1.2" stroke-dasharray="3 3">
+            <path d="M440 163 V45"/></g>
+          <path d="M440 45 l-4.5 9 h9 z" fill="var(--c)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="col">
+      <ol class="pts tight">
+        <li class="a"><b>统一接入</b><p>楼宇自控、能耗监测、安防、办公系统接到一处，不再分头建。</p></li>
+        <li class="a"><b>统一数据</b><p>一套计量数据，同时满足运营调优和碳核算。</p></li>
+        <li class="a"><b>统一管理</b><p>设备、工单、预约、报表一个口径。</p></li>
+        <li class="a"><b>统一联动</b><p>预约、行为和设备末端连成回路。</p></li>
+        <li class="a"><b>南网增量三件</b><p>负荷预测、需求响应接口、绿电溯源。</p>
+          <div class="chips" style="margin-top:10px"><span class="chip">负荷预测</span><span class="chip">需求响应接口</span><span class="chip">绿电溯源</span></div>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">平台本地部署、数据主权自持，是选型的前置条件。</div><div class="pg">13 / 23</div></div>
+</section>
+
+<!-- ==================== 14 · green-smart-building ==================== -->
+<section class="slide" data-id="green-smart-building" data-group="智慧主线" data-accent="blue"
+         data-name="智慧主线（三）：绿智楼宇的诊断—监测—控制闭环">
+  <div class="chrome"><div class="l"><i class="sq"></i>智慧主线</div><div class="r">green-smart-building</div></div>
+  <div class="main g57">
+    <div class="col">
+      <div class="a"><div class="kicker">智慧主线（三）</div>
+        <h2 class="t xs">智慧主线（三）：绿智楼宇的诊断—监测—控制闭环</h2></div>
+      <p class="lead a">楼宇这一层，讲清四步就够。</p>
+      <div class="a fig" style="margin-top:auto">
+        <svg viewBox="0 0 470 208" width="100%">
+          <g fill="none" stroke="var(--line)" stroke-width="1.4">
+            <rect x="1" y="1" width="200" height="200" rx="6"/>
+            <rect x="21" y="49" width="160" height="152" rx="5"/>
+            <rect x="41" y="97" width="120" height="104" rx="4"/>
+            <rect x="61" y="145" width="80" height="56" rx="3" fill="var(--c-soft)" stroke="var(--c)"/>
+          </g>
+          <text class="fig-s" x="10" y="20">地块</text><text class="fig-s" x="30" y="68">楼宇</text>
+          <text class="fig-s" x="50" y="116">区域</text><text class="fig-c" x="70" y="168">楼层</text>
+          <g fill="none" stroke="var(--c)" stroke-width="1.6">
+            <circle cx="350" cy="101" r="72" stroke-dasharray="4 5" opacity=".55"/>
+          </g>
+          <g fill="var(--paper)" stroke="var(--c)" stroke-width="1.5">
+            <rect x="308" y="14" width="84" height="30" rx="15"/>
+            <rect x="392" y="86" width="76" height="30" rx="15"/>
+            <rect x="308" y="158" width="84" height="30" rx="15"/>
+            <rect x="232" y="86" width="76" height="30" rx="15"/>
+          </g>
+          <text class="fig-c" x="350" y="34" text-anchor="middle">预测</text>
+          <text class="fig-c" x="430" y="106" text-anchor="middle">策略</text>
+          <text class="fig-c" x="350" y="178" text-anchor="middle">执行</text>
+          <text class="fig-c" x="270" y="106" text-anchor="middle">复核</text>
+        </svg>
+      </div>
+    </div>
+    <div class="col">
+      <ol class="pts">
+        <li class="a"><b>诊断起点</b><p>先测后改，冷站和典型楼层要拿到一个完整供冷季的数据。</p></li>
+        <li class="a"><b>分区改造</b><p>一栋一区地做，办公不停，做不好能回退。</p></li>
+        <li class="a"><b>四级监测</b><p>地块、楼宇、区域、楼层四级分项计量到位。</p></li>
+        <li class="a"><b>控制闭环</b><p>预测、策略、执行、复核连成一圈，效果用实测说话。</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">机制照成熟做法定制，产品指标不照搬。</div><div class="pg">14 / 23</div></div>
+</section>
+
+<!-- ==================== 15 · human-inclusive ==================== -->
+<section class="slide" data-id="human-inclusive" data-group="人文主线" data-accent="orange"
+         data-name="普惠：一个规则，人人可及">
+  <div class="chrome"><div class="l"><i class="sq"></i>人文主线</div><div class="r">human-inclusive</div></div>
+  <div class="main g57">
+    <div class="col">
+      <div class="a"><div class="kicker">人文主线（一）· 普惠</div>
+        <h2 class="t">普惠：一个规则，人人可及</h2></div>
+      <p class="lead a">普惠讲的是人人参与、人人受益，同一件事对所有人一套规则。</p>
+      <div class="a fig" style="margin-top:auto">
+        <svg viewBox="0 0 470 204" width="100%">
+          <g fill="none" stroke="var(--c)" stroke-width="1.6">
+            <circle cx="18" cy="34" r="8"/><path d="M6 58 a12 12 0 0 1 24 0"/>
+            <circle cx="18" cy="96" r="8"/><path d="M6 120 a12 12 0 0 1 24 0"/>
+            <circle cx="18" cy="158" r="8"/><path d="M6 182 a12 12 0 0 1 24 0"/>
+          </g>
+          <text class="fig-s" x="44" y="51">员工</text>
+          <text class="fig-s" x="44" y="113">外包</text>
+          <text class="fig-s" x="44" y="175">访客</text>
+          <g stroke="var(--c-line)" stroke-width="1.3" stroke-dasharray="3 4" fill="none">
+            <path d="M92 46 H172"/><path d="M92 108 H172"/><path d="M92 170 H172"/>
+          </g>
+          <rect x="172" y="16" width="92" height="180" rx="8" fill="var(--c-soft)" stroke="var(--c)" stroke-width="1.6"/>
+          <rect x="198" y="52" width="40" height="40" rx="5" fill="var(--paper)" stroke="var(--c)" stroke-width="1.4"/>
+          <g fill="var(--c)">
+            <rect x="204" y="58" width="9" height="9"/><rect x="223" y="58" width="9" height="9"/>
+            <rect x="204" y="77" width="9" height="9"/><rect x="218" y="72" width="5" height="5"/><rect x="227" y="81" width="5" height="5"/>
+          </g>
+          <text class="fig-c" x="218" y="126" text-anchor="middle">同一个码</text>
+          <text class="fig-s" x="218" y="148" text-anchor="middle">同一道闸机</text>
+          <text class="fig-s" x="218" y="168" text-anchor="middle">同一套流程</text>
+          <g fill="none" stroke="var(--line)" stroke-width="1.4">
+            <rect x="298" y="16" width="170" height="80" rx="7"/><rect x="298" y="116" width="170" height="80" rx="7"/>
+          </g>
+          <text class="fig-k" x="318" y="48">车位余量</text><text class="fig-s" x="318" y="74">先约先用，不留专属位</text>
+          <text class="fig-k" x="318" y="148">充电桩余量</text><text class="fig-s" x="318" y="174">额度和余量公开</text>
+        </svg>
+      </div>
+    </div>
+    <div class="col">
+      <ol class="pts tight">
+        <li class="a"><b>通行</b><p>入园、停车、充电一次约好，员工、外包、访客走同一套流程，闸机前不用问人。</p></li>
+        <li class="a"><b>车位与充电</b><p>车位和充电桩按同一队列排，先约先用，不留专属位。</p></li>
+        <li class="a"><b>用餐</b><p>食堂时段和排队时长公示，谁都能提前挑一个不挤的点去。</p></li>
+        <li class="a"><b>运动与共享</b><p>文体场地、共享会议室、母婴室在同一个入口预约，额度和余量公开。</p></li>
+        <li class="a"><b>无障碍</b><p>坡道、盲道、无障碍卫生间按标准做齐，坐轮椅能自己走完全程。</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">普惠看的是同一套规则对所有人有效，不是给谁额外的优待。</div><div class="pg">15 / 23</div></div>
+</section>
+
+<!-- ==================== 16 · human-health ==================== -->
+<section class="slide" data-id="human-health" data-group="人文主线" data-accent="orange"
+         data-name="健康：空气、光、声、温湿度可测可调可公示">
+  <div class="chrome"><div class="l"><i class="sq"></i>人文主线</div><div class="r">human-health</div></div>
+  <div class="main g75">
+    <div class="col">
+      <div class="a"><div class="kicker">人文主线（二）· 健康</div>
+        <h2 class="t sm">健康：空气、光、声、温湿度可测可调可公示</h2></div>
+      <p class="lead a">健康不靠说法，靠四项环境数据能测、能调、能看得见。</p>
+      <ol class="pts tight" style="margin-top:26px">
+        <li class="a"><b>空气</b><p>每层布点测二氧化碳和 PM2.5，超过阈值自动加新风。</p></li>
+        <li class="a"><b>光环境</b><p>办公区照度和色温分区可调，靠窗自动遮阳，屏幕不反光。</p></li>
+        <li class="a"><b>声环境</b><p>开放办公、专注舱、电话间分开做声学处理，各区噪声定各自的限值。</p></li>
+        <li class="a"><b>温湿度</b><p>可调工位是常态，每个人在手机上就能微调自己工位的风口和送风温度。</p></li>
+        <li class="a"><b>公示</b><p>每层电梯厅一块环境牌，实时数值和当日达标时长都写在牌面上。</p></li>
+      </ol>
+    </div>
+    <div class="col">
+      <div class="a fig figbox" style="margin-top:52px">
+        <div class="figcap">每层电梯厅 · 环境牌</div>
+        <svg viewBox="0 0 340 262" width="100%">
+          <g fill="none" stroke="var(--line)" stroke-width="1.3">
+            <path d="M0 42 h340"/><path d="M0 90 h340"/><path d="M0 138 h340"/><path d="M0 186 h340"/><path d="M0 234 h340"/>
+          </g>
+          <text class="fig-k" x="0" y="26">空气</text>
+          <text class="fig-k" x="0" y="74">光环境</text>
+          <text class="fig-k" x="0" y="122">声环境</text>
+          <text class="fig-k" x="0" y="170">温湿度</text>
+          <text class="fig-k" x="0" y="218">当日达标时长</text>
+          <g>
+            <rect x="150" y="17" width="190" height="8" rx="4" fill="var(--line-2)"/>
+            <rect x="150" y="17" width="146" height="8" rx="4" fill="var(--c)"/>
+            <rect x="150" y="65" width="190" height="8" rx="4" fill="var(--line-2)"/>
+            <rect x="150" y="65" width="165" height="8" rx="4" fill="var(--c)"/>
+            <rect x="150" y="113" width="190" height="8" rx="4" fill="var(--line-2)"/>
+            <rect x="150" y="113" width="128" height="8" rx="4" fill="var(--c)"/>
+            <rect x="150" y="161" width="190" height="8" rx="4" fill="var(--line-2)"/>
+            <rect x="150" y="161" width="172" height="8" rx="4" fill="var(--c)"/>
+            <rect x="150" y="209" width="190" height="8" rx="4" fill="var(--line-2)"/>
+            <rect x="150" y="209" width="155" height="8" rx="4" fill="var(--c)"/>
+          </g>
+          <text class="fig-s" x="340" y="256" text-anchor="end">实时数值和当日达标时长都写在牌面上</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">健康数据只用于改善环境和验收，不进个人考核。</div><div class="pg">16 / 23</div></div>
+</section>
+
+<!-- ==================== 17 · human-culture ==================== -->
+<section class="slide" data-id="human-culture" data-group="人文主线" data-accent="orange"
+         data-name="人文：一次预约联动末端，一次参观看见运行">
+  <div class="chrome"><div class="l"><i class="sq"></i>人文主线</div><div class="r">human-culture</div></div>
+  <div class="main g75">
+    <div class="col">
+      <div class="a"><div class="kicker">人文主线（三）· 人文</div>
+        <h2 class="t sm">人文：一次预约联动末端，一次参观看见运行</h2></div>
+      <p class="lead a">人文是把运行变成场所感：会议一预约末端就动，客人一进园就看见真实运行。</p>
+      <ol class="pts tight" style="margin-top:26px">
+        <li class="a"><b>会议</b><p>预约就是末端开关，人到灯亮风起，散会自动回落。</p></li>
+        <li class="a"><b>联动</b><p>会议改期或取消，空调照明跟着改，空房间不再空转。</p></li>
+        <li class="a"><b>参观路线</b><p>客人走的是运行现场，冷站、屋顶光伏、楼层配电依次看得到。</p></li>
+        <li class="a"><b>碳账本</b><p>最后一站看正在记账的碳账，当日发电、用电、降碳量当场翻给客人看。</p></li>
+        <li class="a"><b>现场解说</b><p>说明牌贴在设备旁边，参观走完，园区照常办公。</p></li>
+      </ol>
+    </div>
+    <div class="col">
+      <div class="a fig figbox" style="margin-top:52px">
+        <div class="figcap">参观路线 · 四站都是运行现场</div>
+        <svg viewBox="0 0 340 246" width="100%">
+          <path d="M18 22 V158" stroke="var(--c-line)" stroke-width="1.6" stroke-dasharray="4 5" fill="none"/>
+          <g fill="var(--paper)" stroke="var(--c)" stroke-width="1.8">
+            <circle cx="18" cy="22" r="6.5"/><circle cx="18" cy="67" r="6.5"/>
+            <circle cx="18" cy="112" r="6.5"/><circle cx="18" cy="157" r="6.5"/>
+          </g>
+          <circle cx="18" cy="157" r="3" fill="var(--c)"/>
+          <text class="fig-k" x="38" y="27">冷站</text>
+          <text class="fig-k" x="38" y="72">屋顶光伏</text>
+          <text class="fig-k" x="38" y="117">楼层配电</text>
+          <text class="fig-k" x="38" y="162">碳账本</text>
+          <text class="fig-s" x="340" y="27"  text-anchor="end">说明牌贴在设备旁边</text>
+          <text class="fig-s" x="340" y="72"  text-anchor="end">参观走完，园区照常办公</text>
+          <text class="fig-s" x="340" y="117" text-anchor="end">不建独立展馆</text>
+          <text class="fig-c" x="340" y="162" text-anchor="end">当场翻给客人看</text>
+          <rect x="0" y="180" width="340" height="66" rx="7" fill="var(--c-soft)" stroke="var(--c-line)" stroke-width="1.3"/>
+          <text class="fig-s" x="170" y="200" text-anchor="middle">正在记账的碳账</text>
+          <path d="M12 210 h316" stroke="var(--c-line)" stroke-width="1" fill="none"/>
+          <path d="M113 210 V246 M227 210 V246" stroke="var(--c-line)" stroke-width="1" fill="none"/>
+          <text class="fig-k" x="56"  y="234" text-anchor="middle">当日发电</text>
+          <text class="fig-k" x="170" y="234" text-anchor="middle">用电</text>
+          <text class="fig-k" x="284" y="234" text-anchor="middle">降碳量</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">参观看的是正在运行的园区，不建独立展馆。</div><div class="pg">17 / 23</div></div>
+</section>
+
+<!-- ==================== 18 · six-proofs ==================== -->
+<section class="slide" data-id="six-proofs" data-group="闭环 · 指标 · 增益" data-accent="rose"
+         data-name="六项属性互相证明">
+  <div class="chrome"><div class="l"><i class="sq"></i>闭环 · 指标 · 增益</div><div class="r">six-proofs</div></div>
+  <div class="main g57">
+    <div class="col">
+      <div class="a"><div class="kicker">闭环</div>
+        <h2 class="t">六项属性互相证明</h2></div>
+      <p class="lead a">六项属性不是六项并列的清单，是一个闭环。</p>
+      <div class="a fig" style="margin-top:auto">
+        <svg viewBox="0 0 430 250" width="100%">
+          <circle cx="215" cy="125" r="104" fill="none" stroke="var(--line)" stroke-width="1.2" stroke-dasharray="3 5"/>
+          <g fill="none" stroke="var(--c-line)" stroke-width="1.3">
+            <path d="M215 21 A104 104 0 0 1 305 73"/><path d="M305 177 A104 104 0 0 1 215 229"/>
+            <path d="M125 177 A104 104 0 0 1 125 73"/>
+          </g>
+          <g fill="var(--c)">
+            <path d="M305 73 l-2 -11 8 6 z"/><path d="M215 229 l-9 -5 9 -5 z"/><path d="M125 73 l1 -11 8 7 z"/>
+          </g>
+          <g fill="var(--paper)" stroke="var(--c)" stroke-width="1.5">
+            <rect x="176" y="6" width="78" height="30" rx="15"/>
+            <rect x="290" y="58" width="78" height="30" rx="15"/>
+            <rect x="290" y="162" width="78" height="30" rx="15"/>
+            <rect x="176" y="214" width="78" height="30" rx="15"/>
+            <rect x="62" y="162" width="78" height="30" rx="15"/>
+            <rect x="62" y="58" width="78" height="30" rx="15"/>
+          </g>
+          <text class="fig-c" x="215" y="26" text-anchor="middle">高效</text>
+          <text class="fig-c" x="329" y="78" text-anchor="middle">绿色</text>
+          <text class="fig-c" x="329" y="182" text-anchor="middle">智慧</text>
+          <text class="fig-c" x="215" y="234" text-anchor="middle">健康</text>
+          <text class="fig-c" x="101" y="182" text-anchor="middle">普惠</text>
+          <text class="fig-c" x="101" y="78" text-anchor="middle">人文</text>
+          <text class="fig-k" x="215" y="120" text-anchor="middle">六项互证</text>
+          <text class="fig-s" x="215" y="140" text-anchor="middle">才算闭环</text>
+        </svg>
+      </div>
+    </div>
+    <div class="col">
+      <ol class="pts">
+        <li class="a"><p><span class="mark">高效</span>省下来的电，直接变成绿色的降碳量。</p></li>
+        <li class="a"><p><span class="mark">智慧</span>提供数据，绿色和高效的成效才算得清。</p></li>
+        <li class="a"><p><span class="mark">健康</span>给节能设了底线：少用电不能换来坏空气。</p></li>
+        <li class="a"><p><span class="mark">普惠</span>把全员的减碳行为纳进总账。</p></li>
+        <li class="a"><p><span class="mark">人文</span>把前面五项的成果，变成员工每天感受得到的日常。</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">单项达标不算成立，六项互证才算闭环。</div><div class="pg">18 / 23</div></div>
+</section>
+
+<!-- ==================== 19 · indicator-tree ==================== -->
+<section class="slide" data-id="indicator-tree" data-group="闭环 · 指标 · 增益" data-accent="rose"
+         data-name="指标结构：世界一流用什么来验">
+  <div class="chrome"><div class="l"><i class="sq"></i>闭环 · 指标 · 增益</div><div class="r">indicator-tree</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">指标</div>
+      <h2 class="t">指标结构：世界一流用什么来验</h2></div>
+    <p class="lead a">三条主线各有硬指标，加上协同成果，一起验证目标。</p>
+    <div class="body">
+    <div class="a fig" style="margin-top:2px">
+      <svg viewBox="0 0 1432 34" width="100%" height="34" preserveAspectRatio="none">
+        <path d="M716 0 V12 M144 34 V12 H1288 V34 M430 12 V34 M716 12 V34 M1002 12 V34"
+              fill="none" stroke="var(--c-line)" stroke-width="1.4"/>
+      </svg>
+    </div>
+    <div class="row5" style="margin-top:-4px">
+      <div class="card a" style="border-top:3px solid #0b8457">
+        <div class="ch" style="font-size:17px">绿色类</div>
+        <div class="chips" style="margin-top:4px">
+          <span class="chip n">降碳率</span><span class="chip n">绿电占比</span><span class="chip n">碳账覆盖率</span><span class="chip n">光伏装机</span>
+        </div>
+      </div>
+      <div class="card a" style="border-top:3px solid #0b8457">
+        <div class="ch" style="font-size:17px">高效类</div>
+        <div class="chips" style="margin-top:4px">
+          <span class="chip n">冷站综合能效</span><span class="chip n">单位面积综合能耗</span><span class="chip n">柔性负荷容量</span>
+        </div>
+      </div>
+      <div class="card a" style="border-top:3px solid #2563eb">
+        <div class="ch" style="font-size:17px">智慧类</div>
+        <div class="chips" style="margin-top:4px">
+          <span class="chip n">四级计量覆盖率</span><span class="chip n">设备接入率</span><span class="chip n">负荷预测精度</span><span class="chip n">本地部署与数据主权</span>
+        </div>
+      </div>
+      <div class="card a" style="border-top:3px solid #d9480f">
+        <div class="ch" style="font-size:17px">人文类</div>
+        <div class="chips" style="margin-top:4px">
+          <span class="chip n">无障碍达标率</span><span class="chip n">环境达标时长</span><span class="chip n">碳普惠参与率</span><span class="chip n">员工满意度</span>
+        </div>
+      </div>
+      <div class="card a" style="border-top:3px solid var(--c)">
+        <div class="ch" style="font-size:17px">协同类</div>
+        <div class="chips" style="margin-top:4px">
+          <span class="chip n">预约联动覆盖率</span><span class="chip n">需求响应接口在线运行</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">今天先把指标的分类和口径定下来，量化指标等基线核定后再定。</div><div class="pg">19 / 23</div></div>
+</section>
+
+<!-- ==================== 20 · four-scenes ==================== -->
+<section class="slide" data-id="four-scenes" data-group="闭环 · 指标 · 增益" data-accent="rose"
+         data-name="增益：对企业、对员工">
+  <div class="chrome"><div class="l"><i class="sq"></i>闭环 · 指标 · 增益</div><div class="r">four-scenes</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">增益</div>
+      <h2 class="t">增益：对企业、对员工</h2></div>
+    <p class="lead a">建成之后的好处，落在两头。</p>
+    <div class="body">
+    <div class="g66" style="display:grid;gap:40px;margin-top:8px">
+      <div class="card a fig tint">
+        <div class="ch" style="font-size:22px;margin-bottom:18px">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--c)" stroke-width="1.6">
+            <path d="M3 25 h22"/><rect x="5" y="9" width="8" height="16"/><rect x="15" y="3" width="8" height="22"/></svg>
+          对企业
+        </div>
+        <ul class="plain">
+          <li>成本降下来，能效和电费都看得见。</li>
+          <li>方法沉淀下来，账、模型、底座、流程都能带走。</li>
+          <li>对外讲能碳服务，有了自己园区的实测证据。</li>
+        </ul>
+      </div>
+      <div class="card a fig tint">
+        <div class="ch" style="font-size:22px;margin-bottom:18px">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="var(--c)" stroke-width="1.6">
+            <circle cx="14" cy="9" r="5.5"/><path d="M4 25 a10 11 0 0 1 20 0"/></svg>
+          对员工
+        </div>
+        <ul class="plain">
+          <li>环境更好，空气、光、温湿度有数据、有公示。</li>
+          <li>办事更省，会议、充电、停车、文体一处预约。</li>
+          <li>参与得上，个人碳账看得见，减碳行为算得着。</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">企业得到的是能力，员工得到的是每天的体感。</div><div class="pg">20 / 23</div></div>
+</section>
+
+<!-- ==================== 21 · four-steps ==================== -->
+<section class="slide" data-id="four-steps" data-group="推进 · 复制 · 决策" data-accent="amber"
+         data-name="四步推进">
+  <div class="chrome"><div class="l"><i class="sq"></i>推进 · 复制 · 决策</div><div class="r">four-steps</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">推进</div>
+      <h2 class="t">四步推进</h2></div>
+    <p class="lead a">不做一次性大工程，四步走，每步都有过关条件。</p>
+    <div class="body">
+    <div class="a fig">
+      <svg viewBox="0 0 1432 96" width="100%">
+        <path d="M1 95 V72 H344 V50 H707 V28 H1070 V6 H1431 V95 z"
+              fill="var(--c-soft)" stroke="var(--c)" stroke-width="1.4"/>
+        <path d="M1360 34 h44 M1404 34 l-12 -7 v14 z" fill="var(--c)" stroke="var(--c)" stroke-width="1.4"/>
+      </svg>
+    </div>
+    <div class="row4" style="margin-top:-25px">
+      <div class="card a">
+        <div class="ch"><span style="color:var(--c);font-size:13px;letter-spacing:.14em">STEP 01</span></div>
+        <div class="ch" style="font-size:19px;margin-top:-2px">第一步 基线诊断</div>
+        <div class="cb">把用电、碳排、设备家底和机房口径核清，拿到一个供冷季的数据。</div>
+      </div>
+      <div class="card a">
+        <div class="ch"><span style="color:var(--c);font-size:13px;letter-spacing:.14em">STEP 02</span></div>
+        <div class="ch" style="font-size:19px;margin-top:-2px">第二步 分区试点</div>
+        <div class="cb">园中园先跑一栋一区，办公不停，效果实测。</div>
+      </div>
+      <div class="card a">
+        <div class="ch"><span style="color:var(--c);font-size:13px;letter-spacing:.14em">STEP 03</span></div>
+        <div class="ch" style="font-size:19px;margin-top:-2px">第三步 集成运行</div>
+        <div class="cb">底座、三端、碳账全园贯通，蓄冷策略接进交易。</div>
+      </div>
+      <div class="card a">
+        <div class="ch"><span style="color:var(--c);font-size:13px;letter-spacing:.14em">STEP 04</span></div>
+        <div class="ch" style="font-size:19px;margin-top:-2px">第四步 复制推广</div>
+        <div class="cb">方法定型，向南网内同类园区推开。</div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">数据合格才进下一步，不合格就停在原地补。</div><div class="pg">21 / 23</div></div>
+</section>
+
+<!-- ==================== 22 · replicable-pack ==================== -->
+<section class="slide" data-id="replicable-pack" data-group="推进 · 复制 · 决策" data-accent="amber"
+         data-name="可复制的方案包">
+  <div class="chrome"><div class="l"><i class="sq"></i>推进 · 复制 · 决策</div><div class="r">replicable-pack</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">可复制</div>
+      <h2 class="t">可复制的方案包</h2></div>
+    <p class="lead a">这个园区做完，要留下能带走的东西。</p>
+    <div class="body">
+    <div class="row4" style="margin-top:8px">
+      <div class="card a fig">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--c)" stroke-width="1.6">
+          <path d="M4 12 L20 4 36 12 20 20 z" fill="var(--c-soft)"/><path d="M4 12 v16 l16 8 16 -8 V12"/><path d="M20 20 v16"/></svg>
+        <div class="ch" style="margin-top:14px">标准与指标包</div>
+        <div class="cb">能碳核算口径、指标体系、验收方法。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--c)" stroke-width="1.6">
+          <path d="M6 34 V10 M20 34 V4 M34 34 V16" /><path d="M2 36 h36" stroke="var(--line)"/>
+          <circle cx="6" cy="10" r="3" fill="var(--c-soft)"/><circle cx="20" cy="4" r="3" fill="var(--c-soft)"/><circle cx="34" cy="16" r="3" fill="var(--c-soft)"/></svg>
+        <div class="ch" style="margin-top:14px">三主线方法包</div>
+        <div class="cb">绿色、智慧、人文各自的诊断与实施步骤。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--c)" stroke-width="1.6">
+          <rect x="3" y="4" width="34" height="9" rx="2" fill="var(--c-soft)"/><rect x="3" y="16" width="34" height="9" rx="2"/><rect x="3" y="28" width="34" height="9" rx="2"/></svg>
+        <div class="ch" style="margin-top:14px">数字底座模板</div>
+        <div class="cb">接入、数据、管理、联动的架构与接口。</div>
+      </div>
+      <div class="card a fig">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="var(--c)" stroke-width="1.6">
+          <circle cx="20" cy="20" r="15" stroke-dasharray="5 4"/><path d="M20 11 v9 l7 5"/></svg>
+        <div class="ch" style="margin-top:14px">改造运营方法</div>
+        <div class="cb">不停机、分区试点、先测后改的完整流程。</div>
+      </div>
+    </div>
+    <div class="strip a">复制次序：<b>先南网内同类园区，再往外推。</b></div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">前提是总部基地自己的方法和数据先立住。</div><div class="pg">22 / 23</div></div>
+</section>
+
+<!-- ==================== 23 · three-decisions ==================== -->
+<section class="slide" data-id="three-decisions" data-group="推进 · 复制 · 决策" data-accent="amber"
+         data-name="请本次明确三项决策">
+  <div class="chrome"><div class="l"><i class="sq"></i>推进 · 复制 · 决策</div><div class="r">three-decisions</div></div>
+  <div class="main g1">
+    <div class="a"><div class="kicker">决策</div>
+      <h2 class="t">请本次明确三项决策</h2></div>
+    <p class="lead a">三件事定下来，后面的工作就能启动。</p>
+    <div class="body">
+    <div class="row3" style="margin-top:14px">
+      <div class="card a fig tint" style="padding:28px 30px">
+        <div class="numbadge">一</div>
+        <div class="ch" style="font-size:22px;margin-top:14px">确认总体目标</div>
+        <div class="cb" style="font-size:18px">建设世界一流智慧零碳园区。</div>
+      </div>
+      <div class="card a fig tint" style="padding:28px 30px">
+        <div class="numbadge">二</div>
+        <div class="ch" style="font-size:22px;margin-top:14px">确认方案框架</div>
+        <div class="cb" style="font-size:18px">三条主线统领六项属性，用真实场景和运行指标验证。</div>
+      </div>
+      <div class="card a fig tint" style="padding:28px 30px">
+        <div class="numbadge">三</div>
+        <div class="ch" style="font-size:22px;margin-top:14px">授权启动机制</div>
+        <div class="cb" style="font-size:18px">深化总体规划和三个专题，建立跨专业统筹机制。</div>
+      </div>
+    </div>
+    <div class="a fig" style="margin-top:8px;display:flex;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--line)">
+      <div style="flex:1;border-top:4px solid #0b8457;padding:16px 22px">
+        <span style="font-size:12.5px;letter-spacing:.2em;font-weight:700;color:#0b8457">绿色</span>
+        <div style="font-size:18px;color:var(--ink);margin-top:6px">以绿色夯实底座</div>
+      </div>
+      <div style="flex:1;border-top:4px solid #2563eb;padding:16px 22px;border-left:1px solid var(--line)">
+        <span style="font-size:12.5px;letter-spacing:.2em;font-weight:700;color:#2563eb">智慧</span>
+        <div style="font-size:18px;color:var(--ink);margin-top:6px">以智慧贯通运行</div>
+      </div>
+      <div style="flex:1;border-top:4px solid #d9480f;padding:16px 22px;border-left:1px solid var(--line)">
+        <span style="font-size:12.5px;letter-spacing:.2em;font-weight:700;color:#d9480f">人文</span>
+        <div style="font-size:18px;color:var(--ink);margin-top:6px">以人文定义品质</div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="foot"><div class="nb a">以绿色夯实底座，以智慧贯通运行，以人文定义品质。</div><div class="pg">23 / 23</div></div>
+</section>
+
+<div id="ov"><h3>页面总览 · 点标题跳页 · ESC 返回</h3><div class="grid"></div></div>
+<div id="hint">← → 翻页 · 滚轮 · 点击左右半屏 · ESC 总览</div>
+
+</div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var deck    = document.getElementById('deck');
+  var bar     = document.getElementById('bar');
+  var ov      = document.getElementById('ov');
+  var ovGrid  = ov.querySelector('.grid');
+  var slides  = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+  var total   = slides.length;
+  var current = -1;
+  var timers  = [];
+
+  /* ---------- 固定 1600×900 画布等比缩放，任何窗口下都保持 16:9 ---------- */
+  function fit() {
+    var s = Math.min(window.innerWidth / 1600, window.innerHeight / 900);
+    deck.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+
+  /* ---------- 顶部分段进度条 ---------- */
+  slides.forEach(function (s, i) {
+    var seg = document.createElement('div');
+    seg.className = 'seg';
+    seg.title = (i + 1) + ' · ' + (s.dataset.name || '');
+    seg.addEventListener('click', function (e) { e.stopPropagation(); go(i); });
+    bar.appendChild(seg);
+  });
+  var segs = Array.prototype.slice.call(bar.children);
+
+  /* ---------- 总览 ---------- */
+  slides.forEach(function (s, i) {
+    var c = document.createElement('div');
+    c.className = 'ovc';
+    c.innerHTML = '<div class="n">' + pad(i + 1) + ' · ' + (s.dataset.group || '') + '</div>' +
+                  '<div class="nm">' + (s.dataset.name || '') + '</div>';
+    c.addEventListener('click', function () { closeOverview(); go(i); });
+    ovGrid.appendChild(c);
+  });
+  var ovCards = Array.prototype.slice.call(ovGrid.children);
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  /* ---------- 翻页 + 元素依次缓入 ---------- */
+  function go(i) {
+    if (i < 0) { i = 0; }
+    if (i > total - 1) { i = total - 1; }
+    if (i === current) { return; }
+
+    timers.forEach(clearTimeout);
+    timers = [];
+
+    slides.forEach(function (s, k) { s.classList.toggle('active', k === i); });
+    segs.forEach(function (g, k) {
+      g.classList.toggle('now', k === i);
+      g.classList.toggle('done', k < i);
+    });
+    ovCards.forEach(function (c, k) { c.classList.toggle('now', k === i); });
+
+    var slide = slides[i];
+    var items = Array.prototype.slice.call(slide.querySelectorAll('.a'));
+    var n     = items.length;
+    // 整页元素在 1.5—2.5 秒内依次到位：末位延时 ≤ 1440ms，叠加 620ms 过渡
+    var step  = n > 1 ? Math.min(110, 1350 / (n - 1)) : 0;
+
+    items.forEach(function (el, k) {
+      el.classList.remove('show');
+      var d = el.hasAttribute('data-delay')
+            ? parseInt(el.getAttribute('data-delay'), 10)
+            : Math.round(90 + k * step);
+      timers.push(setTimeout(function () { el.classList.add('show'); }, d));
+    });
+
+    current = i;
+    if (history.replaceState) {
+      history.replaceState(null, '', '#' + slide.dataset.id);
+    }
+  }
+
+  function next() { go(current + 1); }
+  function prev() { go(current - 1); }
+
+  /* ---------- 总览开合 ---------- */
+  function openOverview()  { ov.classList.add('on'); }
+  function closeOverview() { ov.classList.remove('on'); }
+  function toggleOverview(){ ov.classList.contains('on') ? closeOverview() : openOverview(); }
+
+  /* ---------- 键盘 ---------- */
+  document.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'Escape') { toggleOverview(); e.preventDefault(); return; }
+    if (ov.classList.contains('on')) { return; }
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === 'PageDown' || k === ' ' || k === 'Enter') {
+      next(); e.preventDefault();
+    } else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp' || k === 'Backspace') {
+      prev(); e.preventDefault();
+    } else if (k === 'Home') { go(0); e.preventDefault(); }
+    else if (k === 'End')    { go(total - 1); e.preventDefault(); }
+  });
+
+  /* ---------- 鼠标滚轮（节流，防止一格滚多页） ---------- */
+  var wheelLock = 0;
+  window.addEventListener('wheel', function (e) {
+    if (ov.classList.contains('on')) { return; }
+    var now = Date.now();
+    if (now - wheelLock < 520) { return; }
+    if (Math.abs(e.deltaY) < 8) { return; }
+    wheelLock = now;
+    if (e.deltaY > 0) { next(); } else { prev(); }
+  }, { passive: true });
+
+  /* ---------- 点击左右半屏 ---------- */
+  document.getElementById('viewport').addEventListener('click', function (e) {
+    if (ov.classList.contains('on')) { return; }
+    if (e.target.closest('#bar')) { return; }
+    if (e.clientX > window.innerWidth / 2) { next(); } else { prev(); }
+  });
+
+  /* ---------- 触屏左右滑 ---------- */
+  var tx = 0, ty = 0;
+  window.addEventListener('touchstart', function (e) {
+    tx = e.changedTouches[0].clientX; ty = e.changedTouches[0].clientY;
+  }, { passive: true });
+  window.addEventListener('touchend', function (e) {
+    var dx = e.changedTouches[0].clientX - tx;
+    var dy = e.changedTouches[0].clientY - ty;
+    if (Math.abs(dx) > 56 && Math.abs(dx) > Math.abs(dy)) { dx < 0 ? next() : prev(); }
+  }, { passive: true });
+
+  /* ---------- 起始页：支持 #page-id 直达 ---------- */
+  var startAt = 0;
+  if (location.hash) {
+    var want = location.hash.slice(1);
+    slides.forEach(function (s, i) { if (s.dataset.id === want) { startAt = i; } });
+  }
+  go(startAt);
+})();
+</script>
+
+</body>
+</html>
