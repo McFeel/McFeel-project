@@ -1319,7 +1319,8 @@
   .dk-logic{position:relative;min-height:0;display:flex;flex-direction:column}
   .dk-logic>.logic-img{display:none;flex:1;min-height:0}
   .dk-logic>.logic-img.is-ok{display:block}
-  .dk-logic>.logic-img.is-ok ~ .dk-fig-svg{display:none}
+  /* 逻辑图 PNG 到位后必须盖掉内联 SVG 回落；部分回落块自带 inline display，故用 !important */
+  .dk-logic>.logic-img.is-ok ~ .dk-fig-svg{display:none!important}
   .dk-fig-svg{position:relative;flex:1;min-height:0;display:flex;flex-direction:column}
 
   /* 逻辑图：SVG 只画几何，标签一律走 HTML */
