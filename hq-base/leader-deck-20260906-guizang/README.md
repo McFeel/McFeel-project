@@ -113,6 +113,17 @@ open "hq-base/leader-deck-20260906-guizang/leader-deck-20260906_by小七.html"
 
 > 云端拿不到 Box 和 Mac 本地盘，上表全部要在本地由小七拷入。
 
+### 汇报当天不想露出文件路径
+
+占位框默认会把它等的那个文件名印在框里（补图时照着拷就行）。如果当天还有图没补上、又不想让领导看见 `images/...` 这种路径，把 HTML 第一行 `<body>` 上的 `show-slot-filenames` 去掉即可：
+
+```html
+<body class="canvas-mode show-slot-filenames">   <!-- 改成 -->
+<body class="canvas-mode">
+```
+
+改完占位框只剩「待补实拍」和框下那句中文说明，网格底纹照旧，页面其余部分不受影响。
+
 ---
 
 ## 文案与口径底线

@@ -1280,8 +1280,12 @@
     justify-content:space-between;padding:1vh .85vw;pointer-events:none}
   .photo-slot .ph .tg{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:.16em;
     color:var(--accent)}
-  .photo-slot .ph .fn{font-family:var(--mono);font-size:13px;color:var(--text-helper);
+  /* 占位框里的文件名：默认显示（补图时照着拷就行）。
+     正式汇报当天如果不想让领导看见文件路径，把 <body> 上的 show-slot-filenames 去掉即可，
+     占位框只剩「待补实拍」和框下的中文说明。 */
+  .photo-slot .ph .fn{display:none;font-family:var(--mono);font-size:13px;color:var(--text-helper);
     line-height:1.35;word-break:break-all}
+  body.show-slot-filenames .photo-slot .ph .fn{display:block}
   .photo-slot .ph .gm{position:absolute;right:.85vw;top:50%;transform:translateY(-50%);
     width:2.1vw;height:2.1vw;border:1px solid var(--accent);opacity:.45}
   .photo-slot .ph .gm::after{content:"";position:absolute;inset:24%;border:1px solid var(--accent);
@@ -1382,7 +1386,7 @@
   .slide.dark .dk-vsep{border-left-color:rgba(255,255,255,.18)}
 </style>
 </head>
-<body class="canvas-mode">
+<body class="canvas-mode show-slot-filenames">
 <script>
   // Windows 平台标记 — 雅黑没有 ExtraLight,需要字重补偿
   if(/Win/i.test(navigator.platform || navigator.userAgentData?.platform || '')){
