@@ -49,21 +49,6 @@ def set_font(run, name: str, size: Pt, bold: bool = False) -> None:
         rfonts.set(qn(attr), name)
 
 
-def set_run_east_ascii(run, east: str, ascii_name: str, size: Pt, bold: bool = False) -> None:
-    run.font.name = ascii_name
-    run.font.size = size
-    run.font.bold = bold
-    rpr = run._element.get_or_add_rPr()
-    rfonts = rpr.find(qn("w:rFonts"))
-    if rfonts is None:
-        rfonts = OxmlElement("w:rFonts")
-        rpr.append(rfonts)
-    rfonts.set(qn("w:ascii"), ascii_name)
-    rfonts.set(qn("w:hAnsi"), ascii_name)
-    rfonts.set(qn("w:eastAsia"), east)
-    rfonts.set(qn("w:cs"), ascii_name)
-
-
 def add_paragraph(
     doc,
     text: str = "",
@@ -242,9 +227,10 @@ def three_line_table(doc, rows: list[list[str]], widths_mm: list[float], caption
             cell.text = ""
             para = cell.paragraphs[0]
             para.alignment = WD_ALIGN_PARAGRAPH.CENTER if r == 0 else WD_ALIGN_PARAGRAPH.LEFT
-            para.paragraph_format.space_before = Pt(3)
-            para.paragraph_format.space_after = Pt(3)
-            para.paragraph_format.line_spacing_rule = WD_LINE_SPACING.SINGLE
+            para.paragraph_format.space_before = Pt(2)
+            para.paragraph_format.space_after = Pt(2)
+            para.paragraph_format.line_spacing = Pt(16)
+            para.paragraph_format.line_spacing_rule = WD_LINE_SPACING.EXACTLY
             set_font(para.add_run(text), HEITI if r == 0 else FANGSONG, SIZE_TABLE, bold=(r == 0))
 
             top = thick if r == 0 else none
@@ -253,10 +239,14 @@ def three_line_table(doc, rows: list[list[str]], widths_mm: list[float], caption
             if r == 0:
                 shade_cell(cell, "F2F2F2")
 
-    tr_pr = table.rows[0]._tr.get_or_add_trPr()
-    tbl_header = OxmlElement("w:tblHeader")
-    tbl_header.set(qn("w:val"), "true")
-    tr_pr.append(tbl_header)
+        tr_pr = table.rows[r]._tr.get_or_add_trPr()
+        cant = OxmlElement("w:cantSplit")
+        cant.set(qn("w:val"), "true")
+        tr_pr.append(cant)
+        if r == 0:
+            tbl_header = OxmlElement("w:tblHeader")
+            tbl_header.set(qn("w:val"), "true")
+            tr_pr.append(tbl_header)
 
 
 def add_h1(doc, text: str) -> None:
@@ -315,7 +305,17 @@ def build() -> Path:
 
     add_paragraph(
         doc,
-        "青海海东智算中心节能降碳与综合节能大模型合作备忘录",
+        "青海海东智算中心节能降碳与综合节能大模型",
+        font=HEITI,
+        size=SIZE_TITLE,
+        align=WD_ALIGN_PARAGRAPH.CENTER,
+        first_line_indent=False,
+        space_after=Pt(2),
+        line_spacing=Pt(28),
+    )
+    add_paragraph(
+        doc,
+        "合作备忘录",
         font=HEITI,
         size=SIZE_TITLE,
         align=WD_ALIGN_PARAGRAPH.CENTER,
@@ -455,6 +455,7 @@ def build() -> Path:
         "本备忘录自三方盖章之日起生效，有效期十二个月，或至专项协议生效之日止，以较早者为准。任何一方可提前十五日书面通知终止磋商；保密和数据安全义务在终止后继续有效三年。本备忘录一式三份，三方各执一份。",
     )
 
+    doc.add_page_break()
     add_h1(doc, "九、签署栏")
     add_body(doc, "以下签署栏留空，待正式签署时填写。未盖章前，本稿仅为协商讨论稿。")
 
@@ -544,7 +545,7 @@ def build() -> Path:
                 "围绕节能降耗训练综合节能大模型；编制经费、数据权、模型权属单列",
             ],
         ],
-        [28, 42, 86],
+        [26, 44, 86],
         "表1 各方分工",
     )
 
@@ -574,7 +575,7 @@ def build() -> Path:
             ],
             [
                 "三同步与一票否决",
-                "安全措施与建设、上线、运行同步；未通过审查不得上线",
+                "按制度实行三同步；未通过审查一票否决，不得上线",
                 "同上",
             ],
             [
@@ -668,7 +669,10 @@ def build() -> Path:
     add_paragraph(
         doc,
         "说明：表4所列事项均待书面确认，不得以本讨论稿代替确认。本稿法律合规表述建议墨律过目，不替代法务审查。",
-        space_before=Pt(12),
+        size=SIZE_SMALL,
+        first_line_indent=False,
+        space_before=Pt(10),
+        line_spacing=Pt(22),
     )
 
     doc.save(TARGET)
