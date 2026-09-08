@@ -16,7 +16,7 @@ Cursor Cloud **无跨会话记忆**。能被下一轮读到的，只有本仓库
 ## 怎么挂
 
 - **专责任务**：只挂对应 `docs/specialist-memory/*.md`。跨专责交接，先核交付形态，再决定谁主笔。
-- **正式中文长稿**：挂 `docs/writing-method-codex.md`。文秘任务再挂 `docs/specialist-memory/文秘.md`、底稿路径、本轮改口。
+- **正式中文长稿**：四件套必须齐——`docs/writing-method-codex.md` + `docs/specialist-memory/文秘.md` + 底稿路径 + 本轮改口。先核交付形态。长稿可优先桌面 Codex 首版；禁止 bot 自带模型硬写。
 - **派单**：只引上述路径，不粘全文。本轮禁止项写在派单正文最前。
 - **成果**：进本仓库 PR。默认另存新文件。
 
